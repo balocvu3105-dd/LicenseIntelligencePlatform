@@ -274,7 +274,7 @@ public sealed class ExcelReportMapper : IReportMapper
             dataRange.Style.Border.OutsideBorder = XLBorderStyleValues.Medium;
         }
 
-        // Apply generous, perfectly balanced and comfortable column widths (mở rộng ô thoải mái và cân đối)
+        // Apply super spacious, ultra-wide and comfortable column widths (tăng chiều rộng lên tối đa cho thoải mái)
         for (int i = 1; i <= 12; i++)
         {
             var col = sheet.Column(i);
@@ -283,19 +283,19 @@ public sealed class ExcelReportMapper : IReportMapper
 
             double explicitWidth = i switch
             {
-                1 => Math.Max(minHeaderWidth, 38), // Software Package (wide enough for long titles)
-                2 => Math.Max(minHeaderWidth, 32), // Version (wide enough for commit SHAs/hashes to wrap cleanly without creating giant height chunks)
-                3 => Math.Max(minHeaderWidth, 32), // Publisher
-                4 => Math.Max(minHeaderWidth, 75), // Install Path (Đường dẫn dài nằm trọn trên 1 hoặc 2 dòng thoáng đãng)
-                5 => Math.Max(minHeaderWidth, 24), // Install Date
-                6 => Math.Max(minHeaderWidth, 28), // Last Modified (VN Time)
-                7 => Math.Max(minHeaderWidth, 30), // Last Used / Active (VN Time)
-                8 => Math.Max(minHeaderWidth, 36), // Scan Source
-                9 => Math.Max(minHeaderWidth, 22), // License Type
-                10 => Math.Max(minHeaderWidth, 22), // Confidence
-                11 => Math.Max(minHeaderWidth, 42), // Plugin Detector
-                12 => Math.Max(minHeaderWidth, 105), // Verification Evidence (Mở rộng thoải mái để chuỗi bằng chứng dài chạy gọn gàng không bao giờ bị xén chân chữ)
-                _ => 30
+                1 => Math.Max(minHeaderWidth, 45), // Software Package (wide enough for long titles)
+                2 => Math.Max(minHeaderWidth, 75), // Version (Tăng chiều rộng lên 75 để các chuỗi commit SHA siêu dài như '@Commit: 901ca9...' hoặc 'SHA: 406132...' nằm trọn vẹn thoải mái không bị khuất chữ)
+                3 => Math.Max(minHeaderWidth, 42), // Publisher
+                4 => Math.Max(minHeaderWidth, 95), // Install Path (Tăng lên 95 để đường dẫn thư mục sâu nằm thoải mái)
+                5 => Math.Max(minHeaderWidth, 26), // Install Date
+                6 => Math.Max(minHeaderWidth, 32), // Last Modified (VN Time)
+                7 => Math.Max(minHeaderWidth, 34), // Last Used / Active (VN Time)
+                8 => Math.Max(minHeaderWidth, 45), // Scan Source
+                9 => Math.Max(minHeaderWidth, 24), // License Type
+                10 => Math.Max(minHeaderWidth, 24), // Confidence
+                11 => Math.Max(minHeaderWidth, 50), // Plugin Detector
+                12 => Math.Max(minHeaderWidth, 120), // Verification Evidence (Tăng lên 120 để bằng chứng và mô tả dài hiển thị cực kỳ rộng rãi)
+                _ => 35
             };
             col.Width = explicitWidth;
         }
