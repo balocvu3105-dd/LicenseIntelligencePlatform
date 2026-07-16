@@ -299,23 +299,23 @@ public sealed class ExcelReportMapper : IReportMapper
         {
             var col = sheet.Column(i);
             var headerLen = headers[i - 1].Length;
-            var minHeaderWidth = headerLen + 6.0; // +6 padding for bold font and filter icon space
+            var minHeaderWidth = headerLen + 10.0; // +10 padding for bold font and filter icon space
 
             double explicitWidth = i switch
             {
-                1 => Math.Max(minHeaderWidth, 48), // Software Package (wide enough for long titles)
-                2 => Math.Max(minHeaderWidth, 85), // Version (Tăng chiều rộng lên 85 để các chuỗi commit SHA siêu dài như '@Commit: 901ca9...' hoặc 'SHA: 406132...' nằm trọn vẹn thoải mái không bị khuất hay xén chữ)
-                3 => Math.Max(minHeaderWidth, 45), // Publisher
-                4 => Math.Max(minHeaderWidth, 100), // Install Path (Tăng lên 100 để đường dẫn thư mục sâu nằm thoải mái)
-                5 => Math.Max(minHeaderWidth, 26), // Install Date
-                6 => Math.Max(minHeaderWidth, 32), // Last Modified (VN Time)
-                7 => Math.Max(minHeaderWidth, 34), // Last Used / Active (VN Time)
-                8 => Math.Max(minHeaderWidth, 45), // Scan Source
-                9 => Math.Max(minHeaderWidth, 24), // License Type
-                10 => Math.Max(minHeaderWidth, 24), // Confidence
-                11 => Math.Max(minHeaderWidth, 55), // Plugin Detector
-                12 => Math.Max(minHeaderWidth, 130), // Verification Evidence (Tăng lên 130 để bằng chứng và mô tả dài hiển thị cực kỳ rộng rãi)
-                _ => 38
+                1 => Math.Max(minHeaderWidth, 55), // Software Package (wide enough for long titles)
+                2 => Math.Max(minHeaderWidth, 95), // Version (Tăng chiều rộng lên 95 để các chuỗi commit SHA siêu dài như '@Commit: 901ca9...' hoặc 'SHA: 406132...' nằm trọn vẹn thoải mái không bị khuất hay xén chữ)
+                3 => Math.Max(minHeaderWidth, 52), // Publisher
+                4 => Math.Max(minHeaderWidth, 110), // Install Path (Tăng lên 110 để đường dẫn thư mục sâu nằm thoải mái)
+                5 => Math.Max(minHeaderWidth, 32), // Install Date
+                6 => Math.Max(minHeaderWidth, 46), // Last Modified (VN Time) - Tăng từ 32 lên 46 để chuỗi '2026/06/26 04:47:14 VN Time (UTC+7)' (33 ký tự) nằm lọt lòng cực kỳ rộng rãi, không bao giờ bị xén dấu ngoặc đơn ở cuối
+                7 => Math.Max(minHeaderWidth, 48), // Last Used / Active (VN Time) - Tăng lên 48 để thời gian hoạt động nằm thênh thang thoải mái
+                8 => Math.Max(minHeaderWidth, 52), // Scan Source
+                9 => Math.Max(minHeaderWidth, 28), // License Type
+                10 => Math.Max(minHeaderWidth, 28), // Confidence
+                11 => Math.Max(minHeaderWidth, 62), // Plugin Detector
+                12 => Math.Max(minHeaderWidth, 140), // Verification Evidence (Tăng lên 140 để bằng chứng và mô tả dài hiển thị cực kỳ rộng rãi)
+                _ => 40
             };
             col.Width = explicitWidth;
         }

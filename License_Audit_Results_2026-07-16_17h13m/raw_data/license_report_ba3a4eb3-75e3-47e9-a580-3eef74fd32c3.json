@@ -1,0 +1,4057 @@
+{
+  "ScanId": "ba3a4eb3-75e3-47e9-a580-3eef74fd32c3",
+  "HostName": "DESKTOP-V8T1TLJ",
+  "OSDescription": "Microsoft Windows 10.0.26200",
+  "StartedAtUtc": "2026-07-16T10:13:47.7120548Z",
+  "CompletedAtUtc": "2026-07-16T10:13:48.3160601Z",
+  "TotalSoftwareScanned": 135,
+  "TotalPluginsExecuted": 143,
+  "Results": [
+    {
+      "PluginId": "std.security.anticheat",
+      "PluginName": "Anti-Cheat \u0026 System Security Suite Detector",
+      "Software": {
+        "Name": "AntiCheatExpert",
+        "Version": "28.0.2604.938",
+        "Publisher": "Unknown Publisher",
+        "InstallPath": "C:\\Program Files\\AntiCheatExpert",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/06/08 01:59:03 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Proprietary Anti-Cheat / Security Driver EULA",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Detected kernel driver / security daemon binary in installation directory.",
+          "RawData": "ACE-BASE.sys",
+          "SourceLocation": "C:\\Program Files\\AntiCheatExpert\\ACE-BASE.sys"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies system integrity enforcement drivers and anti-tamper security platforms.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9098294Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "Armoury Crate Service",
+        "Version": "6.5.7.0",
+        "Publisher": "ASUSTeK COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "2025/12/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027Armoury Crate Service\u0027.",
+          "RawData": "Armoury Crate Service",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9112761Z"
+    },
+    {
+      "PluginId": "std.docker.desktop",
+      "PluginName": "Docker Desktop Commercial \u0026 Subscription Detector",
+      "Software": {
+        "Name": "Docker Desktop",
+        "Version": "4.66.0",
+        "Publisher": "Docker Inc.",
+        "InstallPath": "C:\\Program Files\\Docker\\Docker",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/03/24 10:44:05 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Docker Desktop Commercial / Subscription License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "DockerDesktopProduct",
+          "Description": "Identified Docker Desktop package requiring commercial subscription evaluation: \u0027Docker Desktop\u0027.",
+          "RawData": "Docker Desktop",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verified via local Docker resources LICENSE file checks.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.912398Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "Docker Desktop",
+        "Version": "4.66.0",
+        "Publisher": "Docker Inc.",
+        "InstallPath": "C:\\Program Files\\Docker\\Docker",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/03/24 10:44:05 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "Open Source License (Heuristic)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Software name \u0027Docker Desktop\u0027 matches known open source or permissive distribution terms.",
+          "RawData": "Docker Desktop",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: False.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9135321Z"
+    },
+    {
+      "PluginId": "std.git.opensource",
+      "PluginName": "Git Version Control Open Source License Detector",
+      "Software": {
+        "Name": "Git",
+        "Version": "2.54.0",
+        "Publisher": "The Git Development Community",
+        "InstallPath": "C:\\Program Files\\Git\\",
+        "InstallDate": "2026/06/05",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/04/20 10:51:22 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "GNU General Public License (GPL)",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "GitGplArtifact",
+          "Description": "Detected GNU General Public License v2 artifact inside Git directory.",
+          "RawData": "GNU GPL Version 2",
+          "SourceLocation": "C:\\Program Files\\Git\\LICENSE.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verified via Git distribution directory COPYING/LICENSE.txt checks.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9189437Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "Git",
+        "Version": "2.54.0",
+        "Publisher": "The Git Development Community",
+        "InstallPath": "C:\\Program Files\\Git\\",
+        "InstallDate": "2026/06/05",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/04/20 10:51:22 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "GNU General Public License (GPL)",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE.txt\u0027 specifying GNU General Public License (GPL).",
+          "RawData": "\r\n Note that the only valid version of the GPL as far as this project\r\n is concerned is _this_ particular version of the license (ie v2, not\r\n v2.2 or v3.x or whatever), unless explicitly otherwise st...",
+          "SourceLocation": "C:\\Program Files\\Git\\LICENSE.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9200906Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "GDR 1170 for SQL Server 2022 (KB5077465) (64-bit)",
+        "Version": "16.0.1170.5",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/04/18",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027GDR 1170 for SQL Server 2022 (KB5077465) (64-bit)\u0027.",
+          "RawData": "GDR 1170 for SQL Server 2022 (KB5077465) (64-bit)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9204542Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "GDR 1175 for SQL Server 2022 (KB5084815) (64-bit)",
+        "Version": "16.0.1175.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027GDR 1175 for SQL Server 2022 (KB5084815) (64-bit)\u0027.",
+          "RawData": "GDR 1175 for SQL Server 2022 (KB5084815) (64-bit)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9205149Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "GDR 1180 for SQL Server 2022 (KB5091158) (64-bit)",
+        "Version": "16.0.1180.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/16",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027GDR 1180 for SQL Server 2022 (KB5091158) (64-bit)\u0027.",
+          "RawData": "GDR 1180 for SQL Server 2022 (KB5091158) (64-bit)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9205498Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "Microsoft SQL Server 2022 (64-bit)",
+        "Version": "Unknown",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027Microsoft SQL Server 2022 (64-bit)\u0027.",
+          "RawData": "Microsoft SQL Server 2022 (64-bit)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9205852Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Microsoft OneDrive",
+        "Version": "26.113.0614.0004",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\Microsoft OneDrive",
+        "InstallDate": "2025/12/27",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64) \u002B DeepFileSystem (RAM: OneDrive.exe | Original: OneDrive.exe)",
+        "LastModifiedDate": "2026/07/11 12:08:23 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:33 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "OneDrive.App.exe",
+          "SourceLocation": "C:\\Program Files\\Microsoft OneDrive\\OneDrive.App.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9217381Z"
+    },
+    {
+      "PluginId": "std.security.anticheat",
+      "PluginName": "Anti-Cheat \u0026 System Security Suite Detector",
+      "Software": {
+        "Name": "Riot Vanguard",
+        "Version": "Unknown",
+        "Publisher": "Riot Games, Inc.",
+        "InstallPath": "C:\\Program Files\\Riot Vanguard",
+        "InstallDate": "1780458889",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/07/13 07:00:18 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Proprietary Anti-Cheat / Security Driver EULA",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Detected kernel driver / security daemon binary in installation directory.",
+          "RawData": "vgk.sys",
+          "SourceLocation": "C:\\Program Files\\Riot Vanguard\\vgk.sys"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies system integrity enforcement drivers and anti-tamper security platforms.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9224875Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Riot Vanguard",
+        "Version": "Unknown",
+        "Publisher": "Riot Games, Inc.",
+        "InstallPath": "C:\\Program Files\\Riot Vanguard",
+        "InstallDate": "1780458889",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/07/13 07:00:18 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Riot Vanguard\u0027.",
+          "RawData": "Riot Vanguard",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9233449Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Palworld",
+        "Version": "Unknown",
+        "Publisher": "Pocketpair",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Palworld",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/07/15 09:08:51 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Digital Game License (Steam / Epic / Store)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Palworld\u0027.",
+          "RawData": "Palworld",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9258198Z"
+    },
+    {
+      "PluginId": "std.obs.studio",
+      "PluginName": "OBS Studio Open Source GPLv2 Detector",
+      "Software": {
+        "Name": "OBS Studio",
+        "Version": "Unknown",
+        "Publisher": "OBS Project",
+        "InstallPath": "E:\\steam\\steamapps\\common\\OBS Studio",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/07/10 13:28:06 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "GNU General Public License v2.0 (GPL-2.0)",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "ObsStudioPackage",
+          "Description": "Detected OBS Studio broadcasting software: \u0027OBS Studio\u0027. Distributed under open source GNU GPLv2.",
+          "RawData": "OBS Studio",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identified OBS Studio open source video recording package.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9261006Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Source SDK Base 2007",
+        "Version": "Unknown",
+        "Publisher": "Valve",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Source SDK Base 2007\u0027.",
+          "RawData": "Source SDK Base 2007",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.926147Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Cities: Skylines",
+        "Version": "Unknown",
+        "Publisher": "Colossal Order",
+        "InstallPath": "E:\\SteamLibrary\\steamapps\\common\\Cities_Skylines",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Digital Game License (Steam / Epic / Store)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Cities: Skylines\u0027.",
+          "RawData": "Cities: Skylines",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9262205Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Grand Theft Auto V Legacy",
+        "Version": "Unknown",
+        "Publisher": "Rockstar North",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Grand Theft Auto V",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/07/14 14:40:32 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Digital Game License (Steam / Epic / Store)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Grand Theft Auto V Legacy\u0027.",
+          "RawData": "Grand Theft Auto V Legacy",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.930985Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Sid Meier\u0027s Civilization VI",
+        "Version": "Unknown",
+        "Publisher": "Firaxis Games",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Sid Meier\u0027s Civilization VI",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/05/24 14:25:28 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Digital Game License (Steam / Epic / Store)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Sid Meier\u0027s Civilization VI\u0027.",
+          "RawData": "Sid Meier\u0027s Civilization VI",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:47.9990198Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Stardew Valley",
+        "Version": "Unknown",
+        "Publisher": "ConcernedApe",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Stardew Valley",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/05/24 10:21:32 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Digital Game License (Steam / Epic / Store)",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Detected game client distribution metadata artifact in install directory.",
+          "RawData": "Game Distribution Identifier / EULA",
+          "SourceLocation": "E:\\steam\\steamapps\\common\\Stardew Valley\\steam_appid.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0201613Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "Wallpaper Engine",
+        "Version": "Unknown",
+        "Publisher": "Wallpaper Engine Team",
+        "InstallPath": "E:\\steam\\steamapps\\common\\wallpaper_engine",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/06/30 17:13:23 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Desktop / Utility License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found hardware utility / service binary executable.",
+          "RawData": "installer.exe",
+          "SourceLocation": "E:\\steam\\steamapps\\common\\wallpaper_engine\\installer.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0205043Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Counter-Strike 2",
+        "Version": "Unknown",
+        "Publisher": "Valve",
+        "InstallPath": "E:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Digital Game License (Steam / Epic / Store)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Counter-Strike 2\u0027.",
+          "RawData": "Counter-Strike 2",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0205937Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Green Hell",
+        "Version": "Unknown",
+        "Publisher": "Creepy Jar",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Green Hell",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/06/06 05:20:51 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Digital Game License (Steam / Epic / Store)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Green Hell\u0027.",
+          "RawData": "Green Hell",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0226883Z"
+    },
+    {
+      "PluginId": "std.tableplus.client",
+      "PluginName": "TablePlus Database Client Commercial Device License Detector",
+      "Software": {
+        "Name": "TablePlus 26.6.0",
+        "Version": "26.6.0",
+        "Publisher": "TablePlus, Inc",
+        "InstallPath": "C:\\Program Files\\TablePlus\\",
+        "InstallDate": "2026/07/09",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/07/08 05:05:32 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "TablePlus Commercial Device License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "TablePlusPackage",
+          "Description": "Detected TablePlus GUI client: \u0027TablePlus 26.6.0\u0027. Commercial seat / device license required beyond single database restriction.",
+          "RawData": "TablePlus 26.6.0",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identified TablePlus installation requiring commercial license key.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0234095Z"
+    },
+    {
+      "PluginId": "std.unity.engine",
+      "PluginName": "Unity Game Engine Commercial \u0026 Pro Tier Detector",
+      "Software": {
+        "Name": "Unity 2022.3.62f3",
+        "Version": "2022.3.62f3",
+        "Publisher": "Unity Technologies ApS",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Unity Pro / Enterprise Commercial Seat License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "UnityEngineInstallation",
+          "Description": "Detected Unity development package: \u0027Unity 2022.3.62f3\u0027. Pro/Enterprise subscription mandatory for revenue \u003E$200K.",
+          "RawData": "Unity 2022.3.62f3",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Flagged Unity development seat for revenue/funding limit audit.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0235692Z"
+    },
+    {
+      "PluginId": "std.unity.engine",
+      "PluginName": "Unity Game Engine Commercial \u0026 Pro Tier Detector",
+      "Software": {
+        "Name": "Unity 6000.2.10f1",
+        "Version": "6000.2.10f1",
+        "Publisher": "Unity Technologies ApS",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Unity Pro / Enterprise Commercial Seat License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "UnityEngineInstallation",
+          "Description": "Detected Unity development package: \u0027Unity 6000.2.10f1\u0027. Pro/Enterprise subscription mandatory for revenue \u003E$200K.",
+          "RawData": "Unity 6000.2.10f1",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Flagged Unity development seat for revenue/funding limit audit.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0236154Z"
+    },
+    {
+      "PluginId": "std.unity.engine",
+      "PluginName": "Unity Game Engine Commercial \u0026 Pro Tier Detector",
+      "Software": {
+        "Name": "Unity 6000.3.1f1",
+        "Version": "6000.3.1f1",
+        "Publisher": "Unity Technologies ApS",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Unity Pro / Enterprise Commercial Seat License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "UnityEngineInstallation",
+          "Description": "Detected Unity development package: \u0027Unity 6000.3.1f1\u0027. Pro/Enterprise subscription mandatory for revenue \u003E$200K.",
+          "RawData": "Unity 6000.3.1f1",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Flagged Unity development seat for revenue/funding limit audit.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.023646Z"
+    },
+    {
+      "PluginId": "std.unity.engine",
+      "PluginName": "Unity Game Engine Commercial \u0026 Pro Tier Detector",
+      "Software": {
+        "Name": "Unity Hub 3.17.3",
+        "Version": "3.17.3",
+        "Publisher": "Unity Technologies Inc.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Unity Pro / Enterprise Commercial Seat License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "UnityEngineInstallation",
+          "Description": "Detected Unity development package: \u0027Unity Hub 3.17.3\u0027. Pro/Enterprise subscription mandatory for revenue \u003E$200K.",
+          "RawData": "Unity Hub 3.17.3",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Flagged Unity development seat for revenue/funding limit audit.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0236766Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Microsoft GameInput",
+        "Version": "3.3.221.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/20",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched browser or system utility name: \u0027Microsoft GameInput\u0027.",
+          "RawData": "Microsoft GameInput",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0242858Z"
+    },
+    {
+      "PluginId": "std.nodejs.runtime",
+      "PluginName": "Node.js Runtime MIT License Detector",
+      "Software": {
+        "Name": "Node.js",
+        "Version": "24.14.1",
+        "Publisher": "Node.js Foundation",
+        "InstallPath": "C:\\Program Files\\nodejs",
+        "InstallDate": "2026/04/16",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64) \u002B DeepFileSystem (RAM: node.exe | Original: node.exe)",
+        "LastModifiedDate": "2026/03/24 02:46:18 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 13:04:20 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "NodeJsPackageMatch",
+          "Description": "Detected Node.js JavaScript runtime engine package: \u0027Node.js\u0027.",
+          "RawData": "Node.js",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verified via Node.js local distribution directory LICENSE checks.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0253562Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "Node.js",
+        "Version": "24.14.1",
+        "Publisher": "Node.js Foundation",
+        "InstallPath": "C:\\Program Files\\nodejs",
+        "InstallDate": "2026/04/16",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64) \u002B DeepFileSystem (RAM: node.exe | Original: node.exe)",
+        "LastModifiedDate": "2026/03/24 02:46:18 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 13:04:20 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Software name \u0027Node.js\u0027 matches known open source or permissive distribution terms.",
+          "RawData": "Node.js",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: False.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.025605Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2010  x64 Redistributable - 10.0.40219",
+        "Version": "10.0.40219",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/03/06",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Visual C\u002B\u002B 2010  x64 Redistributable - 10.0.40219\u0027.",
+          "RawData": "Microsoft Visual C\u002B\u002B 2010  x64 Redistributable - 10.0.40219",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.026276Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "ROG Live Service",
+        "Version": "3.5.8.0",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "2026/07/15",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027ROG Live Service\u0027.",
+          "RawData": "ROG Live Service",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0263259Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft ODBC Driver 18 for SQL Server",
+        "Version": "18.6.1.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/03/24",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft ODBC Driver 18 for SQL Server\u0027.",
+          "RawData": "Microsoft ODBC Driver 18 for SQL Server",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0263637Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft OLE DB Driver for SQL Server",
+        "Version": "18.7.4.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/04/18",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft OLE DB Driver for SQL Server\u0027.",
+          "RawData": "Microsoft OLE DB Driver for SQL Server",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0263995Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Paradox Launcher v2",
+        "Version": "2.4.0",
+        "Publisher": "Paradox Interactive",
+        "InstallPath": "",
+        "InstallDate": "2026/03/06",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Free Client Launcher / Platform Service EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Paradox Launcher v2\u0027.",
+          "RawData": "Paradox Launcher v2",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0264853Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Intel(R) Computing Improvement Program",
+        "Version": "2.4.11219",
+        "Publisher": "Intel Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/07/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched browser or system utility name: \u0027Intel(R) Computing Improvement Program\u0027.",
+          "RawData": "Intel(R) Computing Improvement Program",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.026526Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft MPI (10.1.12498.18)",
+        "Version": "10.1.12498.18",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\Microsoft MPI\\",
+        "InstallDate": "2026/03/24",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/03/24 08:23:43 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft MPI (10.1.12498.18)\u0027.",
+          "RawData": "Microsoft MPI (10.1.12498.18)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0270622Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "Aura Wallpaper Service",
+        "Version": "2.2.3.0",
+        "Publisher": "ASUSTeK COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "2026/07/15",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027Aura Wallpaper Service\u0027.",
+          "RawData": "Aura Wallpaper Service",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0271077Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "Microsoft VSS Writer for SQL Server 2022",
+        "Version": "16.0.1000.6",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/16",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027Microsoft VSS Writer for SQL Server 2022\u0027.",
+          "RawData": "Microsoft VSS Writer for SQL Server 2022",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0271415Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft OLE DB Driver 19 for SQL Server",
+        "Version": "19.4.1.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/03/24",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft OLE DB Driver 19 for SQL Server\u0027.",
+          "RawData": "Microsoft OLE DB Driver 19 for SQL Server",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0271756Z"
+    },
+    {
+      "PluginId": "std.nvidia.consumer",
+      "PluginName": "NVIDIA Consumer Suite \u0026 Driver Detector",
+      "Software": {
+        "Name": "NVIDIA Graphics Driver 610.47",
+        "Version": "610.47",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\Display.Driver.{5836CE95-D7C8-43CB-B4E6-85F3674B6BD3}",
+        "InstallDate": "2026/06/03",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/06/02 19:40:02 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "NVIDIA Software License Agreement (Driver / Companion App)",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified NVIDIA runtime DLL component artifact.",
+          "RawData": "DisplayDriverExt.dll",
+          "SourceLocation": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\Display.Driver.{5836CE95-D7C8-43CB-B4E6-85F3674B6BD3}\\DisplayDriverExt.dll"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies NVIDIA consumer graphics drivers, control applications, and streaming clients.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0283748Z"
+    },
+    {
+      "PluginId": "std.nvidia.consumer",
+      "PluginName": "NVIDIA Consumer Suite \u0026 Driver Detector",
+      "Software": {
+        "Name": "NVIDIA App 11.0.7.247",
+        "Version": "11.0.7.247",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\Display.NvApp.{8F9E8F0B-DED9-44D9-B92A-BACEC6DBE6C0}",
+        "InstallDate": "2026/05/02",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/05/02 01:17:02 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "NVIDIA Software License Agreement (Driver / Companion App)",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified NVIDIA runtime DLL component artifact.",
+          "RawData": "NvAppExt.dll",
+          "SourceLocation": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\Display.NvApp.{8F9E8F0B-DED9-44D9-B92A-BACEC6DBE6C0}\\NvAppExt.dll"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies NVIDIA consumer graphics drivers, control applications, and streaming clients.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0289027Z"
+    },
+    {
+      "PluginId": "std.nvidia.consumer",
+      "PluginName": "NVIDIA Consumer Suite \u0026 Driver Detector",
+      "Software": {
+        "Name": "NVIDIA PhysX System Software 9.23.1019",
+        "Version": "9.23.1019",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX",
+        "InstallDate": "2025/12/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2025/12/13 18:19:33 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "NVIDIA Software License Agreement (Driver / Companion App)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched NVIDIA software/driver signature: \u0027NVIDIA PhysX System Software 9.23.1019\u0027.",
+          "RawData": "NVIDIA PhysX System Software 9.23.1019",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies NVIDIA consumer graphics drivers, control applications, and streaming clients.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.029386Z"
+    },
+    {
+      "PluginId": "std.nvidia.consumer",
+      "PluginName": "NVIDIA Consumer Suite \u0026 Driver Detector",
+      "Software": {
+        "Name": "NVIDIA FrameView SDK 1.7.12227.37421622",
+        "Version": "1.7.12227.37421622",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\FrameViewSDK",
+        "InstallDate": "2026/05/02",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/04/24 07:15:53 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "NVIDIA Software License Agreement (Driver / Companion App)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched NVIDIA software/driver signature: \u0027NVIDIA FrameView SDK 1.7.12227.37421622\u0027.",
+          "RawData": "NVIDIA FrameView SDK 1.7.12227.37421622",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies NVIDIA consumer graphics drivers, control applications, and streaming clients.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0299058Z"
+    },
+    {
+      "PluginId": "std.nvidia.consumer",
+      "PluginName": "NVIDIA Consumer Suite \u0026 Driver Detector",
+      "Software": {
+        "Name": "NVIDIA HD Audio Driver 1.4.5.7",
+        "Version": "1.4.5.7",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\HDAudio.Driver.{5016C912-AAF4-464C-8D0C-15850FB54EDA}",
+        "InstallDate": "2026/06/03",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/06/02 19:40:07 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "NVIDIA Software License Agreement (Driver / Companion App)",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified NVIDIA runtime DLL component artifact.",
+          "RawData": "HDAudioExt.dll",
+          "SourceLocation": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\HDAudio.Driver.{5016C912-AAF4-464C-8D0C-15850FB54EDA}\\HDAudioExt.dll"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies NVIDIA consumer graphics drivers, control applications, and streaming clients.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0305032Z"
+    },
+    {
+      "PluginId": "std.nvidia.consumer",
+      "PluginName": "NVIDIA Consumer Suite \u0026 Driver Detector",
+      "Software": {
+        "Name": "NVIDIA USBC Driver 1.52.831.832",
+        "Version": "1.52.831.832",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\USBC.{03D97859-80D7-4965-82A2-CB226E979B77}",
+        "InstallDate": "2026/06/03",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2026/06/02 19:40:14 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "NVIDIA Software License Agreement (Driver / Companion App)",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified NVIDIA runtime DLL component artifact.",
+          "RawData": "USBCExt.dll",
+          "SourceLocation": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\USBC.{03D97859-80D7-4965-82A2-CB226E979B77}\\USBCExt.dll"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies NVIDIA consumer graphics drivers, control applications, and streaming clients.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0311022Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "Microsoft SQL Server 2022 Setup (English)",
+        "Version": "16.0.1180.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/16",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027Microsoft SQL Server 2022 Setup (English)\u0027.",
+          "RawData": "Microsoft SQL Server 2022 Setup (English)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0311511Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Cloudflare One Client",
+        "Version": "26.4.1350.0",
+        "Publisher": "Cloudflare, Inc.",
+        "InstallPath": "",
+        "InstallDate": "2026/05/12",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched communication/collaboration package: \u0027Cloudflare One Client\u0027.",
+          "RawData": "Cloudflare One Client",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0311929Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Epic Games Launcher",
+        "Version": "1.3.161.0",
+        "Publisher": "Epic Games, Inc.",
+        "InstallPath": "C:\\Program Files\\Epic Games\\",
+        "InstallDate": "2025/12/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "2025/12/13 18:32:35 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Free Client Launcher / Platform Service EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Epic Games Launcher\u0027.",
+          "RawData": "Epic Games Launcher",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0448514Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Virtual Assistant",
+        "Version": "4.3.5",
+        "Publisher": "ASUS",
+        "InstallPath": "",
+        "InstallDate": "2025/12/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched communication/collaboration package: \u0027Virtual Assistant\u0027.",
+          "RawData": "Virtual Assistant",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0449384Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "IIS 10.0 Express",
+        "Version": "10.0.11304",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/23",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027IIS 10.0 Express\u0027.",
+          "RawData": "IIS 10.0 Express",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0449876Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "AURA lighting effect add-on x64",
+        "Version": "0.0.60",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "2026/07/15",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027AURA lighting effect add-on x64\u0027.",
+          "RawData": "AURA lighting effect add-on x64",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0450271Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Web Deploy 4.0",
+        "Version": "10.0.9419",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/03/24",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Web Deploy 4.0\u0027.",
+          "RawData": "Microsoft Web Deploy 4.0",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0450597Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "Microsoft SQL Server 2019 LocalDB",
+        "Version": "15.0.4382.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/04/01",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027Microsoft SQL Server 2019 LocalDB\u0027.",
+          "RawData": "Microsoft SQL Server 2019 LocalDB",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0450962Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "Microsoft SQL Server 2025 LocalDB",
+        "Version": "17.0.4025.3",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/23",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027Microsoft SQL Server 2025 LocalDB\u0027.",
+          "RawData": "Microsoft SQL Server 2025 LocalDB",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0451267Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Wuthering Waves",
+        "Version": "2.6.3.0",
+        "Publisher": "Guangzhou Kuro Technology Co., Ltd",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Digital Game License (Steam / Epic / Store)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Wuthering Waves\u0027.",
+          "RawData": "Wuthering Waves",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0451572Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "LDPlayer 9",
+        "Version": "9.5.19.0",
+        "Publisher": "JUST OKAY LIMITED",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched browser or system utility name: \u0027LDPlayer 9\u0027.",
+          "RawData": "LDPlayer 9",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0451839Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Microsoft Edge",
+        "Version": "148.0.3967.70",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application",
+        "InstallDate": "2026/05/17",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32) \u002B DeepFileSystem (RAM: msedge.exe | Original: msedge.exe)",
+        "LastModifiedDate": "2026/05/15 07:59:46 UTC",
+        "AppStartTime": "2026/07/16 09:53:29 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Chromium Based Freeware Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "msedge.exe",
+          "SourceLocation": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0457111Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Overwolf",
+        "Version": "0.304.1.1",
+        "Publisher": "Overwolf Ltd.",
+        "InstallPath": "C:\\Program Files (x86)\\Overwolf\\",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2026/07/14 07:58:10 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Free Client Launcher / Platform Service EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Overwolf\u0027.",
+          "RawData": "Overwolf",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0497878Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Rockstar Games Launcher",
+        "Version": "1.0.107.2944",
+        "Publisher": "Rockstar Games",
+        "InstallPath": "E:\\Launcher",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2026/07/11 06:23:06 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Free Client Launcher / Platform Service EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Rockstar Games Launcher\u0027.",
+          "RawData": "Rockstar Games Launcher",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0504334Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Rockstar Games SDK",
+        "Version": "2.4.0.216",
+        "Publisher": "Rockstar Games",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Rockstar Games SDK\u0027.",
+          "RawData": "Rockstar Games SDK",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0504835Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Steam",
+        "Version": "2.10.91.91",
+        "Publisher": "Valve Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Free Client Launcher / Platform Service EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Steam\u0027.",
+          "RawData": "Steam",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0505133Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Intel(R) Wireless Bluetooth(R)",
+        "Version": "24.30.1.1",
+        "Publisher": "Intel Corporation",
+        "InstallPath": "C:\\Program Files (x86)\\Intel\\",
+        "InstallDate": "2026/03/25",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2026/07/14 16:25:33 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched browser or system utility name: \u0027Intel(R) Wireless Bluetooth(R)\u0027.",
+          "RawData": "Intel(R) Wireless Bluetooth(R)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0509662Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "AOMEI Partition Assistant 10.10.1",
+        "Version": "10.10.1",
+        "Publisher": "AOMEI International Network Limited.",
+        "InstallPath": "C:\\Program Files (x86)\\AOMEI Partition Assistant\\",
+        "InstallDate": "2026/06/03",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2025/08/03 07:00:00 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Commercial Desktop / Utility License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found hardware utility / service binary executable.",
+          "RawData": "7z.exe",
+          "SourceLocation": "C:\\Program Files (x86)\\AOMEI Partition Assistant\\7z.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0517113Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Intel\u00AE Driver \u0026 Support Assistant",
+        "Version": "26.2.0.7",
+        "Publisher": "Intel",
+        "InstallPath": "",
+        "InstallDate": "2026/07/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched browser or system utility name: \u0027Intel\u00AE Driver \u0026 Support Assistant\u0027.",
+          "RawData": "Intel\u00AE Driver \u0026 Support Assistant",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.051796Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2013 Redistributable (x64) - 12.0.30501",
+        "Version": "12.0.30501.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Visual C\u002B\u002B 2013 Redistributable (x64) - 12.0.30501\u0027.",
+          "RawData": "Microsoft Visual C\u002B\u002B 2013 Redistributable (x64) - 12.0.30501",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0518338Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B v14 Redistributable (x64) - 14.51.36247",
+        "Version": "14.51.36247.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Visual C\u002B\u002B v14 Redistributable (x64) - 14.51.36247\u0027.",
+          "RawData": "Microsoft Visual C\u002B\u002B v14 Redistributable (x64) - 14.51.36247",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0518723Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "vs_CoreEditorFonts",
+        "Version": "17.7.40001",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/02/24",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License (.NET Foundation / Microsoft Open Source)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027vs_CoreEditorFonts\u0027.",
+          "RawData": "vs_CoreEditorFonts",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0519036Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "AURA lighting effect add-on",
+        "Version": "0.0.60",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "2026/07/15",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027AURA lighting effect add-on\u0027.",
+          "RawData": "AURA lighting effect add-on",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0519334Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft .NET SDK 10.0.109 (x64)",
+        "Version": "10.1.926.27113",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/06/30",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License (.NET Foundation / Microsoft Open Source)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft .NET SDK 10.0.109 (x64)\u0027.",
+          "RawData": "Microsoft .NET SDK 10.0.109 (x64)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0519663Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Radmin VPN 2.0.9",
+        "Version": "2.0.4899.9",
+        "Publisher": "Famatech",
+        "InstallPath": "C:\\Program Files (x86)\\Radmin VPN\\",
+        "InstallDate": "2026/05/23",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2025/09/02 10:17:12 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "drvinst.exe",
+          "SourceLocation": "C:\\Program Files (x86)\\Radmin VPN\\drvinst.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0526599Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "ASUS Framework Service",
+        "Version": "4.2.4.13",
+        "Publisher": "ASUSTeK Computer Inc.",
+        "InstallPath": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice",
+        "InstallDate": "2026/04/17",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2026/01/13 10:14:50 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE\u0027 specifying MIT License.",
+          "RawData": "Copyright (c) Electron contributors\r\nCopyright (c) 2013-2020 GitHub Inc.\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining\r\na copy of this software and associated documentation ...",
+          "SourceLocation": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\LICENSE"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0531532Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "ASUS Framework Service",
+        "Version": "4.2.4.13",
+        "Publisher": "ASUSTeK Computer Inc.",
+        "InstallPath": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice",
+        "InstallDate": "2026/04/17",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2026/01/13 10:14:50 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found hardware utility / service binary executable.",
+          "RawData": "asus_framework.exe",
+          "SourceLocation": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0532979Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2012 Redistributable (x86) - 11.0.61030",
+        "Version": "11.0.61030.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Visual C\u002B\u002B 2012 Redistributable (x86) - 11.0.61030\u0027.",
+          "RawData": "Microsoft Visual C\u002B\u002B 2012 Redistributable (x86) - 11.0.61030",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0533529Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Epic Online Services",
+        "Version": "4.1.0",
+        "Publisher": "Epic Games, Inc.",
+        "InstallPath": "",
+        "InstallDate": "2025/12/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Epic Online Services\u0027.",
+          "RawData": "Epic Online Services",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.053392Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Windows Desktop Runtime - 8.0.28 (x86)",
+        "Version": "8.0.28.36119",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Windows Desktop Runtime - 8.0.28 (x86)\u0027.",
+          "RawData": "Microsoft Windows Desktop Runtime - 8.0.28 (x86)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0534253Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "DB Browser for SQLite",
+        "Version": "3.13.1",
+        "Publisher": "DB Browser for SQLite Team",
+        "InstallPath": "C:\\Program Files (x86)\\DB Browser for SQLite\\",
+        "InstallDate": "2026/04/14",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2024/10/15 00:52:40 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "GPL / Apache Open Source License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "DB Browser for SQLCipher.exe",
+          "SourceLocation": "C:\\Program Files (x86)\\DB Browser for SQLite\\DB Browser for SQLCipher.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0539968Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft .NET SDK 8.0.422 (x64)",
+        "Version": "8.4.2226.27003",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License (.NET Foundation / Microsoft Open Source)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft .NET SDK 8.0.422 (x64)\u0027.",
+          "RawData": "Microsoft .NET SDK 8.0.422 (x64)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.054051Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft .NET SDK 6.0.428 (x64)",
+        "Version": "6.4.2824.52403",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License (.NET Foundation / Microsoft Open Source)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft .NET SDK 6.0.428 (x64)\u0027.",
+          "RawData": "Microsoft .NET SDK 6.0.428 (x64)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.054087Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B v14 Redistributable (x86) - 14.51.36247",
+        "Version": "14.51.36247.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Visual C\u002B\u002B v14 Redistributable (x86) - 14.51.36247\u0027.",
+          "RawData": "Microsoft Visual C\u002B\u002B v14 Redistributable (x86) - 14.51.36247",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0541244Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft .NET Runtime - 8.0.28 (x64)",
+        "Version": "8.0.28.36114",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft .NET Runtime - 8.0.28 (x64)\u0027.",
+          "RawData": "Microsoft .NET Runtime - 8.0.28 (x64)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0541595Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "TUF GAMING K1",
+        "Version": "4.03.10",
+        "Publisher": "ASUSTek Computer Inc.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027TUF GAMING K1\u0027.",
+          "RawData": "TUF GAMING K1",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.054193Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "GameSDK Service",
+        "Version": "1.0.6.0",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027GameSDK Service\u0027.",
+          "RawData": "GameSDK Service",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0542264Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "GameSDK Service",
+        "Version": "1.0.6.0",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027GameSDK Service\u0027.",
+          "RawData": "GameSDK Service",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0542383Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "inphic driver",
+        "Version": "1.0",
+        "Publisher": "inphic",
+        "InstallPath": "C:\\Program Files (x86)\\inphic driver\\",
+        "InstallDate": "2026/03/06",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027inphic driver\u0027.",
+          "RawData": "inphic driver",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0543627Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "AURA Service",
+        "Version": "3.10.10",
+        "Publisher": "ASUSTeK COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027AURA Service\u0027.",
+          "RawData": "AURA Service",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0544095Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2012 Redistributable (x64) - 11.0.61030",
+        "Version": "11.0.61030.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Visual C\u002B\u002B 2012 Redistributable (x64) - 11.0.61030\u0027.",
+          "RawData": "Microsoft Visual C\u002B\u002B 2012 Redistributable (x64) - 11.0.61030",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0544437Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft .NET Runtime - 8.0.21 (x64)",
+        "Version": "8.0.21.35325",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft .NET Runtime - 8.0.21 (x64)\u0027.",
+          "RawData": "Microsoft .NET Runtime - 8.0.21 (x64)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0544759Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "INPHIC",
+        "Version": "1.0.1.16",
+        "Publisher": "Unknown Publisher",
+        "InstallPath": "C:\\Program Files (x86)\\INPHIC HUB\\",
+        "InstallDate": "2026/03/06",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027INPHIC\u0027.",
+          "RawData": "INPHIC",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0546043Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft XNA Framework Redistributable 4.0 Refresh",
+        "Version": "4.0.30901.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/20",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft XNA Framework Redistributable 4.0 Refresh\u0027.",
+          "RawData": "Microsoft XNA Framework Redistributable 4.0 Refresh",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0546497Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "UltraViewer phi\u00EAn b\u1EA3n 6.6.124",
+        "Version": "6.6.124",
+        "Publisher": "DucFabulous",
+        "InstallPath": "C:\\UltraViewer\\",
+        "InstallDate": "2026/03/19",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "2025/02/10 14:54:18 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "UltraViewer_Service.exe",
+          "SourceLocation": "C:\\UltraViewer\\UltraViewer_Service.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0551002Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2010  x86 Redistributable - 10.0.40219",
+        "Version": "10.0.40219",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/03/06",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft Visual C\u002B\u002B 2010  x86 Redistributable - 10.0.40219\u0027.",
+          "RawData": "Microsoft Visual C\u002B\u002B 2010  x86 Redistributable - 10.0.40219",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0551577Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft ASP.NET Core 8.0.28 - Shared Framework (x86)",
+        "Version": "8.0.28.26269",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft ASP.NET Core 8.0.28 - Shared Framework (x86)\u0027.",
+          "RawData": "Microsoft ASP.NET Core 8.0.28 - Shared Framework (x86)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0551922Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "Aura Wallpaper HTML",
+        "Version": "2.2.3.0",
+        "Publisher": "ASUSTek Computer Inc.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched hardware/OEM utility name pattern: \u0027Aura Wallpaper HTML\u0027.",
+          "RawData": "Aura Wallpaper HTML",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0552242Z"
+    },
+    {
+      "PluginId": "std.microsoft.sqlserver",
+      "PluginName": "Microsoft SQL Server Database Engine Detector",
+      "Software": {
+        "Name": "Browser for SQL Server 2022",
+        "Version": "16.0.1000.6",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "2026/05/16",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft SQL Server Commercial License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "SqlServerProductMatch",
+          "Description": "Identified Microsoft SQL Server database package: \u0027Browser for SQL Server 2022\u0027.",
+          "RawData": "Browser for SQL Server 2022",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verified via SQL Server engine binary presence and edition naming.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0552565Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "OP.GG 2.5.1",
+        "Version": "2.5.1",
+        "Publisher": "OP.GG",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched browser or system utility name: \u0027OP.GG 2.5.1\u0027.",
+          "RawData": "OP.GG 2.5.1",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0552872Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "DBeaver 26.1.2 (current user)",
+        "Version": "26.1.2",
+        "Publisher": "DBeaver Corp",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "GPL / Apache Open Source License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched browser or system utility name: \u0027DBeaver 26.1.2 (current user)\u0027.",
+          "RawData": "DBeaver 26.1.2 (current user)",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0553166Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Discord",
+        "Version": "1.0.9247",
+        "Publisher": "Discord Inc.",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Discord",
+        "InstallDate": "2026/48/16",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default) \u002B DeepFileSystem (RAM: Discord.exe | Original: Discord.exe)",
+        "LastModifiedDate": "2026/05/11 09:46:10 UTC",
+        "AppStartTime": "2026/07/16 09:52:50 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Community Client EULA",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "Update.exe",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\Discord\\Update.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0557802Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Zalo 26.06.11",
+        "Version": "26.06.11",
+        "Publisher": "VNG Corp.",
+        "InstallPath": "",
+        "InstallDate": "2026/06/16",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Community Client EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched communication/collaboration package: \u0027Zalo 26.06.11\u0027.",
+          "RawData": "Zalo 26.06.11",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0558244Z"
+    },
+    {
+      "PluginId": "std.figma.design",
+      "PluginName": "Figma Commercial UX Design License Detector",
+      "Software": {
+        "Name": "Figma",
+        "Version": "126.2.9",
+        "Publisher": "Figma, Inc.",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Figma",
+        "InstallDate": "2026/03/24",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/03/24 08:34:38 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Figma Commercial Organization / Enterprise License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "FigmaClientPackage",
+          "Description": "Detected Figma design client installation: \u0027Figma\u0027. Cloud workspace seat licenses apply.",
+          "RawData": "Figma",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identified Figma desktop client tied to cloud organization seat management.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0563124Z"
+    },
+    {
+      "PluginId": "std.figma.design",
+      "PluginName": "Figma Commercial UX Design License Detector",
+      "Software": {
+        "Name": "Figma Agent",
+        "Version": "126.6.10",
+        "Publisher": "Figma, Inc.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Figma Commercial Organization / Enterprise License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "FigmaClientPackage",
+          "Description": "Detected Figma design client installation: \u0027Figma Agent\u0027. Cloud workspace seat licenses apply.",
+          "RawData": "Figma Agent",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identified Figma desktop client tied to cloud organization seat management.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0563579Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Google Chrome",
+        "Version": "150.0.7871.116",
+        "Publisher": "Google LLC",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Google\\Chrome\\Application",
+        "InstallDate": "2026/07/15",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/07/07 23:14:27 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Chromium Based Freeware Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "chrome.exe",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0567952Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "TFTactics",
+        "Version": "1.18.0",
+        "Publisher": "Overwolf app",
+        "InstallPath": "",
+        "InstallDate": "2026/07/16",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027TFTactics\u0027.",
+          "RawData": "TFTactics",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0568402Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Travel Guide",
+        "Version": "6.7.1",
+        "Publisher": "Overwolf app",
+        "InstallPath": "",
+        "InstallDate": "2026/06/21",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Travel Guide\u0027.",
+          "RawData": "Travel Guide",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0568668Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Travel Guide",
+        "Version": "6.7.1",
+        "Publisher": "Overwolf app",
+        "InstallPath": "",
+        "InstallDate": "2026/06/21",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched browser or system utility name: \u0027Travel Guide\u0027.",
+          "RawData": "Travel Guide",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0568874Z"
+    },
+    {
+      "PluginId": "std.postman.client",
+      "PluginName": "Postman API Platform Commercial \u0026 Subscription Detector",
+      "Software": {
+        "Name": "Postman x64 12.4.2",
+        "Version": "12.4.2",
+        "Publisher": "Postman",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Postman",
+        "InstallDate": "2026/03/31",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/03/31 08:14:34 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Postman Commercial / Enterprise Subscription License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "PostmanClientInstallation",
+          "Description": "Detected Postman API client installation: \u0027Postman x64 12.4.2\u0027. Requires evaluation against Postman Team/Enterprise seat count restrictions.",
+          "RawData": "Postman x64 12.4.2",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Flagged as commercial subscription evaluation required for organizational seat usage.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0575395Z"
+    },
+    {
+      "PluginId": "std.python.runtime",
+      "PluginName": "Python Runtime \u0026 Ecosystem PSF License Detector",
+      "Software": {
+        "Name": "Python 3.14.6",
+        "Version": "3.14-64",
+        "Publisher": "Python Software Foundation",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Python\\pythoncore-3.14-64",
+        "InstallDate": "2026/06/22",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/06/22 08:42:44 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "Python Software Foundation (PSF) License",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "PythonInterpreterPackage",
+          "Description": "Identified Python runtime environment package: \u0027Python 3.14.6\u0027. Distributed under open source PSF License Agreement.",
+          "RawData": "Python 3.14.6",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verified via standard Python distribution naming conventions.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0580513Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "Python 3.14.6",
+        "Version": "3.14-64",
+        "Publisher": "Python Software Foundation",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Python\\pythoncore-3.14-64",
+        "InstallDate": "2026/06/22",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/06/22 08:42:44 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "Open Source License",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE.txt\u0027 specifying Open Source License.",
+          "RawData": "A. HISTORY OF THE SOFTWARE\r\n==========================\r\n\r\nPython was created in the early 1990s by Guido van Rossum at Stichting\r\nMathematisch Centrum (CWI, see https://www.cwi.nl) in the Netherlands\r...",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\LICENSE.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0583315Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Li\u00EAn Minh Huy\u1EC1n Tho\u1EA1i",
+        "Version": "Unknown",
+        "Publisher": "Riot Games, Inc",
+        "InstallPath": "E:/game/Riot Games/League of Legends",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/06/29 14:38:00 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Li\u00EAn Minh Huy\u1EC1n Tho\u1EA1i\u0027.",
+          "RawData": "Li\u00EAn Minh Huy\u1EC1n Tho\u1EA1i",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.065883Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Riot Client",
+        "Version": "Unknown",
+        "Publisher": "Riot Games, Inc",
+        "InstallPath": "E:/game/Riot Games/Riot Client",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/06/03 03:50:44 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Free Client Launcher / Platform Service EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Riot Client\u0027.",
+          "RawData": "Riot Client",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0665476Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Google",
+        "Version": "1.0.13.0",
+        "Publisher": "Google",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Google\\Google",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/07/13 18:39:46 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "updater.exe",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\Google\\Google\\updater.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.06719Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Antigravity IDE (User)",
+        "Version": "2.1.1",
+        "Publisher": "Google",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Programs\\Antigravity IDE\\",
+        "InstallDate": "2026/06/29",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/06/17 16:22:16 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "Antigravity IDE.exe",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\Programs\\Antigravity IDE\\Antigravity IDE.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.067784Z"
+    },
+    {
+      "PluginId": "std.nvidia.consumer",
+      "PluginName": "NVIDIA Consumer Suite \u0026 Driver Detector",
+      "Software": {
+        "Name": "NVIDIA GeForce NOW 2.0.83.130",
+        "Version": "2.0.83.130",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\NVIDIA Corporation\\Installer2\\GeForceNOW.{8DF3678D-DB1A-4333-8807-C44425E111AA}",
+        "InstallDate": "2026/04/15",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)",
+        "LastModifiedDate": "2026/04/15 04:56:36 UTC",
+        "AppStartTime": ""
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "NVIDIA GeForce NOW Cloud Gaming Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified NVIDIA runtime DLL component artifact.",
+          "RawData": "GfnPcExt.dll",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\NVIDIA Corporation\\Installer2\\GeForceNOW.{8DF3678D-DB1A-4333-8807-C44425E111AA}\\GfnPcExt.dll"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies NVIDIA consumer graphics drivers, control applications, and streaming clients.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.068417Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Microsoft\u00AE Windows\u00AE GameInput",
+        "Version": "3.3.221.0",
+        "Publisher": "Windows (R) Win 7 DDK provider",
+        "InstallPath": "C:\\Program Files\\Microsoft GameInput\\x64",
+        "InstallDate": "2026/05/14",
+        "ScanSource": "DeepFileSystem (RAM: GameInputRedistService.exe | Original: GameInputRedistService.exe)",
+        "LastModifiedDate": "2026/05/15 00:08:18 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:02 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "GameInputRawInputProxy.exe",
+          "SourceLocation": "C:\\Program Files\\Microsoft GameInput\\x64\\GameInputRawInputProxy.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0688771Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "CrossDeviceService",
+        "Version": "1.26052.99\u002Bd47faca674f8a6faf4a4ed605e6b37b2a464255c",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\MicrosoftWindows.CrossDevice_1.26052.99.0_x64__cw5n1h2txyewy",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: CrossDeviceService.exe | Original: CrossDeviceService.dll)",
+        "LastModifiedDate": "2026/07/03 02:16:25 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:06 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "createdump.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\MicrosoftWindows.CrossDevice_1.26052.99.0_x64__cw5n1h2txyewy\\createdump.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0700881Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "Microsoft\u00AE Windows\u00AE Operating System",
+        "Version": "526.15201.10.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\MicrosoftWindows.Client.WebExperience_526.15201.50.0_x64__cw5n1h2txyewy\\Dashboard",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: Widgets.exe | Original: Widgets.exe)",
+        "LastModifiedDate": "2026/07/03 02:06:20 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:06 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027Microsoft\u00AE Windows\u00AE Operating System\u0027.",
+          "RawData": "Microsoft\u00AE Windows\u00AE Operating System",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0706252Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Microsoft Edge WebView2",
+        "Version": "148.0.3967.70",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.70",
+        "InstallDate": "2026/05/17",
+        "ScanSource": "DeepFileSystem (RAM: msedgewebview2.exe | Original: msedgewebview2.exe)",
+        "LastModifiedDate": "2026/05/15 14:59:46 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:08 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Chromium Based Freeware Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "cookie_exporter.exe",
+          "SourceLocation": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.70\\cookie_exporter.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0711878Z"
+    },
+    {
+      "PluginId": "std.nvidia.consumer",
+      "PluginName": "NVIDIA Consumer Suite \u0026 Driver Detector",
+      "Software": {
+        "Name": "NVIDIA App",
+        "Version": "11.0.7.247",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF",
+        "InstallDate": "2026/05/02",
+        "ScanSource": "DeepFileSystem (RAM: NVIDIA Overlay.exe | Original: NVIDIA Overlay.exe)",
+        "LastModifiedDate": "2026/04/24 14:16:01 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:08 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "NVIDIA Software License Agreement (Driver / Companion App)",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified NVIDIA runtime DLL component artifact.",
+          "RawData": "chrome_elf.dll",
+          "SourceLocation": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\chrome_elf.dll"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies NVIDIA consumer graphics drivers, control applications, and streaming clients.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0717463Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "Armoury Crate",
+        "Version": "6.5.7.0",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\B9ECED6F.ArmouryCrate_6.5.7.0_x64__qmba6cd70vzyy",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: ArmouryCrate.exe | Original: ArmouryCrate.exe)",
+        "LastModifiedDate": "2026/07/03 02:06:50 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:21 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found hardware utility / service binary executable.",
+          "RawData": "ArmouryCrate.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\B9ECED6F.ArmouryCrate_6.5.7.0_x64__qmba6cd70vzyy\\ArmouryCrate.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0722427Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "ASUS NodeJS Web Framework",
+        "Version": "4.2.4.13",
+        "Publisher": "ASUSTeK COMPUTER INC.",
+        "InstallPath": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice",
+        "InstallDate": "2026/04/17",
+        "ScanSource": "DeepFileSystem (RAM: asus_framework.exe | Original: asus_framework.exe)",
+        "LastModifiedDate": "2026/01/13 17:14:50 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:28 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE\u0027 specifying MIT License.",
+          "RawData": "Copyright (c) Electron contributors\r\nCopyright (c) 2013-2020 GitHub Inc.\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining\r\na copy of this software and associated documentation ...",
+          "SourceLocation": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\LICENSE"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0726962Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "ASUS NodeJS Web Framework",
+        "Version": "4.2.4.13",
+        "Publisher": "ASUSTeK COMPUTER INC.",
+        "InstallPath": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice",
+        "InstallDate": "2026/04/17",
+        "ScanSource": "DeepFileSystem (RAM: asus_framework.exe | Original: asus_framework.exe)",
+        "LastModifiedDate": "2026/01/13 17:14:50 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:28 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found hardware utility / service binary executable.",
+          "RawData": "asus_framework.exe",
+          "SourceLocation": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0729239Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Cloudflare One Client",
+        "Version": "2026.4.1350.0",
+        "Publisher": "com.cloudflare",
+        "InstallPath": "C:\\Program Files\\Cloudflare\\Cloudflare WARP",
+        "InstallDate": "2026/05/11",
+        "ScanSource": "DeepFileSystem (RAM: Cloudflare WARP.exe | Original: Cloudflare WARP.exe)",
+        "LastModifiedDate": "2026/05/11 15:46:42 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:30 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "Cloudflare WARP.exe",
+          "SourceLocation": "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\Cloudflare WARP.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0735452Z"
+    },
+    {
+      "PluginId": "std.security.anticheat",
+      "PluginName": "Anti-Cheat \u0026 System Security Suite Detector",
+      "Software": {
+        "Name": "Vanguard Tray",
+        "Version": "1.18.4-29\u002B20260713.064847",
+        "Publisher": "Riot Games, Inc.",
+        "InstallPath": "C:\\Program Files\\Riot Vanguard",
+        "InstallDate": "2026/06/03",
+        "ScanSource": "DeepFileSystem (RAM: vgtray.exe | Original: vgtray.exe)",
+        "LastModifiedDate": "2026/07/13 14:00:06 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:32 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Proprietary Anti-Cheat / Security Driver EULA",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Detected kernel driver / security daemon binary in installation directory.",
+          "RawData": "vgk.sys",
+          "SourceLocation": "C:\\Program Files\\Riot Vanguard\\vgk.sys"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies system integrity enforcement drivers and anti-tamper security platforms.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.0740977Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Vanguard Tray",
+        "Version": "1.18.4-29\u002B20260713.064847",
+        "Publisher": "Riot Games, Inc.",
+        "InstallPath": "C:\\Program Files\\Riot Vanguard",
+        "InstallDate": "2026/06/03",
+        "ScanSource": "DeepFileSystem (RAM: vgtray.exe | Original: vgtray.exe)",
+        "LastModifiedDate": "2026/07/13 14:00:06 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:32 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Game Client / Launcher EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Vanguard Tray\u0027.",
+          "RawData": "Vanguard Tray",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.074394Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Steam",
+        "Version": "01.00.00.02",
+        "Publisher": "Valve Corporation",
+        "InstallPath": "E:\\steam",
+        "InstallDate": "2026/07/16",
+        "ScanSource": "DeepFileSystem (RAM: steam.exe | Original: steam.exe)",
+        "LastModifiedDate": "2026/07/15 06:57:48 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:33 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Free Client Launcher / Platform Service EULA",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Detected game client distribution metadata artifact in install directory.",
+          "RawData": "Game Distribution Identifier / EULA",
+          "SourceLocation": "E:\\steam\\steamapps\\common\\Stardew Valley\\steam_appid.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3029936Z"
+    },
+    {
+      "PluginId": "std.gaming.ecosystem",
+      "PluginName": "Gaming Platforms \u0026 Distribution Ecosystem Detector",
+      "Software": {
+        "Name": "Steam Client WebHelper",
+        "Version": "01.00.00.01",
+        "Publisher": "Valve Corporation",
+        "InstallPath": "E:\\steam\\bin\\cef\\cef.win64",
+        "InstallDate": "2026/07/16",
+        "ScanSource": "DeepFileSystem (RAM: steamwebhelper.exe | Original: steamwebhelper.exe)",
+        "LastModifiedDate": "2026/07/15 06:57:48 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:52:43 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Free Client Launcher / Platform Service EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched gaming launcher / application signature: \u0027Steam Client WebHelper\u0027.",
+          "RawData": "Steam Client WebHelper",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Analyzes digital distribution clients, launchers, and licensed entertainment software.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3035092Z"
+    },
+    {
+      "PluginId": "std.figma.design",
+      "PluginName": "Figma Commercial UX Design License Detector",
+      "Software": {
+        "Name": "figma_agent",
+        "Version": "126.6.10",
+        "Publisher": "Unknown Publisher",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\FigmaAgent",
+        "InstallDate": "2026/06/25",
+        "ScanSource": "DeepFileSystem (RAM: figma_agent.exe | Original: )",
+        "LastModifiedDate": "2026/06/26 04:47:14 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:53:07 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Figma Commercial Organization / Enterprise License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "FigmaClientPackage",
+          "Description": "Detected Figma design client installation: \u0027figma_agent\u0027. Cloud workspace seat licenses apply.",
+          "RawData": "figma_agent",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Identified Figma desktop client tied to cloud organization seat management.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3039101Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "OP.GG",
+        "Version": "2.5.1.0",
+        "Publisher": "OP.GG",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Programs\\OP.GG",
+        "InstallDate": "2026/06/29",
+        "ScanSource": "DeepFileSystem (RAM: OP.GG.exe | Original: )",
+        "LastModifiedDate": "2026/07/10 14:57:12 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:53:40 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "OP.GG.exe",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\Programs\\OP.GG\\OP.GG.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3044264Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Copilot",
+        "Version": "1.25121.84\u002B9ebe80bda3d20cf7c1f95b4d84d061c2ea049968",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\Microsoft.Copilot_1.25121.84.0_x64__8wekyb3d8bbwe",
+        "InstallDate": "2026/02/10",
+        "ScanSource": "DeepFileSystem (RAM: Copilot.exe | Original: Copilot.dll)",
+        "LastModifiedDate": "2026/02/10 19:57:58 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:54:19 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "Copilot.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Copilot_1.25121.84.0_x64__8wekyb3d8bbwe\\Copilot.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3056142Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "TranslucentTB",
+        "Version": "2026.1.0.322e2b7",
+        "Publisher": "TranslucentTB Open Source Developers",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\28017CharlesMilette.TranslucentTB_2026.1.0.0_x64__v826wp6bftszj",
+        "InstallDate": "2026/03/29",
+        "ScanSource": "DeepFileSystem (RAM: TranslucentTB.exe | Original: TranslucentTB.exe)",
+        "LastModifiedDate": "2026/03/29 21:41:12 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:54:36 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License (TranslucentTB Open Source)",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found hardware utility / service binary executable.",
+          "RawData": "TranslucentTB.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\28017CharlesMilette.TranslucentTB_2026.1.0.0_x64__v826wp6bftszj\\TranslucentTB.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3061387Z"
+    },
+    {
+      "PluginId": "std.hardware.oem",
+      "PluginName": "Hardware \u0026 OEM Utility Suite Detector",
+      "Software": {
+        "Name": "NGENUITY",
+        "Version": "2.38.0.0",
+        "Publisher": "Hewlett-Packard Development Company, L.P.",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\33C30B79.HyperXNGenuity_5.38.0.0_x64__0a78dr3hq0pvt\\Assets\\Native",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: NGenuity2Helper.exe | Original: NGenuity2Helper.exe)",
+        "LastModifiedDate": "2026/07/03 02:00:38 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:54:37 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Hardware Companion / OEM Bundled Software License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found hardware utility / service binary executable.",
+          "RawData": "CodecFWUpdater.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\33C30B79.HyperXNGenuity_5.38.0.0_x64__0a78dr3hq0pvt\\Assets\\Native\\CodecFWUpdater.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies motherboard, RGB lighting, peripheral control, and desktop utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3068397Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Xbox App",
+        "Version": "2606.1001.29.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\Microsoft.GamingApp_2606.1001.29.0_x64__8wekyb3d8bbwe",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: XboxPcAppFT.exe | Original: XboxPcAppFT.exe)",
+        "LastModifiedDate": "2026/07/03 02:12:05 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:54:40 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "XboxGameBarWidgets.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\Microsoft.GamingApp_2606.1001.29.0_x64__8wekyb3d8bbwe\\XboxGameBarWidgets.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3075544Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Widgets Platform Runtime",
+        "Version": "0.5",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\Microsoft.WidgetsPlatformRuntime_1.6.19.0_x64__8wekyb3d8bbwe\\WidgetService",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: WidgetService.exe | Original: WidgetService.exe)",
+        "LastModifiedDate": "2026/07/03 01:55:57 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:54:47 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "WidgetService.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\Microsoft.WidgetsPlatformRuntime_1.6.19.0_x64__8wekyb3d8bbwe\\WidgetService\\WidgetService.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3082257Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "UniKey",
+        "Version": "4.3 RC4",
+        "Publisher": "unikey.org",
+        "InstallPath": "C:\\Users\\admin\\OneDrive\\Documents",
+        "InstallDate": "2025/12/02",
+        "ScanSource": "DeepFileSystem (RAM: UniKeyNT.exe | Original: UniKeyNT.exe)",
+        "LastModifiedDate": "2023/02/17 20:54:31 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:55:43 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "GPL / Apache Open Source License",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "UniKeyNT.exe",
+          "SourceLocation": "C:\\Users\\admin\\OneDrive\\Documents\\UniKeyNT.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3088943Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Microsoft Phone Link",
+        "Version": "1.26052.144\u002B70e2cda0efe805c62b60ad38215e8b1bd41d32ae",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26052.144.0_x64__8wekyb3d8bbwe",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: PhoneExperienceHost.exe | Original: PhoneExperienceHost.dll)",
+        "LastModifiedDate": "2026/07/03 02:17:39 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 09:56:20 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "createdump.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26052.144.0_x64__8wekyb3d8bbwe\\createdump.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3106348Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Microsoft 365 Copilot",
+        "Version": "19.2606.58031.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\Microsoft.MicrosoftOfficeHub_19.2606.58031.0_x64__8wekyb3d8bbwe",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: M365Copilot.exe | Original: M365Copilot.exe)",
+        "LastModifiedDate": "2026/07/03 02:14:38 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 12:37:03 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Commercial",
+      "LicenseName": "Microsoft 365 Commercial Copilot Subscription",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "M365Copilot.exe",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\Microsoft.MicrosoftOfficeHub_19.2606.58031.0_x64__8wekyb3d8bbwe\\M365Copilot.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3116601Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Codex",
+        "Version": "149.0.7827.197",
+        "Publisher": "OpenAI OpCo, LLC",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.623.11225.0_x64__2p2nqsd0c76g0\\app",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: Codex.exe | Original: chrome.exe)",
+        "LastModifiedDate": "2026/07/03 02:21:37 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 12:43:55 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3121239Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "Antigravity IDE",
+        "Version": "2.1.1",
+        "Publisher": "Google LLC",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Programs\\Antigravity IDE",
+        "InstallDate": "2026/06/29",
+        "ScanSource": "DeepFileSystem (RAM: Antigravity IDE.exe | Original: Antigravity IDE.exe)",
+        "LastModifiedDate": "2026/06/17 23:22:16 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 13:04:17 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "Antigravity IDE.exe",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\Programs\\Antigravity IDE\\Antigravity IDE.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3126166Z"
+    },
+    {
+      "PluginId": "std.comm.collaborate",
+      "PluginName": "Communication \u0026 Collaboration Client Detector",
+      "Software": {
+        "Name": "Microsoft OneDrive Sync Service",
+        "Version": "26.113.0614.0004",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\Microsoft OneDrive\\26.113.0614.0004",
+        "InstallDate": "2026/07/11",
+        "ScanSource": "DeepFileSystem (RAM: OneDrive.Sync.Service.exe | Original: OneDrive.Sync.Service.exe)",
+        "LastModifiedDate": "2026/07/11 12:08:24 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 14:14:57 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Client Application / Service Terms of Use",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Verified installed communication / remote binary executable.",
+          "RawData": "FileCoAuth.exe",
+          "SourceLocation": "C:\\Program Files\\Microsoft OneDrive\\26.113.0614.0004\\FileCoAuth.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Verifies desktop messaging, cloud synchronization, and remote assistance client tools.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.313429Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Notepad",
+        "Version": "11.2605.29.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2605.29.0_x64__8wekyb3d8bbwe\\Notepad",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: Notepad.exe | Original: Notepad.exe)",
+        "LastModifiedDate": "2026/07/03 02:29:29 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 15:15:44 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3138016Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "PowerShell",
+        "Version": "7.6.3 SHA: 4061323c4e021bea0a08e753f13df015fed607e5\u002B4061323c4e021bea0a08e753f13df015fed607e5",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.3.0_x64__8wekyb3d8bbwe",
+        "InstallDate": "2026/07/02",
+        "ScanSource": "DeepFileSystem (RAM: pwsh.exe | Original: pwsh.dll)",
+        "LastModifiedDate": "2026/07/03 01:58:37 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 15:38:35 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE.txt\u0027 specifying MIT License.",
+          "RawData": "Copyright (c) Microsoft Corporation.\r\n\r\nMIT License\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the \u0022Software\u0022...",
+          "SourceLocation": "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.3.0_x64__8wekyb3d8bbwe\\LICENSE.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3146411Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": ".NET",
+        "Version": "10.0.9 @Commit: 901ca941248413c79832d2fdbd709da0c4386353",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\dotnet",
+        "InstallDate": "2026/05/20",
+        "ScanSource": "DeepFileSystem (RAM: dotnet.exe | Original: .NET Host)",
+        "LastModifiedDate": "2026/05/20 19:46:22 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 16:03:41 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "Open Source License",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE.txt\u0027 specifying Open Source License.",
+          "RawData": "MICROSOFT SOFTWARE LICENSE TERMS\r\nMICROSOFT .NET LIBRARY \r\nThese license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read t...",
+          "SourceLocation": "C:\\Program Files\\dotnet\\LICENSE.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3150942Z"
+    },
+    {
+      "PluginId": "std.microsoft.runtimes",
+      "PluginName": "Microsoft Runtime Ecosystem License Detector",
+      "Software": {
+        "Name": "VBCSCompiler",
+        "Version": "5.0.0-2.26270.113\u002B901ca941248413c79832d2fdbd709da0c4386353",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\dotnet\\sdk\\10.0.109\\Roslyn\\bincore",
+        "InstallDate": "2026/05/20",
+        "ScanSource": "DeepFileSystem (RAM: VBCSCompiler.exe | Original: VBCSCompiler.dll)",
+        "LastModifiedDate": "2026/05/20 20:53:46 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 16:34:11 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Microsoft Runtime \u0026 Redistributable EULA",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Matched Microsoft Runtime package pattern: \u0027VBCSCompiler\u0027.",
+          "RawData": "VBCSCompiler",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Verifies Microsoft system runtimes, SDKs, redistributable C\u002B\u002B libraries, and database drivers.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.315665Z"
+    },
+    {
+      "PluginId": "std.browsers.tools",
+      "PluginName": "Web Browsers \u0026 System Utilities Detector",
+      "Software": {
+        "Name": "LicenseIntelligencePlatform.Presentation.Cli",
+        "Version": "1.0.0\u002B75ebaa4664c54ac40a5ad15646da3a3b2e464c95",
+        "Publisher": "LicenseIntelligencePlatform.Presentation.Cli",
+        "InstallPath": "D:\\source code\\License-Intelligence-Platform-Docs\\src\\LicenseIntelligencePlatform.Presentation.Cli\\bin\\Release\\net8.0",
+        "InstallDate": "2026/07/16",
+        "ScanSource": "DeepFileSystem (RAM: LicenseIntelligencePlatform.Presentation.Cli.exe | Original: LicenseIntelligencePlatform.Presentation.Cli.dll)",
+        "LastModifiedDate": "2026/07/16 17:13:41 VN Time (UTC\u002B7)",
+        "AppStartTime": "2026/07/16 17:13:46 VN Time (UTC\u002B7)"
+      },
+      "DetectedLicenseType": "Freeware",
+      "LicenseName": "Freeware / Browser Terms of Service",
+      "Confidence": "High",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found installed browser / system tool executable binary.",
+          "RawData": "LicenseIntelligencePlatform.Presentation.Cli.exe",
+          "SourceLocation": "D:\\source code\\License-Intelligence-Platform-Docs\\src\\LicenseIntelligencePlatform.Presentation.Cli\\bin\\Release\\net8.0\\LicenseIntelligencePlatform.Presentation.Cli.exe"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Identifies web navigation clients, open source database tools, and desktop input utilities.",
+      "ScannedAtUtc": "2026-07-16T10:13:48.3160221Z"
+    }
+  ]
+}
