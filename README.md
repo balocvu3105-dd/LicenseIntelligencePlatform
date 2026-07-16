@@ -28,14 +28,8 @@ Hệ thống hoạt động theo nguyên tắc **Read-Only** (không ghi đè ha
 <div align="center">
 
 ### CLI Execution & Summary
-```text
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│                 LICENSE INTELLIGENCE PLATFORM (LIP) v1.0 AUDIT                   │
-├──────────────────────────────────────────────────────────────────────────────────┤
-│ Total Scanned: 132 | Commercial: 42 | Open Source: 68 | Freeware: 22           │
-│ Scan Status  : Completed (482 ms) | SHA-256 Checksum Signed                      │
-└──────────────────────────────────────────────────────────────────────────────────┘
-```
+<img width="1825" height="792" alt="image" src="https://github.com/user-attachments/assets/85fc1e67-a562-47ef-aa60-494c31c1990e" />
+
 *(CLI interactive progress bar & summary dashboard placeholder)*
 
 ### Widescreen HTML Report & Multi-Sheet Excel Workbook
