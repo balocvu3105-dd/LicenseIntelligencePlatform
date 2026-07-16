@@ -1,0 +1,29 @@
+﻿==========================================================================================
+        LICENSE INTELLIGENCE PLATFORM - CRYPTOGRAPHIC REPORT INTEGRITY MANIFEST           
+==========================================================================================
+Scan ID      : 70a79e56-01ce-4814-8926-e56767bfb83c
+Signed At    : 2026/07/16 16:48:28 VN Time (UTC+7)
+Hash Algorithm: SHA-256 (FIPS-180-4 Standard)
+Security Lock : OS FileAttributes.ReadOnly Enforced
+==========================================================================================
+SHA-256 Hash                                                     File Name
+---------------------------------------------------------------- -------------------------
+08720d584294c765554aa2ee9db51b9858caae58e55207dea881122e6587ea72  license_report_70a79e56-01ce-4814-8926-e56767bfb83c.csv
+bcd7745bed2c10cb7bcd519ec4a5e97aa0166a9a76cc5bc774c6360bf0c387dc  license_report_70a79e56-01ce-4814-8926-e56767bfb83c.json
+d53bfcf9026400ba50602c8f10dfffcdcf75dc925deb3be17870ed9ab13e3e59  license_report_70a79e56-01ce-4814-8926-e56767bfb83c.audit
+35e4a4c14567f7876865763b92db3b5be5237e3f31ed0c7d14cd0ec3e26f23a0  license_report_70a79e56-01ce-4814-8926-e56767bfb83c.html
+35e4a4c14567f7876865763b92db3b5be5237e3f31ed0c7d14cd0ec3e26f23a0  Bao_Cao_Truc_Quan_Web_2026-07-16_16h48m.html
+2eab186e2342bf46a852ec4deacb7e0710640c80073c3f5c508b93a2138b96c4  license_report_70a79e56-01ce-4814-8926-e56767bfb83c.xlsx
+e72a2f954c10179f1e13c0323920626741a08e0c0a685282e5a2042a3581d7fe  Bao_Cao_Tong_Hop_Ban_Quen_2026-07-16_16h48m.xlsx
+d10da9c47daa68289e12524a8dc6885c2490ec286965ebcda083788f39bf6419  license_report_70a79e56-01ce-4814-8926-e56767bfb83c.stats
+5180b227cd508c5c73caa2342e0453e13c37e44bfaec894afd9734e45be642ad  executive_summary_70a79e56-01ce-4814-8926-e56767bfb83c.txt
+47063d123912a22a1006f3ff31a6bb82565249e3d0ebb90d44703e3ce2af6a0b  evidence_report_70a79e56-01ce-4814-8926-e56767bfb83c.txt
+84dd5f318e81f7821508cb4f54a82c150dd60db005f4c6820a513efc8c291664  audit_report_70a79e56-01ce-4814-8926-e56767bfb83c.md
+d10da9c47daa68289e12524a8dc6885c2490ec286965ebcda083788f39bf6419  statistics_report_70a79e56-01ce-4814-8926-e56767bfb83c.json
+c5a47acffacbb9f250aefa9c059fef518a7d04600fb11494512ce8b06ccc024f  backlog_need_plugins.json
+15282072ddf6a5d5f04d01a64a01f1c7632acd56848adf567082e4d1fc92f9c4  .host_identity
+47e66fb790721be6be7c3c1c83f1af4a4b7696ee7cb60336a34adb3f2eb25165  application.log
+eb19070eee64b428d59acdb79740c6fba93ed87d381c712b352278049da67dc7  audit.log
+260cbe5d6aab4dd7042b77acea61687c278b468c3e9b29a052b7f8c6b223ac5d  performance.log
+==========================================================================================
+END OF INTEGRITY MANIFEST. ANY MODIFICATION TO REPORT FILES WILL INVALIDATE SHA-256 HASH.

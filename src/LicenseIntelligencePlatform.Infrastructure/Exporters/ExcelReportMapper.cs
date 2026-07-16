@@ -157,32 +157,51 @@ public sealed class ExcelReportMapper : IReportMapper
         int row = 2;
         foreach (var r in results)
         {
-            // Col 1: Software Package
-            sheet.Cell(row, 1).Value = r.Software.Name;
-            sheet.Cell(row, 1).Style.Font.Bold = true;
+            // Set vertical alignment for the entire data row so multiline wrapped text aligns all cells crisply at the top
+            sheet.Range(row, 1, row, 12).Style.Alignment.Vertical = XLAlignmentVerticalValues.Top;
+
+            // Col 1: Software Package (WrapText true so long names don't spill over)
+            var pkgCell = sheet.Cell(row, 1);
+            pkgCell.Value = r.Software.Name;
+            pkgCell.Style.Font.Bold = true;
+            pkgCell.Style.Alignment.WrapText = true;
 
             // Col 2: Version
-            FormatCellOrPlaceholder(sheet.Cell(row, 2), r.Software.Version, "—");
+            var verCell = sheet.Cell(row, 2);
+            verCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            FormatCellOrPlaceholder(verCell, r.Software.Version, "—");
 
             // Col 3: Publisher
+            var pubCell = sheet.Cell(row, 3);
+            pubCell.Style.Alignment.WrapText = true;
             var pub = !string.IsNullOrWhiteSpace(r.Software.Publisher) && !r.Software.Publisher.Equals("Unknown", StringComparison.OrdinalIgnoreCase)
                 ? r.Software.Publisher : null;
-            FormatCellOrPlaceholder(sheet.Cell(row, 3), pub, "Unknown / Independent");
+            FormatCellOrPlaceholder(pubCell, pub, "Unknown / Independent");
 
-            // Col 4: Install Path
-            FormatCellOrPlaceholder(sheet.Cell(row, 4), r.Software.InstallPath, "N/A (System / Built-in)");
+            // Col 4: Install Path (WrapText true is MANDATORY to prevent path strings from overlapping into Install Date)
+            var pathCell = sheet.Cell(row, 4);
+            pathCell.Style.Alignment.WrapText = true;
+            FormatCellOrPlaceholder(pathCell, r.Software.InstallPath, "N/A (System / Built-in)");
 
             // Col 5: Install Date
-            FormatCellOrPlaceholder(sheet.Cell(row, 5), r.Software.InstallDate, "— (Pre-installed)");
+            var dtCell = sheet.Cell(row, 5);
+            dtCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            FormatCellOrPlaceholder(dtCell, r.Software.InstallDate, "— (Pre-installed)");
 
             // Col 6: Last Modified Date
-            FormatCellOrPlaceholder(sheet.Cell(row, 6), r.Software.LastModifiedDate, "— (Not Modified)");
+            var modCell = sheet.Cell(row, 6);
+            modCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            FormatCellOrPlaceholder(modCell, r.Software.LastModifiedDate, "— (Not Modified)");
 
             // Col 7: Last Used / Active
-            FormatCellOrPlaceholder(sheet.Cell(row, 7), r.Software.AppStartTime, "— (Inactive / Background)");
+            var useCell = sheet.Cell(row, 7);
+            useCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            FormatCellOrPlaceholder(useCell, r.Software.AppStartTime, "— (Inactive / Background)");
 
             // Col 8: Scan Source
-            FormatCellOrPlaceholder(sheet.Cell(row, 8), r.Software.ScanSource, "System Scan");
+            var srcCell = sheet.Cell(row, 8);
+            srcCell.Style.Alignment.WrapText = true;
+            FormatCellOrPlaceholder(srcCell, r.Software.ScanSource, "System Scan");
 
             // Col 9: License Type Cell with conditional badge tint
             var licCell = sheet.Cell(row, 9);
@@ -231,15 +250,18 @@ public sealed class ExcelReportMapper : IReportMapper
             }
 
             // Col 11: Plugin Detector
-            FormatCellOrPlaceholder(sheet.Cell(row, 11), r.PluginName, "Standard Detector");
+            var detCell = sheet.Cell(row, 11);
+            detCell.Style.Alignment.WrapText = true;
+            FormatCellOrPlaceholder(detCell, r.PluginName, "Standard Detector");
 
-            // Col 12: Evidence combined text
+            // Col 12: Evidence combined text (WrapText true is MANDATORY to prevent long evidence strings from spilling out of table right border)
+            var evCell = sheet.Cell(row, 12);
+            evCell.Style.Alignment.WrapText = true;
             var evText = r.Evidences.Count > 0
                 ? string.Join(" | ", r.Evidences.Select(e => $"[{e.EvidenceType}] {e.Description}"))
                 : null;
-            FormatCellOrPlaceholder(sheet.Cell(row, 12), evText, "No verification artifacts recorded");
+            FormatCellOrPlaceholder(evCell, evText, "No verification artifacts recorded");
 
-            sheet.Row(row).Height = 23;
             row++;
         }
 
@@ -251,35 +273,44 @@ public sealed class ExcelReportMapper : IReportMapper
             dataRange.Style.Border.OutsideBorder = XLBorderStyleValues.Medium;
         }
 
-        // Auto-fit column widths first based on content
-        sheet.Columns(1, 12).AdjustToContents();
-
-        // Enforce balanced, spacious minimum column widths (cân đều) and ensure headers + auto-filter dropdown arrows never overlap
+        // Apply generous, perfectly balanced column widths right away without letting AdjustToContents distort wrapped multiline columns
         for (int i = 1; i <= 12; i++)
         {
             var col = sheet.Column(i);
             var headerLen = headers[i - 1].Length;
             var minHeaderWidth = headerLen + 6.0; // +6 padding for bold font and filter icon space
-            if (col.Width < minHeaderWidth) col.Width = minHeaderWidth;
 
-            double explicitMin = i switch
+            double explicitWidth = i switch
             {
-                1 => 30, // Software Package
-                2 => 18, // Version
-                3 => 28, // Publisher
-                4 => 42, // Install Path
-                5 => 20, // Install Date
-                6 => 28, // Last Modified (VN Time)
-                7 => 30, // Last Used / Active (VN Time)
-                8 => 32, // Scan Source
-                9 => 18, // License Type
-                10 => 18, // Confidence
-                11 => 35, // Plugin Detector
-                12 => 45, // Verification Evidence
-                _ => 20
+                1 => Math.Max(minHeaderWidth, 32), // Software Package
+                2 => Math.Max(minHeaderWidth, 18), // Version
+                3 => Math.Max(minHeaderWidth, 28), // Publisher
+                4 => Math.Max(minHeaderWidth, 48), // Install Path (wide enough for normal paths, and WrapText wraps long paths)
+                5 => Math.Max(minHeaderWidth, 22), // Install Date (centered with margin)
+                6 => Math.Max(minHeaderWidth, 28), // Last Modified (VN Time)
+                7 => Math.Max(minHeaderWidth, 30), // Last Used / Active (VN Time)
+                8 => Math.Max(minHeaderWidth, 32), // Scan Source
+                9 => Math.Max(minHeaderWidth, 20), // License Type
+                10 => Math.Max(minHeaderWidth, 20), // Confidence
+                11 => Math.Max(minHeaderWidth, 35), // Plugin Detector
+                12 => Math.Max(minHeaderWidth, 58), // Verification Evidence (plenty wide for readable wrap)
+                _ => 25
             };
-            if (col.Width < explicitMin) col.Width = explicitMin;
-            if (col.Width > 75) col.Width = 75;
+            col.Width = explicitWidth;
+        }
+
+        // Dynamically adjust row heights for all wrapped multiline rows so all lines are visible and cleanly bounded
+        if (row > 2)
+        {
+            sheet.Rows(2, row - 1).AdjustToContents();
+            for (int rRow = 2; rRow < row; rRow++)
+            {
+                var rObj = sheet.Row(rRow);
+                if (rObj.Height < 24)
+                {
+                    rObj.Height = 24;
+                }
+            }
         }
     }
 
