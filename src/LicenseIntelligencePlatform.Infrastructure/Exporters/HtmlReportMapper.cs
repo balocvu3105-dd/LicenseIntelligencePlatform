@@ -48,17 +48,22 @@ public sealed class HtmlReportMapper : IReportMapper
         sb.AppendLine("        .card h3 { margin: 0 0 0.5rem 0; font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }");
         sb.AppendLine("        .card .val { font-size: 2rem; font-weight: 800; line-height: 1; }");
         sb.AppendLine("        .table-container { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; border: 1px solid var(--border); background: var(--card); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); max-height: calc(100vh - 340px); }");
-        sb.AppendLine("        table { width: 100%; min-width: 1300px; border-collapse: collapse; table-layout: fixed; }");
+        sb.AppendLine("        table { width: 100%; min-width: 1850px; border-collapse: collapse; table-layout: fixed; }");
         sb.AppendLine("        th, td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.88rem; vertical-align: top; }");
         sb.AppendLine("        th { position: sticky; top: 0; z-index: 10; background: #0b1323; color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em; box-shadow: 0 1px 0 var(--border); }");
         sb.AppendLine("        tr:hover td { background: rgba(255, 255, 255, 0.03); }");
-        sb.AppendLine("        .col-pkg { width: 18%; word-break: break-word; }");
-        sb.AppendLine("        .col-ver { width: 10%; word-break: break-word; }");
-        sb.AppendLine("        .col-pub { width: 14%; word-break: break-word; }");
-        sb.AppendLine("        .col-lic { width: 10%; text-align: center; }");
-        sb.AppendLine("        .col-cnf { width: 10%; text-align: center; }");
-        sb.AppendLine("        .col-det { width: 12%; word-break: break-word; }");
-        sb.AppendLine("        .col-art { width: 26%; word-break: break-word; }");
+        sb.AppendLine("        .col-pkg { width: 15%; word-break: break-word; }");
+        sb.AppendLine("        .col-ver { width: 8%; word-break: break-word; }");
+        sb.AppendLine("        .col-pub { width: 12%; word-break: break-word; }");
+        sb.AppendLine("        .col-path { width: 14%; word-break: break-all; }");
+        sb.AppendLine("        .col-dt { width: 8%; white-space: nowrap; }");
+        sb.AppendLine("        .col-mod { width: 10%; white-space: nowrap; }");
+        sb.AppendLine("        .col-use { width: 10%; white-space: nowrap; }");
+        sb.AppendLine("        .col-src { width: 10%; word-break: break-word; }");
+        sb.AppendLine("        .col-lic { width: 8%; text-align: center; }");
+        sb.AppendLine("        .col-cnf { width: 8%; text-align: center; }");
+        sb.AppendLine("        .col-det { width: 10%; word-break: break-word; }");
+        sb.AppendLine("        .col-art { width: 18%; word-break: break-word; }");
         sb.AppendLine("        th.col-lic, th.col-cnf { text-align: center; }");
         sb.AppendLine("        code { background: rgba(15, 23, 42, 0.6); padding: 0.15rem 0.4rem; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.82rem; color: #38bdf8; word-break: break-all; }");
         sb.AppendLine("        .badge { display: inline-block; padding: 0.28rem 0.7rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }");
@@ -94,6 +99,11 @@ public sealed class HtmlReportMapper : IReportMapper
         sb.AppendLine("                        <th class=\"col-pkg\">Software Package</th>");
         sb.AppendLine("                        <th class=\"col-ver\">Version</th>");
         sb.AppendLine("                        <th class=\"col-pub\">Publisher</th>");
+        sb.AppendLine("                        <th class=\"col-path\">Install Path</th>");
+        sb.AppendLine("                        <th class=\"col-dt\">Install Date</th>");
+        sb.AppendLine("                        <th class=\"col-mod\">Last Updated (VN)</th>");
+        sb.AppendLine("                        <th class=\"col-use\">Last Used / Active (VN)</th>");
+        sb.AppendLine("                        <th class=\"col-src\">Scan Source</th>");
         sb.AppendLine("                        <th class=\"col-lic\">License Type</th>");
         sb.AppendLine("                        <th class=\"col-cnf\">Confidence</th>");
         sb.AppendLine("                        <th class=\"col-det\">Plugin Detector</th>");
@@ -125,10 +135,21 @@ public sealed class HtmlReportMapper : IReportMapper
                 ? string.Join("<br>", r.Evidences.Select(e => $"• <strong style=\"color: var(--text);\">{HtmlEncode(e.EvidenceType)}:</strong> {HtmlEncode(e.Description)}"))
                 : "<span style=\"color: var(--muted); font-style: italic;\">No artifacts</span>";
 
+            var installPath = !string.IsNullOrWhiteSpace(r.Software.InstallPath) ? HtmlEncode(r.Software.InstallPath) : "<span style=\"color: var(--muted); font-style: italic;\">N/A</span>";
+            var installDate = !string.IsNullOrWhiteSpace(r.Software.InstallDate) ? HtmlEncode(r.Software.InstallDate) : "<span style=\"color: var(--muted);\">Unknown</span>";
+            var lastMod = !string.IsNullOrWhiteSpace(r.Software.LastModifiedDate) ? HtmlEncode(r.Software.LastModifiedDate) : "<span style=\"color: var(--muted);\">Unknown</span>";
+            var appStart = !string.IsNullOrWhiteSpace(r.Software.AppStartTime) ? HtmlEncode(r.Software.AppStartTime) : "<span style=\"color: var(--muted); font-style: italic;\">Inactive / Disk</span>";
+            var scanSrc = !string.IsNullOrWhiteSpace(r.Software.ScanSource) ? HtmlEncode(r.Software.ScanSource) : "System Scan";
+
             sb.AppendLine("                    <tr>");
             sb.AppendLine($"                        <td class=\"col-pkg\"><strong style=\"color: #f8fafc; font-size: 0.95rem;\">{HtmlEncode(r.Software.Name)}</strong></td>");
             sb.AppendLine($"                        <td class=\"col-ver\"><code>{HtmlEncode(r.Software.Version)}</code></td>");
             sb.AppendLine($"                        <td class=\"col-pub\" style=\"color: #cbd5e1;\">{HtmlEncode(r.Software.Publisher ?? "Unknown")}</td>");
+            sb.AppendLine($"                        <td class=\"col-path\" style=\"font-size: 0.82rem; font-family: monospace; color: #a5b4fc;\">{installPath}</td>");
+            sb.AppendLine($"                        <td class=\"col-dt\" style=\"font-size: 0.82rem; color: #cbd5e1;\">{installDate}</td>");
+            sb.AppendLine($"                        <td class=\"col-mod\" style=\"font-size: 0.82rem; color: #cbd5e1;\">{lastMod}</td>");
+            sb.AppendLine($"                        <td class=\"col-use\" style=\"font-size: 0.82rem; color: #86efac; font-weight: 500;\">{appStart}</td>");
+            sb.AppendLine($"                        <td class=\"col-src\" style=\"font-size: 0.82rem; color: #94a3b8;\">{scanSrc}</td>");
             sb.AppendLine($"                        <td class=\"col-lic\"><span class=\"badge {licenseClass}\">{HtmlEncode(r.DetectedLicenseType.ToString())}</span></td>");
             sb.AppendLine($"                        <td class=\"col-cnf\"><span class=\"badge {confClass}\">{HtmlEncode(r.Confidence.ToString())}</span></td>");
             sb.AppendLine($"                        <td class=\"col-det\" style=\"color: #94a3b8; font-weight: 500;\">{HtmlEncode(r.PluginName)}</td>");

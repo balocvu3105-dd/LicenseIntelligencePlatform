@@ -129,9 +129,9 @@ public sealed class ExcelReportMapper : IReportMapper
         // Header Row
         var headers = new[]
         {
-            "Software Package", "Version", "Publisher", "Install Path",
-            "License Type", "Confidence", "Plugin Detector",
-            "Verification Evidence", "Scan Source", "Last Modified (VN Time)"
+            "Software Package", "Version", "Publisher", "Install Path", "Install Date",
+            "Last Modified (VN Time)", "Last Used / Active (VN Time)", "Scan Source",
+            "License Type", "Confidence", "Plugin Detector", "Verification Evidence"
         };
 
         for (int i = 0; i < headers.Length; i++)
@@ -155,9 +155,13 @@ public sealed class ExcelReportMapper : IReportMapper
             sheet.Cell(row, 2).Value = r.Software.Version;
             sheet.Cell(row, 3).Value = r.Software.Publisher ?? "Unknown";
             sheet.Cell(row, 4).Value = r.Software.InstallPath;
+            sheet.Cell(row, 5).Value = r.Software.InstallDate;
+            sheet.Cell(row, 6).Value = r.Software.LastModifiedDate;
+            sheet.Cell(row, 7).Value = r.Software.AppStartTime;
+            sheet.Cell(row, 8).Value = r.Software.ScanSource;
 
             // License Type Cell with conditional badge tint
-            var licCell = sheet.Cell(row, 5);
+            var licCell = sheet.Cell(row, 9);
             licCell.Value = r.DetectedLicenseType.ToString();
             licCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
             licCell.Style.Font.Bold = true;
@@ -178,7 +182,7 @@ public sealed class ExcelReportMapper : IReportMapper
             }
 
             // Confidence Cell
-            var confCell = sheet.Cell(row, 6);
+            var confCell = sheet.Cell(row, 10);
             confCell.Value = r.Confidence.ToString();
             confCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
             confCell.Style.Font.Bold = true;
@@ -193,16 +197,13 @@ public sealed class ExcelReportMapper : IReportMapper
                 confCell.Style.Font.FontColor = XLColor.FromHtml("#92400E");
             }
 
-            sheet.Cell(row, 7).Value = r.PluginName;
+            sheet.Cell(row, 11).Value = r.PluginName;
 
             // Evidence combined text
             var evText = r.Evidences.Count > 0
                 ? string.Join(" | ", r.Evidences.Select(e => $"[{e.EvidenceType}] {e.Description}"))
                 : "No artifacts";
-            sheet.Cell(row, 8).Value = evText;
-
-            sheet.Cell(row, 9).Value = r.Software.ScanSource;
-            sheet.Cell(row, 10).Value = r.Software.LastModifiedDate;
+            sheet.Cell(row, 12).Value = evText;
 
             sheet.Row(row).Height = 22;
             row++;
@@ -210,13 +211,13 @@ public sealed class ExcelReportMapper : IReportMapper
 
         if (row > 2)
         {
-            var dataRange = sheet.Range(1, 1, row - 1, 10);
+            var dataRange = sheet.Range(1, 1, row - 1, 12);
             dataRange.SetAutoFilter();
             dataRange.Style.Border.InsideBorder = XLBorderStyleValues.Thin;
             dataRange.Style.Border.OutsideBorder = XLBorderStyleValues.Medium;
         }
 
         // Auto-fit column widths with logical limits so long paths don't make columns super wide
-        sheet.Columns(1, 10).AdjustToContents(10, 65);
+        sheet.Columns(1, 12).AdjustToContents(10, 65);
     }
 }
