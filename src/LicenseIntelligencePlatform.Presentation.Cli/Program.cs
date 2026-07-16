@@ -29,6 +29,40 @@ public static class Program
         // 1. Parse CLI Options
         var options = ParseCliArguments(args);
 
+        // Interactive Welcome Card (Hold before run - UX Feedback #1)
+        if (!options.NoPause && Environment.UserInteractive && !Console.IsInputRedirected && !Console.IsOutputRedirected)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("==========================================================================================");
+            Console.WriteLine("               🛡️  LICENSE INTELLIGENCE PLATFORM v1.0 (ENTERPRISE AUDIT)  🛡️              ");
+            Console.WriteLine("==========================================================================================");
+            Console.ResetColor();
+            Console.WriteLine(" [Giới Thiệu]: Hệ thống kiểm kê toàn bộ phần mềm & rà soát bản quyền tự động trên máy tính.");
+            Console.WriteLine(" [Cam Kết Bảo Mật]:");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("    ✔ 100% Read-Only (Chỉ đọc, tuyệt đối không ghi/sửa/xóa bất kỳ file/registry nào của bạn).");
+            Console.WriteLine("    ✔ 100% Offline   (Hoạt động cục bộ trên máy, không kết nối internet/gửi dữ liệu ra ngoài).");
+            Console.WriteLine("    ✔ Anti-Tamper    (Tự động khóa chỉ đọc & ký mã băm SHA-256 chống giả mạo kết quả).");
+            Console.ResetColor();
+            Console.WriteLine("==========================================================================================");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(" 👉 Nhấn phím [ENTER] để bắt đầu kiểm kê hệ thống... (Hoặc phím [ESC] để thoát): ");
+            Console.ResetColor();
+            try
+            {
+                while (Console.KeyAvailable) Console.ReadKey(true);
+                var key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Escape)
+                {
+                    Console.WriteLine("\n[+] Đã hủy lệnh kiểm kê. Hẹn gặp lại!");
+                    return 0;
+                }
+                Console.WriteLine();
+                Console.WriteLine();
+            }
+            catch { /* Fallback */ }
+        }
+
         // [ZERO-TOLERANCE SECURITY] Enforce Cross-Machine Data Isolation Guard
         // Guarantees that any historical logs or reports generated on one computer are immediately wiped if transferred to a new computer.
         CrossMachineDataSanitizationGuard.EnforceZeroToleranceIsolation(options.OutputDirectory, Path.Combine(Directory.GetCurrentDirectory(), "logs"));
@@ -165,18 +199,40 @@ public static class Program
         // 5. Export Reports and Backlog if required
         await ExportReportsAndBacklogAsync(host.Services, report, options, cts.Token);
 
-        // 6. Interactive Window Pause Check (Prevent console window from closing when double-clicked by user)
+        // 6. Interactive Post-Scan Summary & Auto-Open Check (UX Feedback #2 & #3)
         if (Environment.UserInteractive && !Console.IsInputRedirected && !Console.IsOutputRedirected && !options.NoPause)
         {
+            var timestampStr = VietnamTime.Now.ToString("yyyy-MM-dd_HH'h'mm'm'");
+            var displayDir = string.IsNullOrEmpty(options.MasterWorkspaceDirectory) ? options.OutputDirectory : options.MasterWorkspaceDirectory;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("==========================================================================================");
-            Console.WriteLine("[+] Hoàn tất kiểm kê & xuất báo cáo! Nhấn bất kỳ phím nào (hoặc Enter) để đóng cửa sổ...");
+            Console.WriteLine("  🎉 QUÁ TRÌNH KIỂM KÊ HOÀN TẤT 100% & TOÀN BỘ KẾT QUẢ ĐÃ ĐƯỢC BẢO MẬT CHỈ ĐỌC (READ-ONLY)!");
             Console.WriteLine("==========================================================================================");
+            Console.ResetColor();
+            Console.WriteLine($" 📁 Toàn bộ hồ sơ kiểm toán được lưu trọn gói tại:\n    -> {displayDir}");
+            Console.WriteLine();
+            Console.WriteLine(" 📊 2 Báo cáo trực quan chính:");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"    ✔ Excel: Bao_Cao_Tong_Hop_Ban_Quen_{timestampStr}.xlsx");
+            Console.WriteLine($"    ✔ Web:   Bao_Cao_Truc_Quan_Web_{timestampStr}.html");
+            Console.ResetColor();
+            Console.WriteLine("==========================================================================================");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(" 👉 Nhấn phím [ENTER / Y] để mở ngay Báo cáo Web HTML (hoặc phím khác để đóng cửa sổ): ");
             Console.ResetColor();
             try
             {
                 while (Console.KeyAvailable) Console.ReadKey(true);
-                Console.ReadKey(true);
+                var key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Enter || key.Key == ConsoleKey.Y)
+                {
+                    var htmlPath = Path.Combine(displayDir, $"Bao_Cao_Truc_Quan_Web_{timestampStr}.html");
+                    if (!File.Exists(htmlPath)) htmlPath = Path.Combine(options.OutputDirectory, $"license_report_{report.ScanId}.html");
+                    if (File.Exists(htmlPath))
+                    {
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(htmlPath) { UseShellExecute = true });
+                    }
+                }
             }
             catch
             {
@@ -301,23 +357,39 @@ public static class Program
 
     private static async Task ExportReportsAndBacklogAsync(IServiceProvider services, ScanReport report, CliOptions options, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(options.OutputDirectory))
+        var timestampStr = VietnamTime.Now.ToString("yyyy-MM-dd_HH'h'mm'm'");
+        string masterDir;
+        string rawDataDir;
+
+        if (string.IsNullOrWhiteSpace(options.OutputDirectory) || options.OutputDirectory == "reports")
         {
-            options.OutputDirectory = Path.Combine(Directory.GetCurrentDirectory(), "reports");
+            masterDir = Path.Combine(Directory.GetCurrentDirectory(), $"License_Audit_Results_{timestampStr}");
+            rawDataDir = Path.Combine(masterDir, "raw_data");
+        }
+        else
+        {
+            masterDir = options.OutputDirectory;
+            rawDataDir = Path.Combine(masterDir, "raw_data");
         }
 
-        Directory.CreateDirectory(options.OutputDirectory);
+        options.MasterWorkspaceDirectory = masterDir;
+        options.OutputDirectory = rawDataDir;
+
+        Directory.CreateDirectory(masterDir);
+        Directory.CreateDirectory(rawDataDir);
 
         // Clear Read-Only locks from existing report files before overwriting
         try
         {
-            foreach (var existingFile in Directory.GetFiles(options.OutputDirectory))
+            foreach (var existingFile in Directory.GetFiles(rawDataDir))
             {
                 var attr = File.GetAttributes(existingFile);
-                if ((attr & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
-                {
-                    File.SetAttributes(existingFile, attr & ~FileAttributes.ReadOnly);
-                }
+                if ((attr & FileAttributes.ReadOnly) == FileAttributes.ReadOnly) File.SetAttributes(existingFile, attr & ~FileAttributes.ReadOnly);
+            }
+            foreach (var existingFile in Directory.GetFiles(masterDir))
+            {
+                var attr = File.GetAttributes(existingFile);
+                if ((attr & FileAttributes.ReadOnly) == FileAttributes.ReadOnly) File.SetAttributes(existingFile, attr & ~FileAttributes.ReadOnly);
             }
         }
         catch { /* Ignore access issues during cleanup attempt */ }
@@ -333,17 +405,33 @@ public static class Program
             }
 
             var extension = mapper.FormatName.ToLowerInvariant();
-            var filePath = Path.Combine(options.OutputDirectory, $"license_report_{report.ScanId}.{extension}");
+            var filePath = Path.Combine(rawDataDir, $"license_report_{report.ScanId}.{extension}");
 
             Console.WriteLine($"[+] Exporting {mapper.FormatName} report to: {filePath}");
             using var fileStream = File.Create(filePath);
             await mapper.ExportAsync(report, fileStream, cancellationToken);
             exportedFiles.Add(filePath);
+
+            // Create Master Workspace copy for Excel and HTML reports in the root folder for easy user access
+            if (mapper.FormatName == "XLSX" || mapper.FormatName == "EXCEL")
+            {
+                var rootExcelPath = Path.Combine(masterDir, $"Bao_Cao_Tong_Hop_Ban_Quen_{timestampStr}.xlsx");
+                using var rootExcelStream = File.Create(rootExcelPath);
+                await mapper.ExportAsync(report, rootExcelStream, cancellationToken);
+                exportedFiles.Add(rootExcelPath);
+            }
+            else if (mapper.FormatName == "HTML")
+            {
+                var rootHtmlPath = Path.Combine(masterDir, $"Bao_Cao_Truc_Quan_Web_{timestampStr}.html");
+                using var rootHtmlStream = File.Create(rootHtmlPath);
+                await mapper.ExportAsync(report, rootHtmlStream, cancellationToken);
+                exportedFiles.Add(rootHtmlPath);
+            }
         }
 
         // Phase 2 — Reporting Engine: Executive Summary
         var execSummaryMapper = services.GetRequiredService<ExecutiveSummaryMapper>();
-        var execSummaryPath = Path.Combine(options.OutputDirectory, $"executive_summary_{report.ScanId}.txt");
+        var execSummaryPath = Path.Combine(rawDataDir, $"executive_summary_{report.ScanId}.txt");
         Console.WriteLine($"[+] Exporting Executive Summary to: {execSummaryPath}");
         using (var execStream = File.Create(execSummaryPath))
         {
@@ -353,7 +441,7 @@ public static class Program
 
         // Phase 2 — Reporting Engine: Evidence Report
         var evidenceMapper = services.GetRequiredService<EvidenceReportMapper>();
-        var evidencePath = Path.Combine(options.OutputDirectory, $"evidence_report_{report.ScanId}.txt");
+        var evidencePath = Path.Combine(rawDataDir, $"evidence_report_{report.ScanId}.txt");
         Console.WriteLine($"[+] Exporting Evidence Report to: {evidencePath}");
         using (var evidenceStream = File.Create(evidencePath))
         {
@@ -363,7 +451,7 @@ public static class Program
 
         // Phase 4 — Reporting Engine: Executive Audit Report
         var auditMapper = services.GetRequiredService<AuditReportMapper>();
-        var auditPath = Path.Combine(options.OutputDirectory, $"audit_report_{report.ScanId}.md");
+        var auditPath = Path.Combine(rawDataDir, $"audit_report_{report.ScanId}.md");
         Console.WriteLine($"[+] Exporting Executive Audit Report to: {auditPath}");
         using (var auditStream = File.Create(auditPath))
         {
@@ -371,19 +459,9 @@ public static class Program
         }
         exportedFiles.Add(auditPath);
 
-        // Phase 4 — Reporting Engine: Standalone HTML Visual Report
-        var htmlMapper = services.GetRequiredService<HtmlReportMapper>();
-        var htmlPath = Path.Combine(options.OutputDirectory, $"license_report_{report.ScanId}.html");
-        Console.WriteLine($"[+] Exporting Standalone HTML Report to: {htmlPath}");
-        using (var htmlStream = File.Create(htmlPath))
-        {
-            await htmlMapper.ExportAsync(report, htmlStream, cancellationToken);
-        }
-        exportedFiles.Add(htmlPath);
-
         // Phase 4 — Reporting Engine: Statistics Analytics Report
         var statsMapper = services.GetRequiredService<StatisticsReportMapper>();
-        var statsPath = Path.Combine(options.OutputDirectory, $"statistics_report_{report.ScanId}.json");
+        var statsPath = Path.Combine(rawDataDir, $"statistics_report_{report.ScanId}.json");
         Console.WriteLine($"[+] Exporting Statistics Report to: {statsPath}");
         using (var statsStream = File.Create(statsPath))
         {
@@ -406,24 +484,43 @@ public static class Program
 
         if (unknowns.Count > 0)
         {
-            var backlogPath = Path.Combine(options.OutputDirectory, "backlog_need_plugins.json");
+            var backlogPath = Path.Combine(rawDataDir, "backlog_need_plugins.json");
             var json = System.Text.Json.JsonSerializer.Serialize(unknowns, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(backlogPath, json, cancellationToken);
             Console.WriteLine($"[+] Exported {unknowns.Count} unhandled software items to backlog file: {backlogPath}");
             exportedFiles.Add(backlogPath);
         }
 
+        // Flush LogSink and Move system logs inside master workspace folder to prevent outside clutter
+        var logSink = services.GetService<ILogSink>();
+        if (logSink != null)
+        {
+            await logSink.FlushAsync(cancellationToken);
+        }
+
+        try
+        {
+            var localLogsDir = Path.Combine(Directory.GetCurrentDirectory(), "logs");
+            if (Directory.Exists(localLogsDir))
+            {
+                var sysLogsDir = Path.Combine(masterDir, "system_logs");
+                Directory.CreateDirectory(sysLogsDir);
+                foreach (var logFile in Directory.GetFiles(localLogsDir))
+                {
+                    if (Path.GetFileName(logFile).Equals(".keep", StringComparison.OrdinalIgnoreCase)) continue;
+                    var destPath = Path.Combine(sysLogsDir, Path.GetFileName(logFile));
+                    File.Copy(logFile, destPath, true);
+                    exportedFiles.Add(destPath);
+                }
+            }
+        }
+        catch { /* Ignore log copy lock errors */ }
+
         // Export Diagnostic Package if requested
         if (options.Diagnostic)
         {
-            var logSink = services.GetService<ILogSink>();
-            if (logSink != null)
-            {
-                await logSink.FlushAsync(cancellationToken);
-            }
-
             var diagExporter = services.GetRequiredService<IDiagnosticExporter>();
-            var zipPath = Path.Combine(options.OutputDirectory, $"diagnostic_{report.ScanId}.zip");
+            var zipPath = Path.Combine(rawDataDir, $"diagnostic_{report.ScanId}.zip");
             var logsDir = Path.Combine(Directory.GetCurrentDirectory(), "logs");
             var createdZip = await diagExporter.ExportDiagnosticPackageAsync(report, logsDir, zipPath, cancellationToken);
             Console.WriteLine($"[+] Diagnostic support package exported to: {createdZip}");
@@ -432,7 +529,24 @@ public static class Program
 
         // Security Hardening: Compute SHA-256 Checksums and enforce Read-Only lock on all exported reports
         Console.WriteLine("[+] Enforcing Anti-Tamper SHA-256 Checksum Signature & Read-Only Lock on all exported reports...");
-        await ReportSecurityLocker.LockAndSignReportsAsync(report.ScanId, options.OutputDirectory, exportedFiles, cancellationToken);
+        await ReportSecurityLocker.LockAndSignReportsAsync(report.ScanId, rawDataDir, exportedFiles, cancellationToken);
+
+        // Clean up temporary local logs directory after copying into master workspace
+        try
+        {
+            var localLogsDir = Path.Combine(Directory.GetCurrentDirectory(), "logs");
+            if (Directory.Exists(localLogsDir))
+            {
+                foreach (var logFile in Directory.GetFiles(localLogsDir))
+                {
+                    if (Path.GetFileName(logFile).Equals(".keep", StringComparison.OrdinalIgnoreCase)) continue;
+                    var attr = File.GetAttributes(logFile);
+                    if ((attr & FileAttributes.ReadOnly) == FileAttributes.ReadOnly) File.SetAttributes(logFile, attr & ~FileAttributes.ReadOnly);
+                    File.Delete(logFile);
+                }
+            }
+        }
+        catch { /* Ignore cleanup issues */ }
 
         Console.WriteLine();
     }
@@ -440,6 +554,7 @@ public static class Program
     private class CliOptions
     {
         public string OutputDirectory { get; set; } = "reports";
+        public string MasterWorkspaceDirectory { get; set; } = "";
         public string Format { get; set; } = "BOTH";
         public string PluginsDirectory { get; set; } = "";
         public bool Verbose { get; set; } = false;
