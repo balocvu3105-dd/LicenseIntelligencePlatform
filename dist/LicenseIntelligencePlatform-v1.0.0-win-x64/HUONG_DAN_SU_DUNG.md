@@ -45,7 +45,7 @@ Sau khi hoàn tất quét, thư mục `reports\` sẽ chứa đầy đủ bộ h
 ### 1. Bảng Tính Excel Chuyên Nghiệp (`license_report_<ScanId>.xlsx`) — *Khuyên Dùng*
 Được xây dựng trên chuẩn OpenXML gồm **4 Trang tính (Tabs)** chuyên biệt:
 - **`Executive Dashboard`**: Bảng điều khiển KPI tổng hợp, tỷ lệ phần trăm các nhóm bản quyền, thời gian quét chuẩn **Giờ Việt Nam (`VN Time - UTC+7`)**.
-- **`Full Inventory & Audit`**: Danh sách toàn bộ 130+ phần mềm được phát hiện, có sẵn bộ lọc (`Auto-Filter`), cố định dòng tiêu đề (`Sticky Header`) và tô nền màu cảnh báo:
+- **`Full Inventory & Audit`**: Danh sách toàn diện 12 cột thông tin chuyên sâu cho mỗi phần mềm (`Software Package`, `Version`, `Publisher`, `Install Path`, `Install Date`, `Last Updated - VN Time`, `Last Used / Active - VN Time`, `Scan Source`, `License Type`, `Confidence`, `Plugin Detector`, `Verification Evidence`), có sẵn bộ lọc (`Auto-Filter`), cố định dòng tiêu đề (`Sticky Header`) và tô nền màu cảnh báo:
   - 🔴 **Màu hồng nhạt (`#FEE2E2`)**: Phần mềm thương mại (`Commercial`) cần kiểm tra giấy phép mua sắm.
   - 🔵 **Màu xanh dương nhạt (`#E0F2FE`)**: Phần mềm mã nguồn mở (`OpenSource`).
   - 🟢 **Màu xanh lá (`#DCFCE7`)**: Các phần mềm đã được xác minh chính xác bằng Plugin tri thức chuyên sâu (`Verified`).
@@ -53,8 +53,8 @@ Sau khi hoàn tất quét, thư mục `reports\` sẽ chứa đầy đủ bộ h
 - **`Open Source Compliance`**: Tab lọc riêng các phần mềm mã nguồn mở và bằng chứng tuân thủ (MIT, Apache 2.0, GPL...).
 
 ### 2. Báo Cáo Trực Quan Web HTML (`license_report_<ScanId>.html`)
-- Giao diện Dark Mode sang trọng, **tối ưu hoàn hảo cho tỷ lệ màn hình 1920x1080 (Full HD Widescreen 16:9)**.
-- Bảng dữ liệu chia tỷ lệ cột chính xác (`table-layout: fixed`), chống trôi header (`Sticky Header`) và không bao giờ bị cắt chữ hay tràn màn hình.
+- Giao diện Dark Mode sang trọng, hiển thị trọn vẹn **12 cột thông tin kiểm kê chi tiết** (đường dẫn cài đặt, ngày giờ cài đặt, thời điểm cập nhật lần cuối, trạng thái hoạt động/lần dùng gần nhất).
+- Bảng dữ liệu tự động co giãn (`table-layout: auto`), thiết lập độ rộng tối thiểu thoáng đãng, chống trôi header (`Sticky Header`) và bảo đảm **không bao giờ bị dính chữ hay đè chữ vào nhau**.
 
 ### 3. Hồ Sơ Kiểm Toán Pháp Lý (`audit_report_<ScanId>.md`)
 - Định dạng Markdown chuẩn dành cho bộ phận kiểm toán nội bộ và luật sư sở hữu trí tuệ. Liệt kê chi tiết trọng số bằng chứng (`Evidence Weights`), độ tin cậy (`Confidence Level`) và phân tích rủi ro.

@@ -37,7 +37,7 @@ public class CsvReportMapper : IReportMapper
         using var writer = new StreamWriter(outputStream, Encoding.UTF8, bufferSize: 4096, leaveOpen: true);
 
         // Header
-        await writer.WriteLineAsync("SoftwareName,Version,Publisher,InstallPath,LastModifiedDate,AppStartTime,DetectedLicenseType,LicenseName,ConfidenceLevel,IsVerified,EvidenceCount,Notes,PluginId,ScannedAtUtc".AsMemory(), cancellationToken);
+        await writer.WriteLineAsync("SoftwareName,Version,Publisher,InstallPath,InstallDate,LastModifiedDate,AppStartTime,ScanSource,DetectedLicenseType,LicenseName,ConfidenceLevel,IsVerified,EvidenceCount,Notes,PluginId,ScannedAtUtc".AsMemory(), cancellationToken);
 
         foreach (var result in report.Results)
         {
@@ -47,13 +47,15 @@ public class CsvReportMapper : IReportMapper
             }
 
             var line = string.Format(
-                "\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\",\"{9}\",{10},\"{11}\",\"{12}\",\"{13:O}\"",
+                "\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\",\"{9}\",\"{10}\",\"{11}\",{12},\"{13}\",\"{14}\",\"{15:O}\"",
                 EscapeCsv(result.Software.Name),
                 EscapeCsv(result.Software.Version),
                 EscapeCsv(result.Software.Publisher),
                 EscapeCsv(result.Software.InstallPath),
+                EscapeCsv(result.Software.InstallDate),
                 EscapeCsv(result.Software.LastModifiedDate),
                 EscapeCsv(result.Software.AppStartTime),
+                EscapeCsv(result.Software.ScanSource),
                 result.DetectedLicenseType,
                 EscapeCsv(result.LicenseName),
                 result.Confidence,
