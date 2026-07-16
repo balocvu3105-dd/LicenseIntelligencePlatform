@@ -6,7 +6,7 @@
 ![Clean Architecture](https://img.shields.io/badge/Architecture-Clean%20%2B%20SOLID-008080?style=for-the-badge)
 ![Security: Read-Only](https://img.shields.io/badge/Security-Read--Only%20%2F%20Air--Gapped-10B981?style=for-the-badge)
 ![Integrity: SHA-256 Checksum](https://img.shields.io/badge/Integrity-SHA--256%20Checksum-3B82F6?style=for-the-badge)
-![Unit Tests: 37/37 Passed](https://img.shields.io/badge/Tests-37%2F37%20Passed-success?style=for-the-badge)
+![Unit Tests: 38/38 Passed](https://img.shields.io/badge/Tests-38%2F38%20Passed-success?style=for-the-badge)
 
 [![Download Release (.zip)](https://img.shields.io/badge/📥_TẢI_VỀ_TRỌN_BỘ_.ZIP_(14_MB)-008080?style=for-the-badge&logo=github)](https://github.com/balocvu3105-dd/LicenseIntelligencePlatform/raw/main/dist/LicenseIntelligencePlatform-v1.0.0-win-x64.zip)
 [![Download CLI (.exe)](https://img.shields.io/badge/🚀_TẢI_TRỰC_TIẾP_FILE_.EXE-3B82F6?style=for-the-badge&logo=windows)](https://github.com/balocvu3105-dd/LicenseIntelligencePlatform/raw/main/dist/LicenseIntelligencePlatform-v1.0.0-win-x64/LicenseIntelligencePlatform.Presentation.Cli.exe)
@@ -33,9 +33,8 @@ Hệ thống hoạt động theo nguyên tắc **Read-Only** (không ghi đè ha
 *(CLI interactive progress bar & summary dashboard placeholder)*
 
 ### Widescreen HTML Report & Multi-Sheet Excel Workbook
-`[ HTML Report Screenshot Placeholder — 1920x1080 Widescreen Dashboard ]`
-
-`[ Excel Report Screenshot Placeholder — 4 Tabs: Dashboard, Inventory, Commercial, OpenSource ]`
+- **🎨 Executive HTML Dashboard (`2800px+ Super Widescreen`)**: Giao diện Dark Mode sang trọng, hiển thị thẻ chỉ số tổng quan và bảng dữ liệu siêu rộng. Tự động ngắt dòng thông minh (`break-all`), đảm bảo các chuỗi phiên bản (`Version`), mã commit SHA hay đường dẫn thư mục không bao giờ bị ngắt lẻ ký tự.
+- **📊 Goldilocks Deluxe Excel Workbook (`4 Tabs + Center/Center Alignment`)**: Toàn bộ 12 cột (`Software Package`, `Version`, `Install Path`, `Last Modified`, `Evidence`...) được thiết lập **căn chính giữa theo cả 2 trục ngang và dọc (`Center / Center`)** kết hợp lề đệm dọc (`+14pt cushion capped at 85pt`) và chiều rộng mở rộng tối đa (`Width = 28 — 140`), tuyệt đối không xén chân chữ hay phình dòng.
 
 </div>
 
