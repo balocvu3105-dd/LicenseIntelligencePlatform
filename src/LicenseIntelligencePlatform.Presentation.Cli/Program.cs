@@ -308,6 +308,20 @@ public static class Program
 
         Directory.CreateDirectory(options.OutputDirectory);
 
+        // Clear Read-Only locks from existing report files before overwriting
+        try
+        {
+            foreach (var existingFile in Directory.GetFiles(options.OutputDirectory))
+            {
+                var attr = File.GetAttributes(existingFile);
+                if ((attr & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                {
+                    File.SetAttributes(existingFile, attr & ~FileAttributes.ReadOnly);
+                }
+            }
+        }
+        catch { /* Ignore access issues during cleanup attempt */ }
+
         var exportedFiles = new List<string>();
 
         var mappers = services.GetServices<IReportMapper>();
