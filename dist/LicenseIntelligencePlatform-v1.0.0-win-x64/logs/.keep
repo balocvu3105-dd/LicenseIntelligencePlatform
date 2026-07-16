@@ -1,0 +1,2 @@
+# Logs Directory
+Active log files (application.log, error.log, performance.log, audit.log) will be generated cleanly when the CLI application executes.

@@ -83,9 +83,17 @@ dotnet publish src/LicenseIntelligencePlatform.Presentation.Cli `
 ```
 
 ### Kiểm tra gói phát hành (`Distribution Verification`):
-1. Vào thư mục `dist/win-x64/`.
-2. Xác nhận sự tồn tại của file `LicenseIntelligencePlatform.Presentation.Cli.exe` (kích thước khoảng `60 MB - 80 MB` vì đã nhúng trọn bộ `.NET 8 Runtime` và `33 Plugins`).
+1. Vào thư mục `dist/win-x64/` (hoặc `dist/LicenseIntelligencePlatform-v1.0.0-win-x64/`).
+2. Xác nhận sự tồn tại của file `LicenseIntelligencePlatform.Presentation.Cli.exe` (kích thước khoảng `60 MB - 80 MB` vì đã nhúng trọn bộ `.NET 8 Runtime` và `33 Plugins`) cùng tài liệu `HUONG_DAN_SU_DUNG.md`.
 3. Copy sang một máy trạm hoàn toàn trắng (`Clean Windows 11 / Windows Server VM không có .NET SDK`) và chạy lệnh `.\LicenseIntelligencePlatform.Presentation.Cli.exe --format BOTH` để xác nhận hoạt động hoàn hảo!
+
+> [!IMPORTANT]
+> **Quy trình Làm sạch Dữ liệu Trước Đóng Gói (`Pre-Distribution Data Clean Check`):**
+> Trước khi nén thành file `.zip` phát hành cho người dùng (`dist/LicenseIntelligencePlatform-v1.0.0-win-x64.zip`) hoặc đẩy lên Git/Release Tag, **bắt buộc phải xóa toàn bộ dữ liệu kiểm kê thử nghiệm** sinh ra trên máy trạm của lập trình viên:
+> - Xóa sạch các file nhật ký trong thư mục `logs/` (`application.log`, `audit.log`, `performance.log`, `error.log`).
+> - Xóa sạch toàn bộ báo cáo trong thư mục `reports/` (`*.html`, `*.audit`, `*.csv`, `*.json`, `*.xlsx`, `*.txt`).
+> - Chỉ để lại các thư mục `logs/` và `reports/` rỗng kèm file `.keep` để giữ cấu trúc thư mục sạch sẽ, bảo đảm người dùng khi tải file về **hoàn toàn không chứa bất kỳ dữ liệu hay vết tích kiểm kê nội bộ nào** của đội ngũ phát triển!
+
 
 ---
 

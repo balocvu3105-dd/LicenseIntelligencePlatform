@@ -29,7 +29,12 @@ public static class Program
         // 1. Parse CLI Options
         var options = ParseCliArguments(args);
 
+        // [ZERO-TOLERANCE SECURITY] Enforce Cross-Machine Data Isolation Guard
+        // Guarantees that any historical logs or reports generated on one computer are immediately wiped if transferred to a new computer.
+        CrossMachineDataSanitizationGuard.EnforceZeroToleranceIsolation(options.OutputDirectory, Path.Combine(Directory.GetCurrentDirectory(), "logs"));
+
         // 2. Configure Dependency Injection (Clean Architecture Layer Wiring)
+
         using var host = Host.CreateDefaultBuilder(args)
             .ConfigureLogging(logging =>
             {

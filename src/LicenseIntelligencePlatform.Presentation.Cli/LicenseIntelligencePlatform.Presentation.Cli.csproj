@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
     <ProjectReference Include="..\LicenseIntelligencePlatform.Domain\LicenseIntelligencePlatform.Domain.csproj" />
@@ -18,4 +18,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <Target Name="SanitizeOutputDirectories" AfterTargets="Publish;Build">
+    <Message Importance="high" Text="[Security Guard] Cleaning log and report output folders to ensure zero internal data is packaged..." />
+    <RemoveDir Directories="$(PublishDir)logs;$(PublishDir)reports;$(OutDir)logs;$(OutDir)reports" />
+    <MakeDir Directories="$(PublishDir)logs;$(PublishDir)reports;$(OutDir)logs;$(OutDir)reports" />
+    <WriteLinesToFile File="$(PublishDir)logs\.keep" Lines="# Logs Directory clean placeholder" Overwrite="true" Condition="Exists('$(PublishDir)')" />
+    <WriteLinesToFile File="$(PublishDir)reports\.keep" Lines="# Reports Directory clean placeholder" Overwrite="true" Condition="Exists('$(PublishDir)')" />
+  </Target>
+
 </Project>
+
+

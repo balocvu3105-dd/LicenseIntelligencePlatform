@@ -29,10 +29,19 @@ $RECYCLE.BIN/
 
 # Intermediate output and temp test folders
 dist/win-x64/
-dist/LicenseIntelligencePlatform-v1.0.0-win-x64/reports/
-reports/
+/logs/
+/reports/
+/my_reports/
+/test_reports/
+/test_stealth_reports/
+dist/LicenseIntelligencePlatform-v1.0.0-win-x64/logs/*
+!dist/LicenseIntelligencePlatform-v1.0.0-win-x64/logs/.keep
+dist/LicenseIntelligencePlatform-v1.0.0-win-x64/reports/*
+!dist/LicenseIntelligencePlatform-v1.0.0-win-x64/reports/.keep
 
-# Note: We intentionally keep dist/LicenseIntelligencePlatform-v1.0.0-win-x64.zip and dist/LicenseIntelligencePlatform-v1.0.0-win-x64/ (except reports/) so users have the standalone executable and guides!
+# Note: We intentionally keep dist/LicenseIntelligencePlatform-v1.0.0-win-x64.zip and dist/LicenseIntelligencePlatform-v1.0.0-win-x64/ (except actual reports and logs) so users have the standalone executable and guides!
 !dist/LicenseIntelligencePlatform-v1.0.0-win-x64.zip
 !dist/LicenseIntelligencePlatform-v1.0.0-win-x64/LicenseIntelligencePlatform.Presentation.Cli.exe
 !dist/LicenseIntelligencePlatform-v1.0.0-win-x64/HUONG_DAN_SU_DUNG.md
+
+

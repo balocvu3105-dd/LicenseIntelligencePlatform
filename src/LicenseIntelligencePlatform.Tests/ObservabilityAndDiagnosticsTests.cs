@@ -129,4 +129,40 @@ public class ObservabilityAndDiagnosticsTests
             if (Directory.Exists(tempDir)) Directory.Delete(tempDir, true);
         }
     }
+
+
+    [Fact]
+    public void CrossMachineDataSanitizationGuard_WipesOldDataWhenHostChanges()
+    {
+        var tempRoot = Path.Combine(Path.GetTempPath(), $"lip_guard_test_{Guid.NewGuid():N}");
+        var logsDir = Path.Combine(tempRoot, "logs");
+        var reportsDir = Path.Combine(tempRoot, "reports");
+        Directory.CreateDirectory(logsDir);
+        Directory.CreateDirectory(reportsDir);
+
+        try
+        {
+            // Simulate foreign machine data transferred or downloaded from another person's computer
+            File.WriteAllText(Path.Combine(logsDir, "application.log"), "User A secret sensitive logs");
+            File.WriteAllText(Path.Combine(reportsDir, "license_report.csv"), "User A scanned software");
+            File.WriteAllText(Path.Combine(logsDir, ".host_identity"), "FOREIGN-USER-MACHINE-PC\nOS: Windows 10");
+
+            // Execute zero-tolerance cross-machine guard
+            CrossMachineDataSanitizationGuard.EnforceZeroToleranceIsolation(reportsDir, logsDir);
+
+            // Verify all previous session data was completely wiped to prevent cross-user leakage
+            Assert.False(File.Exists(Path.Combine(logsDir, "application.log")), "Old logs from another machine must be wiped");
+            Assert.False(File.Exists(Path.Combine(reportsDir, "license_report.csv")), "Old reports from another machine must be wiped");
+
+            // Verify host identity is updated to current machine
+            Assert.True(File.Exists(Path.Combine(logsDir, ".host_identity")), ".host_identity tracker must exist");
+            var newIdentity = File.ReadAllText(Path.Combine(logsDir, ".host_identity"));
+            Assert.Contains(Environment.MachineName.Trim().ToUpperInvariant(), newIdentity);
+        }
+        finally
+        {
+            if (Directory.Exists(tempRoot)) Directory.Delete(tempRoot, true);
+        }
+    }
 }
+
