@@ -6,7 +6,7 @@
 ![Clean Architecture](https://img.shields.io/badge/Architecture-Clean%20%2B%20SOLID-008080?style=for-the-badge)
 ![Security: Read-Only](https://img.shields.io/badge/Security-Read--Only%20%2F%20Air--Gapped-10B981?style=for-the-badge)
 ![Integrity: SHA-256 Checksum](https://img.shields.io/badge/Integrity-SHA--256%20Checksum-3B82F6?style=for-the-badge)
-![Unit Tests: 38/38 Passed](https://img.shields.io/badge/Tests-38%2F38%20Passed-success?style=for-the-badge)
+![Unit Tests: 41/41 Passed](https://img.shields.io/badge/Tests-41%2F41%20Passed-success?style=for-the-badge)
 
 [![Download Release (.zip)](https://img.shields.io/badge/📥_TẢI_VỀ_TRỌN_BỘ_.ZIP_(14_MB)-008080?style=for-the-badge&logo=github)](https://github.com/balocvu3105-dd/LicenseIntelligencePlatform/raw/main/dist/LicenseIntelligencePlatform-v1.0.0-win-x64.zip)
 [![Download CLI (.exe)](https://img.shields.io/badge/🚀_TẢI_TRỰC_TIẾP_FILE_.EXE-3B82F6?style=for-the-badge&logo=windows)](https://github.com/balocvu3105-dd/LicenseIntelligencePlatform/raw/main/dist/LicenseIntelligencePlatform-v1.0.0-win-x64/LicenseIntelligencePlatform.Presentation.Cli.exe)
@@ -42,10 +42,11 @@ Hệ thống hoạt động theo nguyên tắc **Read-Only** (không ghi đè ha
 
 ## Key Features
 
-- **Tự động hóa rà soát giấy phép:** Phân tích và phân loại chính xác các loại giấy phép (Commercial, Open Source, Freeware, Custom) thông qua hệ sinh thái 33 sandboxed plugins chuẩn hóa.
+- **Tự động rà soát bản quyền Windows OS & Phát hiện KMS Lậu (Ghim đầu bảng):** Tự động truy vấn kênh kích hoạt chính hãng (RETAIL, OEM, MAK) hoặc cảnh báo vi phạm nếu phát hiện công cụ crack KMS lậu (`KMSpico`, `KMSAuto`, `SppExtComObj`, `localhost:1688`). Kết quả kiểm tra hệ điều hành luôn được **ghim ở dòng số 1** trong mọi báo cáo Excel và Web.
+- **Tự động hóa rà soát giấy phép:** Phân tích và phân loại chính xác các loại giấy phép (Commercial, Open Source, Freeware, Custom) thông qua hệ sinh thái 34 sandboxed plugins chuẩn hóa.
 - **Bảo mật cục bộ (Read-Only & Air-Gapped):** Mọi thao tác quét Registry, hệ thống tập tin và chữ ký Authenticode diễn ra hoàn toàn trên RAM cục bộ, không ghi hoặc thay đổi cấu hình máy trạm.
 - **Chống giả mạo dữ liệu (SHA-256 & Read-Only Lock):** Báo cáo xuất ra được tự động ký mã băm SHA-256 và khóa thuộc tính chỉ đọc nhằm bảo vệ tính toàn vẹn cho hồ sơ kiểm toán.
-- **Thu thập đa nguồn (Multi-Source Scanners):** Tổng hợp dữ liệu từ Windows Registry (32/64-bit), Windows Package Manager (WinGet), Linux dpkg/rpm và deep binary scanning.
+- **Thu thập đa nguồn (Multi-Source Scanners):** Tổng hợp dữ liệu từ Windows OS Activation (`SLMGR/SPP`), Windows Registry (32/64-bit), Windows Package Manager (WinGet), Linux dpkg/rpm và deep binary scanning.
 - **Deduplication & Merge Engine:** Loại bỏ dữ liệu trùng lặp giữa các kiến trúc hệ thống và chuẩn hóa tên nhà xuất bản.
 - **Rule Engine & Confidence Scoring:** Định lượng độ tin cậy bằng chứng rà soát theo thang điểm động và xử lý xung đột mức độ ưu tiên giữa các plugin tự động.
 - **Xuất báo cáo đa định dạng:** Hỗ trợ đồng thời Bảng tính Excel (.xlsx 4 trang tính), Báo cáo trực quan HTML Widescreen, Hồ sơ Markdown (.md), CSV và JSON.
@@ -70,8 +71,8 @@ Hệ thống được thiết kế theo mô hình **Clean Architecture 5 tầng*
                    ▼                                             ▼
 ┌──────────────────────────────────────┐     ┌─────────────────────────────────────┐
 │         Infrastructure Layer         │     │           Plugins Layer             │
-│  • Scanners: WinRegistry, Winget,    │     │  • 33 Sandboxed Standard Plugins    │
-│    Linux dpkg, Deep PE Scanner       │     │  • Commercial / OpenSource / Steam  │
+│  • Scanners: WinOS Activation (SPP), │     │  • 34 Sandboxed Standard Plugins    │
+│    WinRegistry, Linux dpkg, Deep PE  │     │  • Commercial / OpenSource / Steam  │
 │  • Exporters: XLSX, HTML, MD, JSON   │     │  • Heuristic & License Manifests    │
 └──────────────────┬───────────────────┘     └──────────────────┬──────────────────┘
                    ▼                                            ▼

@@ -69,4 +69,17 @@ public class ScannerTests
         // Assert
         Assert.Equal(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), isSupported);
     }
+
+    [Fact]
+    public void WindowsOsScanner_IsSupportedOnCurrentPlatform_ShouldMatchWindowsOS()
+    {
+        // Arrange
+        var scanner = new WindowsOsScanner(NullLogger<WindowsOsScanner>.Instance);
+
+        // Act
+        var isSupported = scanner.IsSupportedOnCurrentPlatform();
+
+        // Assert
+        Assert.Equal(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), isSupported);
+    }
 }

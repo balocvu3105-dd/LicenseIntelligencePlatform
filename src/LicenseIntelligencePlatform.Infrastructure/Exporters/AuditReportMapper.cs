@@ -50,7 +50,7 @@ public sealed class AuditReportMapper : IReportMapper
         sb.AppendLine("| Software Name | Version | Publisher | Detected License | Confidence | Plugin Identified | Evidences |");
         sb.AppendLine("| :--- | :--- | :--- | :---: | :---: | :--- | :--- |");
 
-        foreach (var result in report.Results.OrderByDescending(r => r.Confidence).ThenBy(r => r.Software.Name))
+        foreach (var result in report.Results.OrderByDescending(r => r.PluginId.StartsWith("os.windows", StringComparison.OrdinalIgnoreCase) ? 1 : 0).ThenByDescending(r => r.Confidence).ThenBy(r => r.Software.Name))
         {
             cancellationToken.ThrowIfCancellationRequested();
 

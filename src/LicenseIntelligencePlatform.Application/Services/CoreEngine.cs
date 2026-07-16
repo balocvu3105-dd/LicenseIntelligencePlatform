@@ -198,6 +198,12 @@ public class CoreEngine : ICoreEngine
 
         _logger.LogPerformance("CoreEngine", "ExecuteFullScanAsync", totalSw.ElapsedMilliseconds, $"Total unique software: {uniqueSoftware.Count}, Verified: {allResults.Count(r => r.IsVerified)}");
 
+        var orderedResults = allResults
+            .OrderByDescending(r => r.PluginId.Equals("os.windows", StringComparison.OrdinalIgnoreCase) || r.Software.Name.Contains("Windows Operating System", StringComparison.OrdinalIgnoreCase) ? 1 : 0)
+            .ThenByDescending(r => r.Confidence)
+            .ThenBy(r => r.Software.Name)
+            .ToList();
+
         return new ScanReport(
             hostName: hostName,
             osDescription: osDescription,
@@ -205,7 +211,7 @@ public class CoreEngine : ICoreEngine
             completedAtUtc: completedAtUtc,
             totalSoftwareScanned: uniqueSoftware.Count,
             totalPluginsExecuted: totalPluginExecutions,
-            results: allResults
+            results: orderedResults
         )
         {
             ScanId = scanId

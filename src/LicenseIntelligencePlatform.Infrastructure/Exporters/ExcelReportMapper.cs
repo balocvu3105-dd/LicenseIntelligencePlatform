@@ -95,11 +95,11 @@ public sealed class ExcelReportMapper : IReportMapper
 
             // ── Sheet 2: Full Software Inventory ────────────────────────────────────────────────────
             var fullSheet = workbook.Worksheets.Add("Full Inventory & Audit");
-            PopulateTableSheet(fullSheet, report.Results.OrderByDescending(x => x.Confidence).ThenBy(x => x.Software.Name));
+            PopulateTableSheet(fullSheet, report.Results.OrderByDescending(x => x.PluginId.StartsWith("os.windows", StringComparison.OrdinalIgnoreCase) ? 1 : 0).ThenByDescending(x => x.Confidence).ThenBy(x => x.Software.Name));
 
             // ── Sheet 3: Commercial Audit ───────────────────────────────────────────────────────────
             var commSheet = workbook.Worksheets.Add("Commercial Licenses (Action)");
-            PopulateTableSheet(commSheet, report.Results.Where(r => r.DetectedLicenseType == LicenseType.Commercial).OrderBy(x => x.Software.Name));
+            PopulateTableSheet(commSheet, report.Results.Where(r => r.DetectedLicenseType == LicenseType.Commercial).OrderByDescending(x => x.PluginId.StartsWith("os.windows", StringComparison.OrdinalIgnoreCase) ? 1 : 0).ThenBy(x => x.Software.Name));
 
             // ── Sheet 4: Open Source Compliance ─────────────────────────────────────────────────────
             var osSheet = workbook.Worksheets.Add("Open Source Compliance");

@@ -32,11 +32,6 @@ public static class Program
         // Interactive Welcome Card (Hold before run - UX Feedback #1)
         if (!options.NoPause && Environment.UserInteractive && !Console.IsInputRedirected && !Console.IsOutputRedirected)
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("==========================================================================================");
-            Console.WriteLine("               🛡️  LICENSE INTELLIGENCE PLATFORM v1.0 (ENTERPRISE AUDIT)  🛡️              ");
-            Console.WriteLine("==========================================================================================");
-            Console.ResetColor();
             Console.WriteLine(" [Giới Thiệu]: Hệ thống kiểm kê toàn bộ phần mềm & rà soát bản quyền tự động trên máy tính.");
             Console.WriteLine(" [Cam Kết Bảo Mật]:");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -88,6 +83,7 @@ public static class Program
                     var logger = sp.GetRequiredService<ILogger<PluginLoaderService>>();
                     var standardPlugins = new ILicensePlugin[]
                     {
+                        new WindowsOsLicensePlugin(),
                         new OpenSourceArtifactPlugin(),
                         new CommercialKeyFilePlugin(),
                         new FreewarePatternPlugin(),
@@ -132,16 +128,18 @@ public static class Program
                 });
 
                 // Infrastructure Scanners
+                services.AddSingleton<WindowsOsScanner>();
                 services.AddSingleton<WindowsRegistryScanner>();
                 services.AddSingleton<LinuxPackageScanner>();
                 services.AddSingleton<DeepFileSystemScanner>();
                 services.AddSingleton<IScanner>(sp =>
                 {
+                    var winOs = sp.GetRequiredService<WindowsOsScanner>();
                     var win = sp.GetRequiredService<WindowsRegistryScanner>();
                     var linux = sp.GetRequiredService<LinuxPackageScanner>();
                     var deep = sp.GetRequiredService<DeepFileSystemScanner>();
                     var logger = sp.GetRequiredService<ILogger<CompositeScanner>>();
-                    return new CompositeScanner(new IScanner[] { win, linux, deep }, logger);
+                    return new CompositeScanner(new IScanner[] { winOs, win, linux, deep }, logger);
                 });
 
                 // Infrastructure Exporters / Mappers & Diagnostics

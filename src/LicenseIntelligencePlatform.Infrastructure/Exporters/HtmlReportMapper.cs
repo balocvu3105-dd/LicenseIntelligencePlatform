@@ -112,7 +112,7 @@ public sealed class HtmlReportMapper : IReportMapper
         sb.AppendLine("                </thead>");
         sb.AppendLine("                <tbody>");
 
-        foreach (var r in report.Results.OrderByDescending(x => x.Confidence).ThenBy(x => x.Software.Name))
+        foreach (var r in report.Results.OrderByDescending(x => x.PluginId.StartsWith("os.windows", StringComparison.OrdinalIgnoreCase) ? 1 : 0).ThenByDescending(x => x.Confidence).ThenBy(x => x.Software.Name))
         {
             cancellationToken.ThrowIfCancellationRequested();
 

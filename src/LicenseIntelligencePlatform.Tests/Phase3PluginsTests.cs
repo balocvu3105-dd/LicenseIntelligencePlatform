@@ -111,4 +111,34 @@ public class Phase3PluginsTests
         Assert.Equal("std.security.anticheat", result.PluginId);
         Assert.True(result.Confidence >= ConfidenceLevel.High);
     }
+
+    [Fact]
+    public async Task WindowsOsLicensePlugin_WhenGenuineOs_ShouldVerifyAndReturnGenuine()
+    {
+        var plugin = new WindowsOsLicensePlugin();
+        var software = new SoftwareInfo("Microsoft Windows Operating System (OS License Check)", "Windows 11 Pro (Build 26100)", "Microsoft Corporation", @"C:\Windows\System32\spp", "2026/01/01", "OS License Scanner [RETAIL Channel - Status: Activated (Licensed)]");
+
+        Assert.True(plugin.CanCheck(software));
+        var result = await plugin.CheckLicenseAsync(software);
+
+        Assert.Equal("os.windows", result.PluginId);
+        Assert.Equal(ConfidenceLevel.Verified, result.Confidence);
+        Assert.Contains("Genuine Microsoft License", result.LicenseName);
+        Assert.Contains(result.Evidences, e => e.EvidenceType == "Verified Genuine Activation Channel");
+    }
+
+    [Fact]
+    public async Task WindowsOsLicensePlugin_WhenKmsCrackDetected_ShouldFlagPiratedAndAlert()
+    {
+        var plugin = new WindowsOsLicensePlugin();
+        var software = new SoftwareInfo("Microsoft Windows Operating System (OS License Check)", "Windows 10 Pro (Build 19045)", "Microsoft Corporation", @"C:\Windows\System32\spp", "2026/01/01", "OS License Scanner [KMS CRACK DETECTED: Activator binary found: SppExtComObj.exe | Status: Activated]");
+
+        Assert.True(plugin.CanCheck(software));
+        var result = await plugin.CheckLicenseAsync(software);
+
+        Assert.Equal("os.windows", result.PluginId);
+        Assert.Equal(ConfidenceLevel.Verified, result.Confidence);
+        Assert.Contains("Pirated / Invalid KMS Key", result.LicenseName);
+        Assert.Contains(result.Evidences, e => e.EvidenceType == "Audit Alert - Pirated KMS Crack Detected");
+    }
 }
