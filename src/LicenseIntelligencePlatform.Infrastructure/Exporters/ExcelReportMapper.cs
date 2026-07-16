@@ -30,8 +30,16 @@ public sealed class ExcelReportMapper : IReportMapper
             var dashSheet = workbook.Worksheets.Add("Executive Dashboard");
             dashSheet.ShowGridLines = true;
 
-            // Title block
-            dashSheet.Range("A1:E1").Merge();
+            // Explicit column widths for perfect dashboard layout without clipping or ### overflows
+            dashSheet.Column(1).Width = 4;  // Left margin space
+            dashSheet.Column(2).Width = 48; // KPI Label column
+            dashSheet.Column(3).Width = 20; // Package Count column
+            dashSheet.Column(4).Width = 25; // Percentage column
+            dashSheet.Column(5).Width = 12;
+            dashSheet.Column(6).Width = 12;
+
+            // Title block (merged A1:F1 to guarantee ample room for full title)
+            dashSheet.Range("A1:F1").Merge();
             var titleCell = dashSheet.Cell("A1");
             titleCell.Value = "LICENSE INTELLIGENCE PLATFORM (LIP) — EXECUTIVE DASHBOARD";
             titleCell.Style.Font.Bold = true;
@@ -40,16 +48,16 @@ public sealed class ExcelReportMapper : IReportMapper
             titleCell.Style.Fill.BackgroundColor = XLColor.FromHtml("#0F172A");
             titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
             titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
-            dashSheet.Row(1).Height = 40;
+            dashSheet.Row(1).Height = 42;
 
             // Subtitle metadata
-            dashSheet.Range("A2:E2").Merge();
+            dashSheet.Range("A2:F2").Merge();
             dashSheet.Cell("A2").Value = $"Scan ID: {report.ScanId} | Host: {report.HostName} ({report.OSDescription})";
             dashSheet.Cell("A2").Style.Font.FontSize = 11;
             dashSheet.Cell("A2").Style.Font.FontColor = XLColor.FromHtml("#475569");
             dashSheet.Cell("A2").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
 
-            dashSheet.Range("A3:E3").Merge();
+            dashSheet.Range("A3:F3").Merge();
             dashSheet.Cell("A3").Value = $"Scan Start (VN Time): {VietnamTime.Format(report.StartedAtUtc)} | Total Packages: {report.TotalSoftwareScanned}";
             dashSheet.Cell("A3").Style.Font.FontSize = 11;
             dashSheet.Cell("A3").Style.Font.Bold = true;
@@ -65,7 +73,7 @@ public sealed class ExcelReportMapper : IReportMapper
             kpiHeaderRange.Style.Fill.BackgroundColor = XLColor.FromHtml("#1E293B");
             kpiHeaderRange.Style.Font.FontColor = XLColor.FromHtml("#F8FAFC");
             kpiHeaderRange.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-            dashSheet.Row(5).Height = 25;
+            dashSheet.Row(5).Height = 26;
 
             var verifiedCount = report.Results.Count(r => r.IsVerified);
             var commercialCount = report.Results.Count(r => r.DetectedLicenseType == LicenseType.Commercial);
@@ -84,7 +92,6 @@ public sealed class ExcelReportMapper : IReportMapper
             var kpiBorderRange = dashSheet.Range("B5:D11");
             kpiBorderRange.Style.Border.OutsideBorder = XLBorderStyleValues.Medium;
             kpiBorderRange.Style.Border.InsideBorder = XLBorderStyleValues.Thin;
-            dashSheet.Columns().AdjustToContents(10, 50);
 
             // ── Sheet 2: Full Software Inventory ────────────────────────────────────────────────────
             var fullSheet = workbook.Worksheets.Add("Full Inventory & Audit");
@@ -119,7 +126,7 @@ public sealed class ExcelReportMapper : IReportMapper
             sheet.Cell(row, 3).Style.Font.Bold = true;
             sheet.Cell(row, 3).Style.Font.FontColor = XLColor.FromHtml(colorHex);
         }
-        sheet.Row(row).Height = 22;
+        sheet.Row(row).Height = 24;
     }
 
     private static void PopulateTableSheet(IXLWorksheet sheet, IEnumerable<LicenseCheckResult> results)
@@ -142,25 +149,42 @@ public sealed class ExcelReportMapper : IReportMapper
             cell.Style.Fill.BackgroundColor = XLColor.FromHtml("#0B1323");
             cell.Style.Font.FontColor = XLColor.FromHtml("#F8FAFC");
             cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
         }
-        sheet.Row(1).Height = 26;
+        sheet.Row(1).Height = 28;
         sheet.SheetView.FreezeRows(1);
 
         int row = 2;
         foreach (var r in results)
         {
+            // Col 1: Software Package
             sheet.Cell(row, 1).Value = r.Software.Name;
             sheet.Cell(row, 1).Style.Font.Bold = true;
 
-            sheet.Cell(row, 2).Value = r.Software.Version;
-            sheet.Cell(row, 3).Value = r.Software.Publisher ?? "Unknown";
-            sheet.Cell(row, 4).Value = r.Software.InstallPath;
-            sheet.Cell(row, 5).Value = r.Software.InstallDate;
-            sheet.Cell(row, 6).Value = r.Software.LastModifiedDate;
-            sheet.Cell(row, 7).Value = r.Software.AppStartTime;
-            sheet.Cell(row, 8).Value = r.Software.ScanSource;
+            // Col 2: Version
+            FormatCellOrPlaceholder(sheet.Cell(row, 2), r.Software.Version, "—");
 
-            // License Type Cell with conditional badge tint
+            // Col 3: Publisher
+            var pub = !string.IsNullOrWhiteSpace(r.Software.Publisher) && !r.Software.Publisher.Equals("Unknown", StringComparison.OrdinalIgnoreCase)
+                ? r.Software.Publisher : null;
+            FormatCellOrPlaceholder(sheet.Cell(row, 3), pub, "Unknown / Independent");
+
+            // Col 4: Install Path
+            FormatCellOrPlaceholder(sheet.Cell(row, 4), r.Software.InstallPath, "N/A (System / Built-in)");
+
+            // Col 5: Install Date
+            FormatCellOrPlaceholder(sheet.Cell(row, 5), r.Software.InstallDate, "— (Pre-installed)");
+
+            // Col 6: Last Modified Date
+            FormatCellOrPlaceholder(sheet.Cell(row, 6), r.Software.LastModifiedDate, "— (Not Modified)");
+
+            // Col 7: Last Used / Active
+            FormatCellOrPlaceholder(sheet.Cell(row, 7), r.Software.AppStartTime, "— (Inactive / Background)");
+
+            // Col 8: Scan Source
+            FormatCellOrPlaceholder(sheet.Cell(row, 8), r.Software.ScanSource, "System Scan");
+
+            // Col 9: License Type Cell with conditional badge tint
             var licCell = sheet.Cell(row, 9);
             licCell.Value = r.DetectedLicenseType.ToString();
             licCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
@@ -179,9 +203,13 @@ public sealed class ExcelReportMapper : IReportMapper
                     licCell.Style.Fill.BackgroundColor = XLColor.FromHtml("#F1F5F9");
                     licCell.Style.Font.FontColor = XLColor.FromHtml("#334155");
                     break;
+                default:
+                    licCell.Style.Fill.BackgroundColor = XLColor.FromHtml("#FEF3C7");
+                    licCell.Style.Font.FontColor = XLColor.FromHtml("#92400E");
+                    break;
             }
 
-            // Confidence Cell
+            // Col 10: Confidence Cell
             var confCell = sheet.Cell(row, 10);
             confCell.Value = r.Confidence.ToString();
             confCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
@@ -196,16 +224,22 @@ public sealed class ExcelReportMapper : IReportMapper
                 confCell.Style.Fill.BackgroundColor = XLColor.FromHtml("#FEF3C7");
                 confCell.Style.Font.FontColor = XLColor.FromHtml("#92400E");
             }
+            else
+            {
+                confCell.Style.Fill.BackgroundColor = XLColor.FromHtml("#F1F5F9");
+                confCell.Style.Font.FontColor = XLColor.FromHtml("#64748B");
+            }
 
-            sheet.Cell(row, 11).Value = r.PluginName;
+            // Col 11: Plugin Detector
+            FormatCellOrPlaceholder(sheet.Cell(row, 11), r.PluginName, "Standard Detector");
 
-            // Evidence combined text
+            // Col 12: Evidence combined text
             var evText = r.Evidences.Count > 0
                 ? string.Join(" | ", r.Evidences.Select(e => $"[{e.EvidenceType}] {e.Description}"))
-                : "No artifacts";
-            sheet.Cell(row, 12).Value = evText;
+                : null;
+            FormatCellOrPlaceholder(sheet.Cell(row, 12), evText, "No verification artifacts recorded");
 
-            sheet.Row(row).Height = 22;
+            sheet.Row(row).Height = 23;
             row++;
         }
 
@@ -217,7 +251,50 @@ public sealed class ExcelReportMapper : IReportMapper
             dataRange.Style.Border.OutsideBorder = XLBorderStyleValues.Medium;
         }
 
-        // Auto-fit column widths with logical limits so long paths don't make columns super wide
-        sheet.Columns(1, 12).AdjustToContents(10, 65);
+        // Auto-fit column widths first based on content
+        sheet.Columns(1, 12).AdjustToContents();
+
+        // Enforce balanced, spacious minimum column widths (cân đều) and ensure headers + auto-filter dropdown arrows never overlap
+        for (int i = 1; i <= 12; i++)
+        {
+            var col = sheet.Column(i);
+            var headerLen = headers[i - 1].Length;
+            var minHeaderWidth = headerLen + 6.0; // +6 padding for bold font and filter icon space
+            if (col.Width < minHeaderWidth) col.Width = minHeaderWidth;
+
+            double explicitMin = i switch
+            {
+                1 => 30, // Software Package
+                2 => 18, // Version
+                3 => 28, // Publisher
+                4 => 42, // Install Path
+                5 => 20, // Install Date
+                6 => 28, // Last Modified (VN Time)
+                7 => 30, // Last Used / Active (VN Time)
+                8 => 32, // Scan Source
+                9 => 18, // License Type
+                10 => 18, // Confidence
+                11 => 35, // Plugin Detector
+                12 => 45, // Verification Evidence
+                _ => 20
+            };
+            if (col.Width < explicitMin) col.Width = explicitMin;
+            if (col.Width > 75) col.Width = 75;
+        }
+    }
+
+    private static void FormatCellOrPlaceholder(IXLCell cell, string? value, string placeholder)
+    {
+        if (!string.IsNullOrWhiteSpace(value) && !value.Equals("Unknown", StringComparison.OrdinalIgnoreCase))
+        {
+            cell.Value = value;
+            cell.Style.Font.FontColor = XLColor.FromHtml("#0F172A");
+        }
+        else
+        {
+            cell.Value = placeholder;
+            cell.Style.Font.FontColor = XLColor.FromHtml("#64748B");
+            cell.Style.Font.Italic = true;
+        }
     }
 }

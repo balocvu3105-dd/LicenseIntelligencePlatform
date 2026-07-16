@@ -58,7 +58,10 @@ public sealed class AuditReportMapper : IReportMapper
                 ? string.Join("; ", result.Evidences.Select(e => $"{e.EvidenceType}: {e.Description}"))
                 : "No physical evidence artifacts.";
 
-            sb.AppendLine($"| **{result.Software.Name}** | `{result.Software.Version}` | {result.Software.Publisher ?? "Unknown"} | `{result.DetectedLicenseType}` | **{result.Confidence}** | `{result.PluginName}` | {evidenceSummary} |");
+            var pub = !string.IsNullOrWhiteSpace(result.Software.Publisher) && !result.Software.Publisher.Equals("Unknown", StringComparison.OrdinalIgnoreCase)
+                ? result.Software.Publisher : "Unknown / Independent";
+
+            sb.AppendLine($"| **{result.Software.Name}** | `{result.Software.Version}` | {pub} | `{result.DetectedLicenseType}` | **{result.Confidence}** | `{result.PluginName}` | {evidenceSummary} |");
         }
 
         sb.AppendLine();
@@ -76,7 +79,8 @@ public sealed class AuditReportMapper : IReportMapper
             foreach (var item in backlog.Take(50))
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                sb.AppendLine($"* [Need Plugin] **{item.Software.Name}** (`v{item.Software.Version}`) by `{item.Software.Publisher ?? "Unknown Publisher"}` — *Install Location: {item.Software.InstallPath ?? "N/A"}*");
+                var backPub = !string.IsNullOrWhiteSpace(item.Software.Publisher) && !item.Software.Publisher.Equals("Unknown", StringComparison.OrdinalIgnoreCase) ? item.Software.Publisher : "Unknown / Independent";
+                sb.AppendLine($"* [Need Plugin] **{item.Software.Name}** (`v{item.Software.Version}`) by `{backPub}` — *Install Location: {item.Software.InstallPath ?? "N/A (System / Built-in)"}*");
             }
 
             if (backlog.Count > 50)
@@ -87,7 +91,7 @@ public sealed class AuditReportMapper : IReportMapper
 
         sb.AppendLine();
         sb.AppendLine("---");
-        sb.AppendLine($"*Generated automatically by License Intelligence Platform (LIP) v1.0 — Phase 4 Reporting Engine on {DateTime.UtcNow:yyyy-MM-dd HH:mm:ss} UTC.*");
+        sb.AppendLine($"*Generated automatically by License Intelligence Platform (LIP) v1.0 — Phase 4 Reporting Engine on {VietnamTime.Format(DateTime.UtcNow)}.*");
 
         await writer.WriteAsync(sb.ToString().AsMemory(), cancellationToken).ConfigureAwait(false);
         await writer.FlushAsync(cancellationToken).ConfigureAwait(false);

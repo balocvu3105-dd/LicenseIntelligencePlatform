@@ -133,18 +133,19 @@ public sealed class HtmlReportMapper : IReportMapper
 
             var evText = r.Evidences.Count > 0
                 ? string.Join("<br>", r.Evidences.Select(e => $"• <strong style=\"color: var(--text);\">{HtmlEncode(e.EvidenceType)}:</strong> {HtmlEncode(e.Description)}"))
-                : "<span style=\"color: var(--muted); font-style: italic;\">No artifacts</span>";
+                : "<span style=\"color: var(--muted); font-style: italic;\">No verification artifacts recorded</span>";
 
-            var installPath = !string.IsNullOrWhiteSpace(r.Software.InstallPath) ? HtmlEncode(r.Software.InstallPath) : "<span style=\"color: var(--muted); font-style: italic;\">N/A</span>";
-            var installDate = !string.IsNullOrWhiteSpace(r.Software.InstallDate) ? HtmlEncode(r.Software.InstallDate) : "<span style=\"color: var(--muted);\">Unknown</span>";
-            var lastMod = !string.IsNullOrWhiteSpace(r.Software.LastModifiedDate) ? HtmlEncode(r.Software.LastModifiedDate) : "<span style=\"color: var(--muted);\">Unknown</span>";
-            var appStart = !string.IsNullOrWhiteSpace(r.Software.AppStartTime) ? HtmlEncode(r.Software.AppStartTime) : "<span style=\"color: var(--muted); font-style: italic;\">Inactive / Disk</span>";
+            var installPath = !string.IsNullOrWhiteSpace(r.Software.InstallPath) ? HtmlEncode(r.Software.InstallPath) : "<span style=\"color: var(--muted); font-style: italic;\">N/A (System / Built-in)</span>";
+            var installDate = !string.IsNullOrWhiteSpace(r.Software.InstallDate) && !r.Software.InstallDate.Equals("Unknown", StringComparison.OrdinalIgnoreCase) ? HtmlEncode(r.Software.InstallDate) : "<span style=\"color: var(--muted); font-style: italic;\">— (Pre-installed)</span>";
+            var lastMod = !string.IsNullOrWhiteSpace(r.Software.LastModifiedDate) && !r.Software.LastModifiedDate.Equals("Unknown", StringComparison.OrdinalIgnoreCase) ? HtmlEncode(r.Software.LastModifiedDate) : "<span style=\"color: var(--muted); font-style: italic;\">— (Not Modified)</span>";
+            var appStart = !string.IsNullOrWhiteSpace(r.Software.AppStartTime) ? HtmlEncode(r.Software.AppStartTime) : "<span style=\"color: var(--muted); font-style: italic;\">— (Inactive / Background)</span>";
+            var publisher = !string.IsNullOrWhiteSpace(r.Software.Publisher) && !r.Software.Publisher.Equals("Unknown", StringComparison.OrdinalIgnoreCase) ? HtmlEncode(r.Software.Publisher) : "<span style=\"color: var(--muted); font-style: italic;\">Unknown / Independent</span>";
             var scanSrc = !string.IsNullOrWhiteSpace(r.Software.ScanSource) ? HtmlEncode(r.Software.ScanSource) : "System Scan";
 
             sb.AppendLine("                    <tr>");
             sb.AppendLine($"                        <td class=\"col-pkg\"><strong style=\"color: #f8fafc; font-size: 0.95rem;\">{HtmlEncode(r.Software.Name)}</strong></td>");
             sb.AppendLine($"                        <td class=\"col-ver\"><code>{HtmlEncode(r.Software.Version)}</code></td>");
-            sb.AppendLine($"                        <td class=\"col-pub\" style=\"color: #cbd5e1;\">{HtmlEncode(r.Software.Publisher ?? "Unknown")}</td>");
+            sb.AppendLine($"                        <td class=\"col-pub\" style=\"color: #cbd5e1;\">{publisher}</td>");
             sb.AppendLine($"                        <td class=\"col-path\" style=\"font-size: 0.82rem; font-family: monospace; color: #a5b4fc;\">{installPath}</td>");
             sb.AppendLine($"                        <td class=\"col-dt\" style=\"font-size: 0.82rem; color: #cbd5e1;\">{installDate}</td>");
             sb.AppendLine($"                        <td class=\"col-mod\" style=\"font-size: 0.82rem; color: #cbd5e1;\">{lastMod}</td>");
