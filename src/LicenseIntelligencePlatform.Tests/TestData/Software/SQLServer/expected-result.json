@@ -1,0 +1,7 @@
+{
+  "SoftwareName": "Microsoft SQL Server 2022 (64-bit)",
+  "Version": "16.0.1000.6",
+  "ExpectedLicenseType": "Commercial",
+  "ExpectedLicenseName": "Microsoft SQL Server Commercial License",
+  "ExpectedConfidence": "Verified"
+}

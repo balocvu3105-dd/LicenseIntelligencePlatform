@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="LicenseIntelligencePlatform.Application/LicenseIntelligencePlatform.Application.csproj" />
+  <Project Path="LicenseIntelligencePlatform.Domain/LicenseIntelligencePlatform.Domain.csproj" />
+  <Project Path="LicenseIntelligencePlatform.Infrastructure/LicenseIntelligencePlatform.Infrastructure.csproj" />
+  <Project Path="LicenseIntelligencePlatform.Plugins.Standard/LicenseIntelligencePlatform.Plugins.Standard.csproj" />
+  <Project Path="LicenseIntelligencePlatform.Presentation.Cli/LicenseIntelligencePlatform.Presentation.Cli.csproj" />
+  <Project Path="LicenseIntelligencePlatform.Tests/LicenseIntelligencePlatform.Tests.csproj" />
+</Solution>

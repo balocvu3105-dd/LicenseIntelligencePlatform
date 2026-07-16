@@ -1,0 +1,2060 @@
+{
+  "ScanId": "31bb38a9a8f54ce1b97afe5bc258dafa",
+  "HostName": "DESKTOP-V8T1TLJ",
+  "OSDescription": "Microsoft Windows 10.0.26200",
+  "StartedAtUtc": "2026-07-15T10:13:50.767564Z",
+  "CompletedAtUtc": "2026-07-15T10:13:50.9700568Z",
+  "TotalSoftwareScanned": 106,
+  "TotalPluginsExecuted": 5,
+  "Results": [
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "AntiCheatExpert",
+        "Version": "28.0.2604.938",
+        "Publisher": "Unknown Publisher",
+        "InstallPath": "C:\\Program Files\\AntiCheatExpert",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8377496Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Armoury Crate Service",
+        "Version": "6.5.7.0",
+        "Publisher": "ASUSTeK COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "20251214",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8379895Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "Docker Desktop",
+        "Version": "4.66.0",
+        "Publisher": "Docker Inc.",
+        "InstallPath": "C:\\Program Files\\Docker\\Docker",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "Open Source License (Heuristic)",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Software name \u0027Docker Desktop\u0027 matches known open source or permissive distribution terms.",
+          "RawData": "Docker Desktop",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: False.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8457594Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "Git",
+        "Version": "2.54.0",
+        "Publisher": "The Git Development Community",
+        "InstallPath": "C:\\Program Files\\Git\\",
+        "InstallDate": "20260605",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "GNU General Public License (GPL)",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE.txt\u0027 specifying GNU General Public License (GPL).",
+          "RawData": "\r\n Note that the only valid version of the GPL as far as this project\r\n is concerned is _this_ particular version of the license (ie v2, not\r\n v2.2 or v3.x or whatever), unless explicitly otherwise st...",
+          "SourceLocation": "C:\\Program Files\\Git\\LICENSE.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8727823Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "GDR 1170 for SQL Server 2022 (KB5077465) (64-bit)",
+        "Version": "16.0.1170.5",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260418",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8728538Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "GDR 1175 for SQL Server 2022 (KB5084815) (64-bit)",
+        "Version": "16.0.1175.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260514",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8729956Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "GDR 1180 for SQL Server 2022 (KB5091158) (64-bit)",
+        "Version": "16.0.1180.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260516",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8730136Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft SQL Server 2022 (64-bit)",
+        "Version": "Unknown",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.873026Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft OneDrive",
+        "Version": "26.113.0614.0004",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8730489Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Riot Vanguard",
+        "Version": "Unknown",
+        "Publisher": "Riot Games, Inc.",
+        "InstallPath": "C:\\Program Files\\Riot Vanguard",
+        "InstallDate": "1780458889",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8748805Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Palworld",
+        "Version": "Unknown",
+        "Publisher": "Pocketpair",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Palworld",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8755378Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "OBS Studio",
+        "Version": "Unknown",
+        "Publisher": "OBS Project",
+        "InstallPath": "E:\\steam\\steamapps\\common\\OBS Studio",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8761339Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Source SDK Base 2007",
+        "Version": "Unknown",
+        "Publisher": "Valve",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8761603Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Cities: Skylines",
+        "Version": "Unknown",
+        "Publisher": "Colossal Order",
+        "InstallPath": "E:\\SteamLibrary\\steamapps\\common\\Cities_Skylines",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8763444Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Grand Theft Auto V Legacy",
+        "Version": "Unknown",
+        "Publisher": "Rockstar North",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Grand Theft Auto V",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8776157Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Sid Meier\u0027s Civilization VI",
+        "Version": "Unknown",
+        "Publisher": "Firaxis Games",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Sid Meier\u0027s Civilization VI",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8783424Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Stardew Valley",
+        "Version": "Unknown",
+        "Publisher": "ConcernedApe",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Stardew Valley",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8837594Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Wallpaper Engine",
+        "Version": "Unknown",
+        "Publisher": "Wallpaper Engine Team",
+        "InstallPath": "E:\\steam\\steamapps\\common\\wallpaper_engine",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8861951Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Counter-Strike 2",
+        "Version": "Unknown",
+        "Publisher": "Valve",
+        "InstallPath": "E:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8863336Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Green Hell",
+        "Version": "Unknown",
+        "Publisher": "Creepy Jar",
+        "InstallPath": "E:\\steam\\steamapps\\common\\Green Hell",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8868372Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "TablePlus 26.6.0",
+        "Version": "26.6.0",
+        "Publisher": "TablePlus, Inc",
+        "InstallPath": "C:\\Program Files\\TablePlus\\",
+        "InstallDate": "20260709",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8904187Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Unity 2022.3.62f3",
+        "Version": "2022.3.62f3",
+        "Publisher": "Unity Technologies ApS",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.890448Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Unity 6000.2.10f1",
+        "Version": "6000.2.10f1",
+        "Publisher": "Unity Technologies ApS",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.89046Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Unity 6000.3.1f1",
+        "Version": "6000.3.1f1",
+        "Publisher": "Unity Technologies ApS",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8904895Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Unity Hub 3.17.3",
+        "Version": "3.17.3",
+        "Publisher": "Unity Technologies Inc.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8905053Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft GameInput",
+        "Version": "3.3.221.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260520",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8905285Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "Node.js",
+        "Version": "24.14.1",
+        "Publisher": "Node.js Foundation",
+        "InstallPath": "",
+        "InstallDate": "20260416",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License",
+      "Confidence": "Medium",
+      "Evidences": [
+        {
+          "EvidenceType": "KeywordMatch",
+          "Description": "Software name \u0027Node.js\u0027 matches known open source or permissive distribution terms.",
+          "RawData": "Node.js",
+          "SourceLocation": "SoftwareInfo.Name"
+        }
+      ],
+      "IsVerified": false,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: False.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8905739Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2010  x64 Redistributable - 10.0.40219",
+        "Version": "10.0.40219",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260306",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8906169Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "ROG Live Service",
+        "Version": "3.5.8.0",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "20260715",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8906332Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft ODBC Driver 18 for SQL Server",
+        "Version": "18.6.1.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260324",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8906451Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft OLE DB Driver for SQL Server",
+        "Version": "18.7.4.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260418",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8906576Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Paradox Launcher v2",
+        "Version": "2.4.0",
+        "Publisher": "Paradox Interactive",
+        "InstallPath": "",
+        "InstallDate": "20260306",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8907088Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Intel(R) Computing Improvement Program",
+        "Version": "2.4.11219",
+        "Publisher": "Intel Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260714",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8907225Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft MPI (10.1.12498.18)",
+        "Version": "10.1.12498.18",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files\\Microsoft MPI\\",
+        "InstallDate": "20260324",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8927287Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Aura Wallpaper Service",
+        "Version": "2.2.3.0",
+        "Publisher": "ASUSTeK COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "20260715",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8927941Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft VSS Writer for SQL Server 2022",
+        "Version": "16.0.1000.6",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260516",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8928249Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft OLE DB Driver 19 for SQL Server",
+        "Version": "19.4.1.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260324",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8928419Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "NVIDIA Graphics Driver 610.47",
+        "Version": "610.47",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\Display.Driver.{5836CE95-D7C8-43CB-B4E6-85F3674B6BD3}",
+        "InstallDate": "20260603",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8959083Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "NVIDIA App 11.0.7.247",
+        "Version": "11.0.7.247",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\Display.NvApp.{8F9E8F0B-DED9-44D9-B92A-BACEC6DBE6C0}",
+        "InstallDate": "20260502",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8971429Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "NVIDIA PhysX System Software 9.23.1019",
+        "Version": "9.23.1019",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX",
+        "InstallDate": "20251214",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.8980046Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "NVIDIA FrameView SDK 1.7.12227.37421622",
+        "Version": "1.7.12227.37421622",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\FrameViewSDK",
+        "InstallDate": "20260502",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9001084Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "NVIDIA HD Audio Driver 1.4.5.7",
+        "Version": "1.4.5.7",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\HDAudio.Driver.{5016C912-AAF4-464C-8D0C-15850FB54EDA}",
+        "InstallDate": "20260603",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9020449Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "NVIDIA USBC Driver 1.52.831.832",
+        "Version": "1.52.831.832",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\USBC.{03D97859-80D7-4965-82A2-CB226E979B77}",
+        "InstallDate": "20260603",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9041087Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft SQL Server 2022 Setup (English)",
+        "Version": "16.0.1180.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260516",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9041345Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Cloudflare One Client",
+        "Version": "26.4.1350.0",
+        "Publisher": "Cloudflare, Inc.",
+        "InstallPath": "",
+        "InstallDate": "20260512",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9041497Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Epic Games Launcher",
+        "Version": "1.3.161.0",
+        "Publisher": "Epic Games, Inc.",
+        "InstallPath": "C:\\Program Files\\Epic Games\\",
+        "InstallDate": "20251214",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.905098Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Virtual Assistant",
+        "Version": "4.3.5",
+        "Publisher": "ASUS",
+        "InstallPath": "",
+        "InstallDate": "20251214",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9051138Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "IIS 10.0 Express",
+        "Version": "10.0.11304",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260523",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9051221Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "AURA lighting effect add-on x64",
+        "Version": "0.0.60",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "20260715",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9051306Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Web Deploy 4.0",
+        "Version": "10.0.9419",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260324",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.905155Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft SQL Server 2019 LocalDB",
+        "Version": "15.0.4382.1",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260401",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9051643Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft SQL Server 2025 LocalDB",
+        "Version": "17.0.4025.3",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260523",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry64)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9051872Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Wuthering Waves",
+        "Version": "2.6.3.0",
+        "Publisher": "Guangzhou Kuro Technology Co., Ltd",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9052124Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "LDPlayer 9",
+        "Version": "9.5.19.0",
+        "Publisher": "JUST OKAY LIMITED",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9052592Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Edge",
+        "Version": "148.0.3967.70",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application",
+        "InstallDate": "20260517",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9063991Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Overwolf",
+        "Version": "0.304.1.1",
+        "Publisher": "Overwolf Ltd.",
+        "InstallPath": "C:\\Program Files (x86)\\Overwolf\\",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9072273Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Rockstar Games Launcher",
+        "Version": "1.0.107.2944",
+        "Publisher": "Rockstar Games",
+        "InstallPath": "E:\\Launcher",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9077228Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Rockstar Games SDK",
+        "Version": "2.4.0.216",
+        "Publisher": "Rockstar Games",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9077498Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Steam",
+        "Version": "2.10.91.91",
+        "Publisher": "Valve Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9077673Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Intel(R) Wireless Bluetooth(R)",
+        "Version": "24.30.1.1",
+        "Publisher": "Intel Corporation",
+        "InstallPath": "C:\\Program Files (x86)\\Intel\\",
+        "InstallDate": "20260325",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9088955Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "AOMEI Partition Assistant 10.10.1",
+        "Version": "10.10.1",
+        "Publisher": "AOMEI International Network Limited.",
+        "InstallPath": "C:\\Program Files (x86)\\AOMEI Partition Assistant\\",
+        "InstallDate": "20260603",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9137378Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Intel\u00AE Driver \u0026 Support Assistant",
+        "Version": "26.2.0.7",
+        "Publisher": "Intel",
+        "InstallPath": "",
+        "InstallDate": "20260714",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9138276Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2013 Redistributable (x64) - 12.0.30501",
+        "Version": "12.0.30501.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9138477Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B v14 Redistributable (x64) - 14.51.36247",
+        "Version": "14.51.36247.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9138649Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "vs_CoreEditorFonts",
+        "Version": "17.7.40001",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260224",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9138883Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "AURA lighting effect add-on",
+        "Version": "0.0.60",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "20260715",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9139214Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft .NET SDK 10.0.109 (x64)",
+        "Version": "10.1.926.27113",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260630",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9139438Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Radmin VPN 2.0.9",
+        "Version": "2.0.4899.9",
+        "Publisher": "Famatech",
+        "InstallPath": "C:\\Program Files (x86)\\Radmin VPN\\",
+        "InstallDate": "20260523",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9171944Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "ASUS Framework Service",
+        "Version": "4.2.4.13",
+        "Publisher": "ASUSTeK Computer Inc.",
+        "InstallPath": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice",
+        "InstallDate": "20260417",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "MIT License",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE\u0027 specifying MIT License.",
+          "RawData": "Copyright (c) Electron contributors\r\nCopyright (c) 2013-2020 GitHub Inc.\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining\r\na copy of this software and associated documentation ...",
+          "SourceLocation": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\LICENSE"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9335806Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2012 Redistributable (x86) - 11.0.61030",
+        "Version": "11.0.61030.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9336587Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Epic Online Services",
+        "Version": "4.1.0",
+        "Publisher": "Epic Games, Inc.",
+        "InstallPath": "",
+        "InstallDate": "20251214",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9336715Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Windows Desktop Runtime - 8.0.28 (x86)",
+        "Version": "8.0.28.36119",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9336799Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "DB Browser for SQLite",
+        "Version": "3.13.1",
+        "Publisher": "DB Browser for SQLite Team",
+        "InstallPath": "C:\\Program Files (x86)\\DB Browser for SQLite\\",
+        "InstallDate": "20260414",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9354233Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft .NET SDK 8.0.422 (x64)",
+        "Version": "8.4.2226.27003",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9354523Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft .NET SDK 6.0.428 (x64)",
+        "Version": "6.4.2824.52403",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9354708Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B v14 Redistributable (x86) - 14.51.36247",
+        "Version": "14.51.36247.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9355154Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft .NET Runtime - 8.0.28 (x64)",
+        "Version": "8.0.28.36114",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9355491Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "TUF GAMING K1",
+        "Version": "4.03.10",
+        "Publisher": "ASUSTek Computer Inc.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9355665Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "GameSDK Service",
+        "Version": "1.0.6.0",
+        "Publisher": "ASUSTek COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9355874Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "inphic driver",
+        "Version": "1.0",
+        "Publisher": "inphic",
+        "InstallPath": "C:\\Program Files (x86)\\inphic driver\\",
+        "InstallDate": "20260306",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9358355Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "AURA Service",
+        "Version": "3.10.10",
+        "Publisher": "ASUSTeK COMPUTER INC.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9358594Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2012 Redistributable (x64) - 11.0.61030",
+        "Version": "11.0.61030.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9358753Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft .NET Runtime - 8.0.21 (x64)",
+        "Version": "8.0.21.35325",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9358938Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "INPHIC",
+        "Version": "1.0.1.16",
+        "Publisher": "Unknown Publisher",
+        "InstallPath": "C:\\Program Files (x86)\\INPHIC HUB\\",
+        "InstallDate": "20260306",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9360938Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft XNA Framework Redistributable 4.0 Refresh",
+        "Version": "4.0.30901.0",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260520",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9361149Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "UltraViewer phi\u00EAn b\u1EA3n 6.6.124",
+        "Version": "6.6.124",
+        "Publisher": "DucFabulous",
+        "InstallPath": "C:\\UltraViewer\\",
+        "InstallDate": "20260319",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9371267Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft Visual C\u002B\u002B 2010  x86 Redistributable - 10.0.40219",
+        "Version": "10.0.40219",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260306",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9371695Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Microsoft ASP.NET Core 8.0.28 - Shared Framework (x86)",
+        "Version": "8.0.28.26269",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9371971Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Aura Wallpaper HTML",
+        "Version": "2.2.3.0",
+        "Publisher": "ASUSTek Computer Inc.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9372138Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Browser for SQL Server 2022",
+        "Version": "16.0.1000.6",
+        "Publisher": "Microsoft Corporation",
+        "InstallPath": "",
+        "InstallDate": "20260516",
+        "ScanSource": "WindowsRegistryScanner (LocalMachine/Registry32)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9372353Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "OP.GG 2.5.1",
+        "Version": "2.5.1",
+        "Publisher": "OP.GG",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9372547Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "DBeaver 26.1.2 (current user)",
+        "Version": "26.1.2",
+        "Publisher": "DBeaver Corp",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9372774Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Discord",
+        "Version": "1.0.9245",
+        "Publisher": "Discord Inc.",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Discord",
+        "InstallDate": "20264816",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9382764Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Zalo 26.06.11",
+        "Version": "26.06.11",
+        "Publisher": "VNG Corp.",
+        "InstallPath": "",
+        "InstallDate": "20260616",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9383005Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Figma",
+        "Version": "126.2.9",
+        "Publisher": "Figma, Inc.",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Figma",
+        "InstallDate": "20260324",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9393377Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Figma Agent",
+        "Version": "126.6.10",
+        "Publisher": "Figma, Inc.",
+        "InstallPath": "",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.939377Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Google Chrome",
+        "Version": "150.0.7871.116",
+        "Publisher": "Google LLC",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Google\\Chrome\\Application",
+        "InstallDate": "20260715",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9403943Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "TFTactics",
+        "Version": "1.17.5",
+        "Publisher": "Overwolf app",
+        "InstallPath": "",
+        "InstallDate": "20260528",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9404177Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Travel Guide",
+        "Version": "6.7.1",
+        "Publisher": "Overwolf app",
+        "InstallPath": "",
+        "InstallDate": "20260621",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9404329Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Postman x64 12.4.2",
+        "Version": "12.4.2",
+        "Publisher": "Postman",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Postman",
+        "InstallDate": "20260331",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9421327Z"
+    },
+    {
+      "PluginId": "std.opensource.artifact",
+      "PluginName": "Open Source License \u0026 Artifact Detector",
+      "Software": {
+        "Name": "Python 3.14.6",
+        "Version": "3.14-64",
+        "Publisher": "Python Software Foundation",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Python\\pythoncore-3.14-64",
+        "InstallDate": "20260622",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "OpenSource",
+      "LicenseName": "Open Source License",
+      "Confidence": "Verified",
+      "Evidences": [
+        {
+          "EvidenceType": "FileArtifact",
+          "Description": "Found open source license artifact \u0027LICENSE.txt\u0027 specifying Open Source License.",
+          "RawData": "A. HISTORY OF THE SOFTWARE\r\n==========================\r\n\r\nPython was created in the early 1990s by Guido van Rossum at Stichting\r\nMathematisch Centrum (CWI, see https://www.cwi.nl) in the Netherlands\r...",
+          "SourceLocation": "C:\\Users\\admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\LICENSE.txt"
+        }
+      ],
+      "IsVerified": true,
+      "Notes": "Evaluated via open source artifact and keyword matching. Verified: True.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9643407Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Li\u00EAn Minh Huy\u1EC1n Tho\u1EA1i",
+        "Version": "Unknown",
+        "Publisher": "Riot Games, Inc",
+        "InstallPath": "E:/game/Riot Games/League of Legends",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9658923Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Riot Client",
+        "Version": "Unknown",
+        "Publisher": "Riot Games, Inc",
+        "InstallPath": "E:/game/Riot Games/Riot Client",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9662614Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Google",
+        "Version": "1.0.13.0",
+        "Publisher": "Google",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Google\\Google",
+        "InstallDate": "",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9670698Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "Antigravity IDE (User)",
+        "Version": "2.1.1",
+        "Publisher": "Google",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\Programs\\Antigravity IDE\\",
+        "InstallDate": "20260629",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9678192Z"
+    },
+    {
+      "PluginId": "core.unknown",
+      "PluginName": "Core Fallback Detector",
+      "Software": {
+        "Name": "NVIDIA GeForce NOW 2.0.83.130",
+        "Version": "2.0.83.130",
+        "Publisher": "NVIDIA Corporation",
+        "InstallPath": "C:\\Users\\admin\\AppData\\Local\\NVIDIA Corporation\\Installer2\\GeForceNOW.{8DF3678D-DB1A-4333-8807-C44425E111AA}",
+        "InstallDate": "20260415",
+        "ScanSource": "WindowsRegistryScanner (CurrentUser/Default)"
+      },
+      "DetectedLicenseType": "Unknown",
+      "LicenseName": "Unknown License",
+      "Confidence": "None",
+      "Evidences": [],
+      "IsVerified": false,
+      "Notes": "No verification plugin claimed checking capability for this software package.",
+      "ScannedAtUtc": "2026-07-15T10:13:50.9700548Z"
+    }
+  ]
+}

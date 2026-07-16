@@ -1,0 +1,80 @@
+# HƯỚNG DẪN SỬ DỤNG — LICENSE INTELLIGENCE PLATFORM (LIP) v1.0
+**Hệ Thống Kiểm Kê Phần Mềm & Rà Soát Bản Quyền Tự Động Chuẩn Doanh Nghiệp (Enterprise Read-Only Audit Engine)**
+
+---
+
+## I. GIỚI THIỆU CHUNG & ĐẶC TÍNH BẢO MẬT (`SECURITY HIGHLIGHTS`)
+
+**License Intelligence Platform (LIP)** là giải pháp kiểm kê toàn bộ phần mềm, phân tích giấy phép bản quyền (Commercial, Open Source, Freeware) và đánh giá mức độ tuân thủ pháp lý tự động cho doanh nghiệp.
+
+### 🛡️ 3 Nguyên Tắc Bảo Mật Cốt Lõi:
+1. **100% Read-Only (Chỉ Đọc & Không Xâm Nhệp):** Engine hoạt động hoàn toàn ở chế độ chỉ đọc (`Get-ItemProperty`, `EnumerateFiles`). Tuyệt đối **KHÔNG GHI**, **KHÔNG SỬA ĐỔI**, **KHÔNG XÓA** bất kỳ tệp tin hay key Registry nào của hệ điều hành và ứng dụng.
+2. **100% Air-Gapped (Không Kết Nối Mạng):** Toàn bộ quá trình quét, kiểm chứng chữ ký số, khớp tri thức bản quyền và xuất báo cáo diễn ra **hoàn toàn cục bộ (offline) trên máy tính**. Không có bất kỳ kết nối internet hay gửi dữ liệu telemetry nào ra bên ngoài.
+3. **Anti-Tamper Signature & Read-Only Lock (Chống Giả Mạo Báo Cáo):** Sau khi xuất báo cáo, hệ thống tự động tính toán mã băm `SHA-256 Checksum Signature` và khóa thuộc tính **Chỉ đọc (`FileAttributes.ReadOnly`)** trên tất cả các file kết quả nhằm ngăn chặn mọi hành vi chỉnh sửa trái phép làm sai lệch kết quả kiểm toán.
+
+---
+
+## II. HƯỚNG DẪN CHẠY NHANH (`QUICK START`)
+
+### Cách 1: Chạy trực tiếp (Dành cho Người dùng phổ thông / Quản lý IT)
+1. Mở thư mục sản phẩm `LicenseIntelligencePlatform-v1.0.0-win-x64`.
+2. Nhấp đúp chuột vào file **`LicenseIntelligencePlatform.Presentation.Cli.exe`**.
+3. Chương trình sẽ tự động quét toàn bộ hệ thống (Registry 64-bit/32-bit, AppData, Path, Deep Scan) trong vòng chưa đến **1 giây (`~500ms`)**.
+4. Toàn bộ kết quả kiểm toán sẽ được tự động lưu vào thư mục **`reports\`** nằm ngay bên cạnh file `.exe`.
+
+### Cách 2: Chạy qua Command Line (Dành cho System Admin / DevOps / SIEM)
+Mở `PowerShell` hoặc `Command Prompt` tại thư mục chứa file `.exe` và chạy các lệnh tùy chọn:
+
+```powershell
+# Chạy và tự động thoát khi xong (không dừng chờ phím Enter)
+.\LicenseIntelligencePlatform.Presentation.Cli.exe --no-pause
+
+# Chỉ xuất báo cáo ra định dạng cụ thể (Ví dụ: XLSX và HTML) ra thư mục tùy chọn
+.\LicenseIntelligencePlatform.Presentation.Cli.exe --format XLSX,HTML --output "D:\AuditReports\2026_Q3" --no-pause
+
+# Xem toàn bộ các tham số cấu hình nâng cao
+.\LicenseIntelligencePlatform.Presentation.Cli.exe --help
+```
+
+---
+
+## III. CHI TIẾT CÁC ĐỊNH DẠNG BÁO CÁO TRONG THƯ MỤC `REPORTS\`
+
+Sau khi hoàn tất quét, thư mục `reports\` sẽ chứa đầy đủ bộ hồ sơ kiểm toán với các định dạng sau:
+
+### 1. Bảng Tính Excel Chuyên Nghiệp (`license_report_<ScanId>.xlsx`) — *Khuyên Dùng*
+Được xây dựng trên chuẩn OpenXML gồm **4 Trang tính (Tabs)** chuyên biệt:
+- **`Executive Dashboard`**: Bảng điều khiển KPI tổng hợp, tỷ lệ phần trăm các nhóm bản quyền, thời gian quét chuẩn **Giờ Việt Nam (`VN Time - UTC+7`)**.
+- **`Full Inventory & Audit`**: Danh sách toàn bộ 130+ phần mềm được phát hiện, có sẵn bộ lọc (`Auto-Filter`), cố định dòng tiêu đề (`Sticky Header`) và tô nền màu cảnh báo:
+  - 🔴 **Màu hồng nhạt (`#FEE2E2`)**: Phần mềm thương mại (`Commercial`) cần kiểm tra giấy phép mua sắm.
+  - 🔵 **Màu xanh dương nhạt (`#E0F2FE`)**: Phần mềm mã nguồn mở (`OpenSource`).
+  - 🟢 **Màu xanh lá (`#DCFCE7`)**: Các phần mềm đã được xác minh chính xác bằng Plugin tri thức chuyên sâu (`Verified`).
+- **`Commercial Licenses (Action)`**: Tab lọc riêng danh sách các phần mềm thương mại (`Docker Desktop`, `SQL Server`, `Unity`, `TablePlus`, `Figma`...) để bộ phận tài chính/pháp chế kiểm tra số lượng license đã mua.
+- **`Open Source Compliance`**: Tab lọc riêng các phần mềm mã nguồn mở và bằng chứng tuân thủ (MIT, Apache 2.0, GPL...).
+
+### 2. Báo Cáo Trực Quan Web HTML (`license_report_<ScanId>.html`)
+- Giao diện Dark Mode sang trọng, **tối ưu hoàn hảo cho tỷ lệ màn hình 1920x1080 (Full HD Widescreen 16:9)**.
+- Bảng dữ liệu chia tỷ lệ cột chính xác (`table-layout: fixed`), chống trôi header (`Sticky Header`) và không bao giờ bị cắt chữ hay tràn màn hình.
+
+### 3. Hồ Sơ Kiểm Toán Pháp Lý (`audit_report_<ScanId>.md`)
+- Định dạng Markdown chuẩn dành cho bộ phận kiểm toán nội bộ và luật sư sở hữu trí tuệ. Liệt kê chi tiết trọng số bằng chứng (`Evidence Weights`), độ tin cậy (`Confidence Level`) và phân tích rủi ro.
+
+### 4. Dữ Liệu Tích Hợp Hệ Thống (`.CSV` & `.JSON`)
+- `license_report_<ScanId>.csv`: Chuẩn hóa dữ liệu bảng để nạp vào hệ thống ERP / Asset Management.
+- `license_report_<ScanId>.json` & `statistics_report_<ScanId>.json`: Cấu trúc JSON đầy đủ để tích hợp vào các pipeline CI/CD hoặc SIEM (Security Information and Event Management).
+
+### 5. Danh Sách Tồn Đọng Cần Bổ Sung (`backlog_need_plugins.json`)
+- Liệt kê các phần mềm mới chưa có Plugin tri thức chuyên sâu, giúp đội ngũ kỹ thuật có cơ sở mở rộng bộ Plugin SDK trong tương lai.
+
+---
+
+## IV. CÁC HÀNH VI BẢO MẬT & THỰC THI HỢP LỆ (`FAQ & TROUBLESHOOTING`)
+
+**Q: Tại sao tôi không thể xóa hoặc chỉnh sửa nội dung file báo cáo `.xlsx` hay `.html` sau khi quét?**
+> **A:** Vì lý do bảo mật và tính toàn vẹn pháp lý, hệ thống tự động khóa thuộc tính **Chỉ đọc (`FileAttributes.ReadOnly`)** cho tất cả file xuất ra. Nếu bạn thực sự cần chỉnh sửa hoặc xóa, hãy nhấp chuột phải vào file -> chọn `Properties` -> bỏ tích ô `Read-only` -> chọn `Apply` (Hoặc chạy lệnh PowerShell: `Get-ChildItem -Path .\reports\* | ForEach-Object { $_.Attributes = 'Normal' }`).
+
+**Q: Hệ thống có bỏ sót ứng dụng Portable hay ứng dụng chạy không cần cài đặt không?**
+> **A:** Không. Bên cạnh việc quét Registry tiêu chuẩn, LIP tích hợp `DeepFileSystemScanner` quét quét sâu các tệp thực thi (`.exe`, `.dll`, `.jar`) trong các thư mục người dùng (`AppData\Local`, `AppData\Roaming`), kiểm tra cấu trúc PE Header, chữ ký số Authenticode và VersionInfo để nhận diện chính xác.
+
+---
+*Bản quyền phần mềm thuộc về Bá Lộc Vũ (DynamiteV) — Hỗ trợ kỹ thuật 24/7.*
