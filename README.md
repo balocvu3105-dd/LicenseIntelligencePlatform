@@ -97,14 +97,49 @@ Bạn không cần cài đặt `.NET SDK` trên máy trạm khi sử dụng bả
 ```
 *Sau khi hoàn tất (~500ms), toàn bộ báo cáo (.xlsx, .html, .md, .csv, .json) được tự động xuất ra thư mục `reports/`.*
 
-### 2. Tùy chọn dòng lệnh nâng cao
+### 2. Tùy chọn dòng lệnh tổng hợp
 
 ```powershell
-# Chỉ xuất báo cáo định dạng Excel và HTML tại thư mục chỉ định
-.\LicenseIntelligencePlatform.Presentation.Cli.exe --format XLSX,HTML --output "D:\AuditReports" --no-pause
-
 # Xem danh sách toàn bộ tham số hỗ trợ
 .\LicenseIntelligencePlatform.Presentation.Cli.exe --help
+```
+
+---
+
+## Multi-Format Report Generators
+
+Hệ thống cho phép tạo và xuất báo cáo rà soát bản quyền tự động qua 4 định dạng độc lập (hoặc xuất đồng thời khi dùng `--format XLSX,HTML,MD,JSON`). Dưới đây là hướng dẫn chi tiết cho từng định dạng xuất:
+
+### Generate HTML Report
+
+Xuất báo cáo trực quan **Executive HTML Dashboard (`2800px+ Super Widescreen`)** với giao diện Dark Mode sang trọng (`#0F172A`), hiển thị thẻ chỉ số tổng quan (`Summary Cards`) và bảng dữ liệu siêu rộng. Tự động ngắt dòng thông minh (`break-all`), đảm bảo các chuỗi phiên bản dài (`Version`), mã commit SHA hay đường dẫn không bao giờ bị ngắt lẻ ký tự. Đặc biệt, kết quả rà soát bản quyền Windows OS & KMS Lậu luôn được **ghim tại dòng #1**.
+
+```powershell
+.\LicenseIntelligencePlatform.Presentation.Cli.exe --format HTML --output "reports/html" --no-pause
+```
+
+### Generate Excel Workbook
+
+Xuất bảng tính **Goldilocks Deluxe Excel Workbook (`4 Tabs + Center/Center Alignment`)** gồm 4 trang tính chuyên sâu: *Executive Summary*, *Full Inventory & Audit*, *Commercial Licenses (Action Required)*, và *Open Source Compliance*. Toàn bộ 12 cột được thiết lập **căn chính giữa theo cả 2 trục ngang và dọc (`Center / Center`)**, lề đệm dọc (`+14pt cushion capped at 85pt`), độ rộng tự động mở rộng tối đa (`Width = 28 — 140`) và ghim dòng #1 bản quyền Windows OS.
+
+```powershell
+.\LicenseIntelligencePlatform.Presentation.Cli.exe --format XLSX --output "reports/excel" --no-pause
+```
+
+### Generate Markdown
+
+Xuất hồ sơ kiểm toán tài sản công nghệ thông tin chuẩn **GitHub Flavored Markdown (`.md`)**. Phù hợp để tích hợp trực tiếp vào hệ thống tài liệu nội bộ, Git wiki, pull requests hoặc lưu trữ tĩnh kèm đầy đủ bảng tổng hợp bằng chứng (`Evidences`) cho từng gói phần mềm.
+
+```powershell
+.\LicenseIntelligencePlatform.Presentation.Cli.exe --format MD --output "reports/markdown" --no-pause
+```
+
+### Generate JSON
+
+Xuất toàn bộ cấu trúc dữ liệu thô **Structured Raw JSON Data (`CamelCase + SHA-256 Checksum`)**. Phù hợp để tích hợp vào các đường ống CI/CD Pipeline, SIEM, Dashboard quản trị tài sản (ITAM) hoặc gọi qua hệ thống API tự động.
+
+```powershell
+.\LicenseIntelligencePlatform.Presentation.Cli.exe --format JSON --output "reports/json" --no-pause
 ```
 
 ---
@@ -117,10 +152,10 @@ License-Intelligence-Platform-Docs/
 ├── src/
 │   ├── LicenseIntelligencePlatform.Domain/              # Core Domain: Entities, Enums, Immutable Records & Interfaces
 │   ├── LicenseIntelligencePlatform.Application/         # Use Cases: CoreEngine, MergeEngine, RuleEngine
-│   ├── LicenseIntelligencePlatform.Plugins.Standard/    # Tập hợp 33 Sandboxed Standard Plugins
+│   ├── LicenseIntelligencePlatform.Plugins.Standard/    # Tập hợp 34 Sandboxed Standard Plugins
 │   ├── LicenseIntelligencePlatform.Infrastructure/      # Multi-source Scanners & Multi-format Exporters
 │   ├── LicenseIntelligencePlatform.Presentation.Cli/    # CLI Entry Point & Dependency Injection Container
-│   └── LicenseIntelligencePlatform.Tests/               # Bộ kiểm thử tự động Unit Tests (37/37 passed)
+│   └── LicenseIntelligencePlatform.Tests/               # Bộ kiểm thử tự động Unit Tests (41/41 passed)
 └── dist/                                  # Bản phát hành đóng gói sẵn (Windows x64 Self-Contained)
 ```
 
