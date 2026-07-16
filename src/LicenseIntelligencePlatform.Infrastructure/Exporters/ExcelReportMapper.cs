@@ -273,7 +273,7 @@ public sealed class ExcelReportMapper : IReportMapper
             dataRange.Style.Border.OutsideBorder = XLBorderStyleValues.Medium;
         }
 
-        // Apply generous, perfectly balanced column widths right away without letting AdjustToContents distort wrapped multiline columns
+        // Apply generous, perfectly balanced and ultra-comfortable column widths (mở rộng ô ra cho thoải mái)
         for (int i = 1; i <= 12; i++)
         {
             var col = sheet.Column(i);
@@ -282,35 +282,43 @@ public sealed class ExcelReportMapper : IReportMapper
 
             double explicitWidth = i switch
             {
-                1 => Math.Max(minHeaderWidth, 32), // Software Package
-                2 => Math.Max(minHeaderWidth, 18), // Version
-                3 => Math.Max(minHeaderWidth, 28), // Publisher
-                4 => Math.Max(minHeaderWidth, 48), // Install Path (wide enough for normal paths, and WrapText wraps long paths)
-                5 => Math.Max(minHeaderWidth, 22), // Install Date (centered with margin)
-                6 => Math.Max(minHeaderWidth, 28), // Last Modified (VN Time)
-                7 => Math.Max(minHeaderWidth, 30), // Last Used / Active (VN Time)
-                8 => Math.Max(minHeaderWidth, 32), // Scan Source
-                9 => Math.Max(minHeaderWidth, 20), // License Type
-                10 => Math.Max(minHeaderWidth, 20), // Confidence
-                11 => Math.Max(minHeaderWidth, 35), // Plugin Detector
-                12 => Math.Max(minHeaderWidth, 58), // Verification Evidence (plenty wide for readable wrap)
-                _ => 25
+                1 => Math.Max(minHeaderWidth, 40), // Software Package (wide enough for long titles)
+                2 => Math.Max(minHeaderWidth, 20), // Version
+                3 => Math.Max(minHeaderWidth, 32), // Publisher
+                4 => Math.Max(minHeaderWidth, 80), // Install Path (Mở rộng cực kỳ thoải mái để đường dẫn dài nằm trọn trên 1 hoặc 2 dòng thoáng đãng)
+                5 => Math.Max(minHeaderWidth, 24), // Install Date
+                6 => Math.Max(minHeaderWidth, 30), // Last Modified (VN Time)
+                7 => Math.Max(minHeaderWidth, 32), // Last Used / Active (VN Time)
+                8 => Math.Max(minHeaderWidth, 36), // Scan Source
+                9 => Math.Max(minHeaderWidth, 22), // License Type
+                10 => Math.Max(minHeaderWidth, 22), // Confidence
+                11 => Math.Max(minHeaderWidth, 42), // Plugin Detector
+                12 => Math.Max(minHeaderWidth, 110), // Verification Evidence (Mở rộng tối đa 110 ký tự để chuỗi bằng chứng dài chạy thoải mái không bao giờ bị xén chân chữ)
+                _ => 30
             };
             col.Width = explicitWidth;
         }
 
-        // Dynamically adjust row heights for all wrapped multiline rows so all lines are visible and cleanly bounded
-        if (row > 2)
+        // Calculate safe, spacious row heights to prevent ClosedXML's AdjustToContents from clipping/slicing the bottom of multiline wrapped text
+        for (int rRow = 2; rRow < row; rRow++)
         {
-            sheet.Rows(2, row - 1).AdjustToContents();
-            for (int rRow = 2; rRow < row; rRow++)
+            int maxLinesInRow = 1;
+            for (int colIdx = 1; colIdx <= 12; colIdx++)
             {
-                var rObj = sheet.Row(rRow);
-                if (rObj.Height < 24)
+                var val = sheet.Cell(rRow, colIdx).GetString();
+                if (!string.IsNullOrEmpty(val))
                 {
-                    rObj.Height = 24;
+                    double colW = sheet.Column(colIdx).Width;
+                    // Count lines needed based on length / width ratio + explicit newlines
+                    int estimatedLines = (int)Math.Ceiling(val.Length / Math.Max(1.0, colW - 3.0));
+                    int newlineCount = val.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+                    int lines = Math.Max(estimatedLines, newlineCount);
+                    if (lines > maxLinesInRow) maxLinesInRow = lines;
                 }
             }
+
+            // Set generous height: 26pt for 1 line, +24pt for each additional wrapped line (48pt for 2 lines, 72pt for 3 lines) to guarantee zero bottom-clipping (đảm bảo không bao giờ xén chữ)
+            sheet.Row(rRow).Height = Math.Max(26.0, maxLinesInRow * 24.0);
         }
     }
 

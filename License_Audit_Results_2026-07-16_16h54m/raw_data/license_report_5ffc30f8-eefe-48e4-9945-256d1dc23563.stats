@@ -1,0 +1,119 @@
+{
+  "SessionId": "5ffc30f8-eefe-48e4-9945-256d1dc23563",
+  "StartedAtUtc": "2026-07-16T09:54:08.930886Z",
+  "CompletedAtUtc": "2026-07-16T09:54:09.6206859Z",
+  "DurationSeconds": 0.6897999,
+  "HostName": "DESKTOP-V8T1TLJ",
+  "OSDescription": "Microsoft Windows 10.0.26200",
+  "TotalSoftwareScanned": 135,
+  "TotalPluginEvaluations": 143,
+  "OverallVerificationRatio": 36.55,
+  "ConfidenceDistribution": {
+    "Verified": 12,
+    "High": 41,
+    "Medium": 90,
+    "Low": 0,
+    "None": 2
+  },
+  "LicenseTypeDistribution": {
+    "Freeware": 93,
+    "Commercial": 30,
+    "OpenSource": 20,
+    "Unknown": 2
+  },
+  "TopPublishersDiscovered": {
+    "Microsoft Corporation": 47,
+    "NVIDIA Corporation": 8,
+    "ASUSTek COMPUTER INC.": 6,
+    "ASUSTeK COMPUTER INC.": 5,
+    "Riot Games, Inc.": 4,
+    "Unknown Publisher": 3,
+    "Unity Technologies ApS": 3,
+    "Valve Corporation": 3,
+    "Overwolf app": 3,
+    "Docker Inc.": 2,
+    "The Git Development Community": 2,
+    "Valve": 2,
+    "Node.js Foundation": 2,
+    "Intel Corporation": 2,
+    "Epic Games, Inc.": 2
+  },
+  "PluginContributionMetrics": {
+    "Gaming Platforms \u0026 Distribution Ecosystem Detector": {
+      "TotalIdentified": 25,
+      "VerifiedCount": 2
+    },
+    "Microsoft Runtime Ecosystem License Detector": {
+      "TotalIdentified": 24,
+      "VerifiedCount": 0
+    },
+    "Web Browsers \u0026 System Utilities Detector": {
+      "TotalIdentified": 21,
+      "VerifiedCount": 13
+    },
+    "Hardware \u0026 OEM Utility Suite Detector": {
+      "TotalIdentified": 18,
+      "VerifiedCount": 7
+    },
+    "Communication \u0026 Collaboration Client Detector": {
+      "TotalIdentified": 13,
+      "VerifiedCount": 10
+    },
+    "Microsoft SQL Server Database Engine Detector": {
+      "TotalIdentified": 9,
+      "VerifiedCount": 0
+    },
+    "Open Source License \u0026 Artifact Detector": {
+      "TotalIdentified": 8,
+      "VerifiedCount": 6
+    },
+    "NVIDIA Consumer Suite \u0026 Driver Detector": {
+      "TotalIdentified": 8,
+      "VerifiedCount": 6
+    },
+    "Unity Game Engine Commercial \u0026 Pro Tier Detector": {
+      "TotalIdentified": 4,
+      "VerifiedCount": 0
+    },
+    "Anti-Cheat \u0026 System Security Suite Detector": {
+      "TotalIdentified": 3,
+      "VerifiedCount": 3
+    },
+    "Figma Commercial UX Design License Detector": {
+      "TotalIdentified": 3,
+      "VerifiedCount": 0
+    },
+    "Core Fallback Detector": {
+      "TotalIdentified": 2,
+      "VerifiedCount": 0
+    },
+    "Docker Desktop Commercial \u0026 Subscription Detector": {
+      "TotalIdentified": 1,
+      "VerifiedCount": 1
+    },
+    "Git Version Control Open Source License Detector": {
+      "TotalIdentified": 1,
+      "VerifiedCount": 1
+    },
+    "OBS Studio Open Source GPLv2 Detector": {
+      "TotalIdentified": 1,
+      "VerifiedCount": 1
+    },
+    "TablePlus Database Client Commercial Device License Detector": {
+      "TotalIdentified": 1,
+      "VerifiedCount": 1
+    },
+    "Node.js Runtime MIT License Detector": {
+      "TotalIdentified": 1,
+      "VerifiedCount": 1
+    },
+    "Postman API Platform Commercial \u0026 Subscription Detector": {
+      "TotalIdentified": 1,
+      "VerifiedCount": 0
+    },
+    "Python Runtime \u0026 Ecosystem PSF License Detector": {
+      "TotalIdentified": 1,
+      "VerifiedCount": 1
+    }
+  }
+}
