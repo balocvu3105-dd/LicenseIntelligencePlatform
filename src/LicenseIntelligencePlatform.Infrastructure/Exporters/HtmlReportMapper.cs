@@ -63,7 +63,7 @@ public sealed class HtmlReportMapper : IReportMapper
         sb.AppendLine("        .col-lic { min-width: 140px; width: 6%; text-align: center; }");
         sb.AppendLine("        .col-cnf { min-width: 140px; width: 6%; text-align: center; }");
         sb.AppendLine("        .col-det { min-width: 180px; width: 8%; word-break: break-word; }");
-        sb.AppendLine("        .col-art { min-width: 380px; width: 16%; word-break: break-word; }");
+        sb.AppendLine("        .col-art { min-width: 480px; width: 22%; word-break: break-word; }");
         sb.AppendLine("        th.col-lic, th.col-cnf { text-align: center; }");
         sb.AppendLine("        code { background: rgba(15, 23, 42, 0.6); padding: 0.2rem 0.5rem; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.82rem; color: #38bdf8; word-break: break-all; display: inline-block; line-height: 1.35; }");
         sb.AppendLine("        .badge { display: inline-block; padding: 0.28rem 0.7rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }");

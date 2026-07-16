@@ -314,13 +314,13 @@ public sealed class ExcelReportMapper : IReportMapper
                 9 => Math.Max(minHeaderWidth, 28), // License Type
                 10 => Math.Max(minHeaderWidth, 28), // Confidence
                 11 => Math.Max(minHeaderWidth, 62), // Plugin Detector
-                12 => Math.Max(minHeaderWidth, 140), // Verification Evidence (Tăng lên 140 để bằng chứng và mô tả dài hiển thị cực kỳ rộng rãi)
+                12 => Math.Max(minHeaderWidth, 200), // Verification Evidence (Tăng lên 200 để bằng chứng KMS và mô tả dài hiển thị cực kỳ rộng rãi và thoải mái)
                 _ => 40
             };
             col.Width = explicitWidth;
         }
 
-        // Dynamically calculate balanced row height: run ClosedXML AdjustToContents first, then add safe +14.0 points cushion (padding top/bottom), capped appropriately at 85.0 points so even multi-line wrapped text NEVER gets sliced when center-aligned ('căn chữ ra giữa hết và tăng kích thước ô lên')
+        // Dynamically calculate balanced row height: run ClosedXML AdjustToContents first, then add generous +18.0 points cushion (~24 pixels padding top/bottom) so multi-line wrapped text (like KMS crack alerts) NEVER gets vertically clipped or sliced when center-aligned ('mở rộng ô ra và tăng kích thước cho thoải mái').
         if (row > 2)
         {
             sheet.Rows(2, row - 1).AdjustToContents();
@@ -328,10 +328,10 @@ public sealed class ExcelReportMapper : IReportMapper
             {
                 var rObj = sheet.Row(rRow);
                 double baseHeight = rObj.Height;
-                // Add +14.0 points of vertical padding cushion (~18 pixels) above and below centered text so no bottom half of any letters get sliced
-                double paddedHeight = Math.Max(34.0, baseHeight + 14.0);
-                // Cap maximum height at 85.0 points (~4 lines) to guarantee every multi-line cell breathes comfortably without turning into a giant chunk
-                rObj.Height = Math.Min(85.0, paddedHeight);
+                // Add +18.0 points of vertical padding cushion above and below centered text so no top/bottom half of any letters get sliced
+                double paddedHeight = Math.Max(36.0, baseHeight + 18.0);
+                // Cap maximum height at 380.0 points (~18 lines) so long evidence notes breathe comfortably without ever slicing characters
+                rObj.Height = Math.Min(380.0, paddedHeight);
             }
         }
     }
