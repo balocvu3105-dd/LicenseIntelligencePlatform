@@ -115,6 +115,7 @@ public class Phase3PluginsTests
     [Fact]
     public async Task WindowsOsLicensePlugin_WhenGenuineOs_ShouldVerifyAndReturnGenuine()
     {
+        WindowsLicenseAuditContext.Clear();
         var plugin = new WindowsOsLicensePlugin();
         var software = new SoftwareInfo("Microsoft Windows Operating System (OS License Check)", "Windows 11 Pro (Build 26100)", "Microsoft Corporation", @"C:\Windows\System32\spp", "2026/01/01", "OS License Scanner [RETAIL Channel - Status: Activated (Licensed)]");
 
@@ -130,6 +131,7 @@ public class Phase3PluginsTests
     [Fact]
     public async Task WindowsOsLicensePlugin_WhenKmsCrackDetected_ShouldFlagPiratedAndAlert()
     {
+        WindowsLicenseAuditContext.Clear();
         var plugin = new WindowsOsLicensePlugin();
         var software = new SoftwareInfo("Microsoft Windows Operating System (OS License Check)", "Windows 10 Pro (Build 19045)", "Microsoft Corporation", @"C:\Windows\System32\spp", "2026/01/01", "OS License Scanner [KMS CRACK DETECTED: Activator binary found: SppExtComObj.exe | Status: Activated]");
 

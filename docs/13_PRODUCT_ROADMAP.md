@@ -154,23 +154,32 @@ services.AddSingleton<IReportMapper, StatisticsReportMapper>();   // JSON Teleme
 
 Sau khi hoàn tất xuất sắc toàn bộ chỉ tiêu từ Phase 0 đến Phase 4, hệ thống LIP sẵn sàng bước vào các giai đoạn mở rộng tương lai:
 
-## Phase 5 — Historical Intelligence & Change Tracking
-- **Objective:** Theo dõi sự thay đổi của danh mục phần mềm và giấy phép theo thời gian thực (`Time-Series Asset Telemetry`).
-- **Key Features:** `Historical Scan Comparison`, `Change Detection Engine` (phát hiện phần mềm mới cài đặt hoặc vừa bị gỡ bỏ giữa 2 lần quét), `License Expiration Timeline`.
+## Phase 5 — Deep Specialized Inspection & UI/UX Dashboard Elevation
+- **Objective:** Nâng tầm trải nghiệm báo cáo trực quan và mở rộng kiểm soát sâu các bộ phần mềm doanh nghiệp trọng yếu.
+- **Key Features:**
+  - `Windows License Audit Card Sync`: Đồng bộ khối Executive Card (hiển thị Điểm rủi ro 0-100, kênh kích hoạt, OEM Key, cảnh báo KMS lậu) lên vị trí đầu bảng của cả **HTML Super Widescreen Dashboard (`HtmlReportMapper.cs`)** và **Excel Goldilocks Deluxe Workbook (`ExcelReportMapper.cs`)**.
+  - `Deep Office & Adobe License Scanners`: Xây dựng `OfficeLicenseScanner` và `AdobeLicenseScanner` kiểm tra dịch vụ WMI `OfficeSoftwareProtectionProduct` và SPP Registry, bóc tách giấy phép Office 365, Office LTSC Pro Plus và phát hiện kích hoạt bằng KMS giả lập lậu (`SppExtComObj`, `KMSAuto`).
+  - `Inline SVG / CSS Analytics Charts`: Tích hợp biểu đồ phân bổ giấy phép (`Commercial vs Open Source vs Freeware`) và tỷ lệ độ tin cậy ngay bên trong HTML Dashboard mà không cần kết nối internet hay thư viện bên ngoài.
+  - `Phase 4+ Plugin Expansion`: Mở rộng kho Plugin từ 34 lên 45+ để nhận diện chuyên sâu `JetBrains Suite`, `Docker Desktop Enterprise vs Community`, `VMware Workstation Pro`, `TeamViewer/AnyDesk`.
 
-## Phase 6 — Enterprise Dashboard & Central Management
-- **Objective:** Xây dựng cổng thông tin quản trị trung tâm (`Central Web Portal`) kết nối hàng nghìn máy trạm qua REST API an toàn.
-- **Key Features:** `Multi-Tenant Dashboard`, `Role-Based Access Control (RBAC)`, `Automated Compliance Alerting via Email/Webhook`.
+## Phase 6 — Enterprise Compliance, Asymmetric Cryptography & CI/CD Telemetry
+- **Objective:** Chuẩn hóa toàn bộ đầu ra dữ liệu và tính toàn vẹn chữ ký số theo tiêu chuẩn kiểm toán quốc tế (`SOX`, `ISO 27001`).
+- **Key Features:**
+  - `Asymmetric RSA / Ed25519 Digital Signatures`: Bổ sung cơ chế ký số bất đối xứng (`--sign-key <private.pem>`), cho phép bộ phận Kiểm toán Nội bộ (Internal Audit) dùng Public Key xác minh báo cáo 100% nguyên bản, chưa từng bị chỉnh sửa trái phép.
+  - `International SBOM Standards (CycloneDX / SPDX)`: Xây dựng `SbomReportMapper.cs` xuất ra định dạng CycloneDX JSON / SPDX phục vụ nhập liệu trực tiếp vào hệ thống SOC và quản trị rủi ro chuỗi cung ứng phần mềm (`ServiceNow`, `Microsoft Sentinel`, `Dependency-Track`).
+  - `Historical Scan & Snapshot Diff Engine`: Thêm cờ `--compare <previous-report.json>` tự động đối chiếu các lần rà soát, phát hiện phần mềm mới cài đặt, phần mềm bị gỡ bỏ hoặc chuyển đổi trạng thái bản quyền (từ RETAIL sang KMS lậu).
 
 ---
 
 # Summary of Roadmap Completion
 
-Tính đến thời điểm hiện tại (**Version 1.0 Stable Release**):
+Tính đến thời điểm hiện tại (**Version 1.0 Stable Release — 49/49 Tests Passed**):
 - **Phase 0 (Pilot):** ✅ `Completed`
 - **Phase 1 (Intelligent Detection):** ✅ `Completed`
 - **Phase 2 (Plugin Ecosystem):** ✅ `Completed`
-- **Phase 3 (Software Discovery):** ✅ `Completed`
+- **Phase 3 (Software Discovery & Windows License Audit Module):** ✅ `Completed`
 - **Phase 4 (Reporting Hierarchy):** ✅ `Completed`
+- **Phase 5 (Deep Specialized Inspection & UI/UX Elevation):** ⏳ `Planned Backlog`
+- **Phase 6 (Enterprise Compliance & Asymmetric Cryptography):** ⏳ `Planned Backlog`
 
-**License Intelligence Platform v1.0** đã đạt trạng thái hoàn hảo, chuẩn hóa 100% từ kiến trúc lõi (`CoreEngine`, `RuleEngine`, `ConfidenceEngine`, `MergeEngine`), bộ 33 Plugins AI chuyên sâu, bộ 3 Scanners đa nền tảng, đến hệ thống 5 Mappers báo cáo Phase 4 đẳng cấp doanh nghiệp!
+**License Intelligence Platform v1.0** đã đạt trạng thái chuẩn mực toàn diện với hệ thống kiến trúc lõi (`CoreEngine`, `RuleEngine`, `ConfidenceEngine`, `MergeEngine`), bộ 34 Plugins AI sandboxed, bộ 3 Scanners (đặc biệt là **Windows License Audit Module 8-Location Deep Scan & Risk Scoring Engine**), cùng hệ thống 5 Mappers báo cáo Phase 4 đẳng cấp doanh nghiệp!

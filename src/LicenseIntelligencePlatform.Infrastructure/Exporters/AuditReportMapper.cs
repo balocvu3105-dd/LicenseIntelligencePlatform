@@ -46,7 +46,55 @@ public sealed class AuditReportMapper : IReportMapper
         sb.AppendLine($"| **Count** | `{verifiedCount}` | `{highCount}` | `{mediumCount}` | `{lowOrNoneCount}` |");
         sb.AppendLine();
 
-        sb.AppendLine("## 3. Verified & Commercial Software Audit Table");
+        var winAuditResult = report.Results.FirstOrDefault(r => r.PluginId.StartsWith("os.windows", StringComparison.OrdinalIgnoreCase));
+        var auditData = WindowsLicenseAuditContext.CurrentAuditData;
+
+        if (winAuditResult != null || auditData != null)
+        {
+            sb.AppendLine("## 3. Windows License Audit & System Compliance Inspection");
+            if (auditData != null)
+            {
+                sb.AppendLine($"* **OS Edition & Build:** `{auditData.WindowsEdition}` (`v{auditData.BuildNumber}` - {auditData.Architecture})");
+                sb.AppendLine($"* **Activation Status:** `{auditData.ActivationStatus}` (Channel: `{auditData.LicenseChannel}`)");
+                sb.AppendLine($"* **Installed Key (Masked):** `{auditData.InstalledProductKeyMasked}` | **OEM Key Present:** `{auditData.OemKeyPresence}`");
+                if (!string.IsNullOrWhiteSpace(auditData.BiosEmbeddedKey))
+                    sb.AppendLine($"* **BIOS Embedded Key:** `{auditData.BiosEmbeddedKey}`");
+                sb.AppendLine($"* **WMI Diagnostic Summary:** `{auditData.SoftwareLicensingProductSummary}`");
+                sb.AppendLine($"* **Weighted Risk Score:** **`{auditData.RiskScore} / 100`** (`{auditData.RiskClassification}`)");
+                sb.AppendLine();
+
+                if (auditData.AuditEvidences.Count > 0)
+                {
+                    sb.AppendLine("### Diagnostic Evidence & Digital Signature Verifications");
+                    sb.AppendLine("| Evidence Type | Category | Severity | Description | Source & Path | Recommendation |");
+                    sb.AppendLine("| :--- | :---: | :---: | :--- | :--- | :--- |");
+                    foreach (var ev in auditData.AuditEvidences)
+                    {
+                        var rec = !string.IsNullOrWhiteSpace(ev.Recommendation) ? ev.Recommendation : "N/A";
+                        sb.AppendLine($"| **{ev.EvidenceType}** | `{ev.Category}` | **{ev.Severity}** | {ev.Description} | `{ev.SourceLocation}` <br/> (`{ev.Path}`) | {rec} |");
+                    }
+                    sb.AppendLine();
+                }
+
+                if (auditData.Recommendations.Count > 0)
+                {
+                    sb.AppendLine("### Actionable Remediation Recommendations");
+                    foreach (var rec in auditData.Recommendations)
+                    {
+                        sb.AppendLine($"* {rec}");
+                    }
+                    sb.AppendLine();
+                }
+            }
+            else if (winAuditResult != null)
+            {
+                sb.AppendLine($"* **Status & Finding:** `{winAuditResult.Software.Version}` — `{winAuditResult.LicenseName}`");
+                sb.AppendLine($"* **Diagnostic Notes:** {winAuditResult.Notes}");
+                sb.AppendLine();
+            }
+        }
+
+        sb.AppendLine("## 4. Verified & Commercial Software Audit Table");
         sb.AppendLine("| Software Name | Version | Publisher | Detected License | Confidence | Plugin Identified | Evidences |");
         sb.AppendLine("| :--- | :--- | :--- | :---: | :---: | :--- | :--- |");
 
@@ -65,7 +113,7 @@ public sealed class AuditReportMapper : IReportMapper
         }
 
         sb.AppendLine();
-        sb.AppendLine("## 4. Backlog — Unverified & Unknown Software List");
+        sb.AppendLine("## 5. Backlog — Unverified & Unknown Software List");
         sb.AppendLine("The following packages currently lack specific license detection plugins or cryptographic artifacts and require manual audit / future plugin development:");
         sb.AppendLine();
 

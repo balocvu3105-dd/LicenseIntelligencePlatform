@@ -302,6 +302,53 @@ public static class Program
         Console.ResetColor();
         Console.WriteLine();
 
+        var auditData = WindowsLicenseAuditContext.CurrentAuditData;
+        if (auditData != null)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("==========================================================================================");
+            Console.WriteLine("             WINDOWS LICENSE AUDIT & SYSTEM COMPLIANCE INSPECTION MODULE                  ");
+            Console.WriteLine("==========================================================================================");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"  OS Edition & Build : {auditData.WindowsEdition} (Build {auditData.BuildNumber} - {auditData.Architecture})");
+            Console.WriteLine($"  Activation Status  : {auditData.ActivationStatus} [{auditData.LicenseChannel}]");
+            Console.WriteLine($"  Installed Key      : {auditData.InstalledProductKeyMasked} | OEM BIOS Key Present: {auditData.OemKeyPresence}");
+            if (!string.IsNullOrWhiteSpace(auditData.BiosEmbeddedKey))
+                Console.WriteLine($"  OEM Embedded Key   : {auditData.BiosEmbeddedKey}");
+            
+            Console.Write("  Audit Risk Score   : ");
+            if (auditData.RiskScore >= 50) Console.ForegroundColor = ConsoleColor.Red;
+            else if (auditData.RiskScore >= 16) Console.ForegroundColor = ConsoleColor.Yellow;
+            else Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"{auditData.RiskScore} / 100 ({auditData.RiskClassification})");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            if (auditData.AuditEvidences.Count > 0)
+            {
+                Console.WriteLine($"  Discovered Artifacts ({auditData.AuditEvidences.Count}):");
+                foreach (var ev in auditData.AuditEvidences.Take(5))
+                {
+                    Console.ForegroundColor = ev.Severity == "CRITICAL" || ev.Severity == "HIGH" ? ConsoleColor.Red : ConsoleColor.DarkGray;
+                    Console.WriteLine($"   • [{ev.EvidenceType}] {ev.Description}");
+                }
+                if (auditData.AuditEvidences.Count > 5)
+                    Console.WriteLine($"   ... (plus {auditData.AuditEvidences.Count - 5} more evidence items detailed in export reports)");
+            }
+
+            if (auditData.Recommendations.Count > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                foreach (var rec in auditData.Recommendations)
+                {
+                    Console.WriteLine($"  {rec}");
+                }
+            }
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("==========================================================================================");
+            Console.ResetColor();
+            Console.WriteLine();
+        }
+
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine(string.Format("{0,-35} | {1,-15} | {2,-16} | {3,-10} | {4,-5}", 
             "Software Name", "Version", "License Type", "Confidence", "Evid"));
