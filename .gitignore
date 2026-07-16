@@ -44,4 +44,11 @@ dist/LicenseIntelligencePlatform-v1.0.0-win-x64/reports/*
 !dist/LicenseIntelligencePlatform-v1.0.0-win-x64/LicenseIntelligencePlatform.Presentation.Cli.exe
 !dist/LicenseIntelligencePlatform-v1.0.0-win-x64/HUONG_DAN_SU_DUNG.md
 
+# Dynamic Report & Audit Data Output Folders (Never track local scan data)
+License_Audit_Results_*/
+audit_results_*/
+reports_*/
+*.audit
+*.stats
+
 
