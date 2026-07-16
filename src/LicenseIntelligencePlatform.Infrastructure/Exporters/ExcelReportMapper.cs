@@ -157,24 +157,31 @@ public sealed class ExcelReportMapper : IReportMapper
         int row = 2;
         foreach (var r in results)
         {
-            // Set vertical alignment for the entire data row so multiline wrapped text aligns all cells crisply at the top
-            sheet.Range(row, 1, row, 12).Style.Alignment.Vertical = XLAlignmentVerticalValues.Top;
+            // Set both horizontal and vertical alignment to Center for ALL cells in the row so every piece of text sits cleanly centered ('căn chữ ra giữa hết')
+            var rowRange = sheet.Range(row, 1, row, 12);
+            rowRange.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+            rowRange.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
 
             // Col 1: Software Package (WrapText true so long names don't spill over)
             var pkgCell = sheet.Cell(row, 1);
             pkgCell.Value = r.Software.Name;
             pkgCell.Style.Font.Bold = true;
             pkgCell.Style.Alignment.WrapText = true;
+            pkgCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            pkgCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
 
             // Col 2: Version
             var verCell = sheet.Cell(row, 2);
-            verCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
             verCell.Style.Alignment.WrapText = true;
+            verCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            verCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             FormatCellOrPlaceholder(verCell, r.Software.Version, "—");
 
             // Col 3: Publisher
             var pubCell = sheet.Cell(row, 3);
             pubCell.Style.Alignment.WrapText = true;
+            pubCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            pubCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             var pub = !string.IsNullOrWhiteSpace(r.Software.Publisher) && !r.Software.Publisher.Equals("Unknown", StringComparison.OrdinalIgnoreCase)
                 ? r.Software.Publisher : null;
             FormatCellOrPlaceholder(pubCell, pub, "Unknown / Independent");
@@ -182,32 +189,40 @@ public sealed class ExcelReportMapper : IReportMapper
             // Col 4: Install Path (WrapText true is MANDATORY to prevent path strings from overlapping into Install Date)
             var pathCell = sheet.Cell(row, 4);
             pathCell.Style.Alignment.WrapText = true;
+            pathCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            pathCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             FormatCellOrPlaceholder(pathCell, r.Software.InstallPath, "N/A (System / Built-in)");
 
             // Col 5: Install Date
             var dtCell = sheet.Cell(row, 5);
             dtCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            dtCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             FormatCellOrPlaceholder(dtCell, r.Software.InstallDate, "— (Pre-installed)");
 
             // Col 6: Last Modified Date
             var modCell = sheet.Cell(row, 6);
             modCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            modCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             FormatCellOrPlaceholder(modCell, r.Software.LastModifiedDate, "— (Not Modified)");
 
             // Col 7: Last Used / Active
             var useCell = sheet.Cell(row, 7);
             useCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            useCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             FormatCellOrPlaceholder(useCell, r.Software.AppStartTime, "— (Inactive / Background)");
 
             // Col 8: Scan Source
             var srcCell = sheet.Cell(row, 8);
             srcCell.Style.Alignment.WrapText = true;
+            srcCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            srcCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             FormatCellOrPlaceholder(srcCell, r.Software.ScanSource, "System Scan");
 
             // Col 9: License Type Cell with conditional badge tint
             var licCell = sheet.Cell(row, 9);
             licCell.Value = r.DetectedLicenseType.ToString();
             licCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            licCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             licCell.Style.Font.Bold = true;
             switch (r.DetectedLicenseType)
             {
@@ -233,6 +248,7 @@ public sealed class ExcelReportMapper : IReportMapper
             var confCell = sheet.Cell(row, 10);
             confCell.Value = r.Confidence.ToString();
             confCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            confCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             confCell.Style.Font.Bold = true;
             if (r.Confidence == ConfidenceLevel.Verified || r.Confidence == ConfidenceLevel.High)
             {
@@ -253,11 +269,15 @@ public sealed class ExcelReportMapper : IReportMapper
             // Col 11: Plugin Detector
             var detCell = sheet.Cell(row, 11);
             detCell.Style.Alignment.WrapText = true;
+            detCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            detCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             FormatCellOrPlaceholder(detCell, r.PluginName, "Standard Detector");
 
             // Col 12: Evidence combined text (WrapText true is MANDATORY to prevent long evidence strings from spilling out of table right border)
             var evCell = sheet.Cell(row, 12);
             evCell.Style.Alignment.WrapText = true;
+            evCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            evCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
             var evText = r.Evidences.Count > 0
                 ? string.Join(" | ", r.Evidences.Select(e => $"[{e.EvidenceType}] {e.Description}"))
                 : null;
@@ -283,24 +303,24 @@ public sealed class ExcelReportMapper : IReportMapper
 
             double explicitWidth = i switch
             {
-                1 => Math.Max(minHeaderWidth, 45), // Software Package (wide enough for long titles)
-                2 => Math.Max(minHeaderWidth, 75), // Version (Tăng chiều rộng lên 75 để các chuỗi commit SHA siêu dài như '@Commit: 901ca9...' hoặc 'SHA: 406132...' nằm trọn vẹn thoải mái không bị khuất chữ)
-                3 => Math.Max(minHeaderWidth, 42), // Publisher
-                4 => Math.Max(minHeaderWidth, 95), // Install Path (Tăng lên 95 để đường dẫn thư mục sâu nằm thoải mái)
+                1 => Math.Max(minHeaderWidth, 48), // Software Package (wide enough for long titles)
+                2 => Math.Max(minHeaderWidth, 85), // Version (Tăng chiều rộng lên 85 để các chuỗi commit SHA siêu dài như '@Commit: 901ca9...' hoặc 'SHA: 406132...' nằm trọn vẹn thoải mái không bị khuất hay xén chữ)
+                3 => Math.Max(minHeaderWidth, 45), // Publisher
+                4 => Math.Max(minHeaderWidth, 100), // Install Path (Tăng lên 100 để đường dẫn thư mục sâu nằm thoải mái)
                 5 => Math.Max(minHeaderWidth, 26), // Install Date
                 6 => Math.Max(minHeaderWidth, 32), // Last Modified (VN Time)
                 7 => Math.Max(minHeaderWidth, 34), // Last Used / Active (VN Time)
                 8 => Math.Max(minHeaderWidth, 45), // Scan Source
                 9 => Math.Max(minHeaderWidth, 24), // License Type
                 10 => Math.Max(minHeaderWidth, 24), // Confidence
-                11 => Math.Max(minHeaderWidth, 50), // Plugin Detector
-                12 => Math.Max(minHeaderWidth, 120), // Verification Evidence (Tăng lên 120 để bằng chứng và mô tả dài hiển thị cực kỳ rộng rãi)
-                _ => 35
+                11 => Math.Max(minHeaderWidth, 55), // Plugin Detector
+                12 => Math.Max(minHeaderWidth, 130), // Verification Evidence (Tăng lên 130 để bằng chứng và mô tả dài hiển thị cực kỳ rộng rãi)
+                _ => 38
             };
             col.Width = explicitWidth;
         }
 
-        // Dynamically calculate balanced row height: run ClosedXML AdjustToContents first, then add safe +6.0 points cushion (padding top/bottom), capped appropriately so rows are never giant blocks ('một cục to đùng') while ensuring 100% no bottom text clipping
+        // Dynamically calculate balanced row height: run ClosedXML AdjustToContents first, then add safe +14.0 points cushion (padding top/bottom), capped appropriately at 85.0 points so even multi-line wrapped text NEVER gets sliced when center-aligned ('căn chữ ra giữa hết và tăng kích thước ô lên')
         if (row > 2)
         {
             sheet.Rows(2, row - 1).AdjustToContents();
@@ -308,10 +328,10 @@ public sealed class ExcelReportMapper : IReportMapper
             {
                 var rObj = sheet.Row(rRow);
                 double baseHeight = rObj.Height;
-                // Add +6.0 points of vertical padding cushion so bottom half of letters in wrapped rows never get sliced
-                double paddedHeight = Math.Max(26.0, baseHeight + 6.0);
-                // Cap maximum height at 64.0 points (~3 lines) so even if a cell has a super long SHA string, the row stays compact and elegant instead of becoming a massive chunk ('cái này thi to quá, cái này một cục')
-                rObj.Height = Math.Min(64.0, paddedHeight);
+                // Add +14.0 points of vertical padding cushion (~18 pixels) above and below centered text so no bottom half of any letters get sliced
+                double paddedHeight = Math.Max(34.0, baseHeight + 14.0);
+                // Cap maximum height at 85.0 points (~4 lines) to guarantee every multi-line cell breathes comfortably without turning into a giant chunk
+                rObj.Height = Math.Min(85.0, paddedHeight);
             }
         }
     }
