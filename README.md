@@ -13,6 +13,14 @@
 
 [Tích hợp Excel 4 Tabs (.XLSX)](#-bộ-xuất-báo-cáo-đa-định-dạng-phase-4-enterprise-exporters) • [Giao diện Web Widescreen 1920x1080](#-bộ-xuất-báo-cáo-đa-định-dạng-phase-4-enterprise-exporters) • [Hướng Dẫn Chạy Nhanh](#-hướng-dẫn-cài-đặt--sử-dụng-quick-start) • [Tài Liệu Kiến Trúc](#-tài-liệu-kiến-trúc--kỹ-thuật-documentation-index)
 
+<br>
+
+[![📥 TẢI VỀ TRỌN BỘ (.ZIP)](https://img.shields.io/badge/📥_TẢI_VỀ_TRỌN_BỘ_.ZIP_(14_MB)-008080?style=for-the-badge&logo=github)](https://github.com/balocvu3105-dd/LicenseIntelligencePlatform/raw/main/dist/LicenseIntelligencePlatform-v1.0.0-win-x64.zip)
+[![🚀 TẢI TRỰC TIẾP FILE .EXE](https://img.shields.io/badge/🚀_TẢI_TRỰC_TIẾP_FILE_.EXE-3B82F6?style=for-the-badge&logo=windows)](https://github.com/balocvu3105-dd/LicenseIntelligencePlatform/raw/main/dist/LicenseIntelligencePlatform-v1.0.0-win-x64/LicenseIntelligencePlatform.Presentation.Cli.exe)
+
+> **⚡ TẢI NGAY & CHẠY TRỰC TIẾP (Không cần cài đặt .NET):**  
+> Tải file `.zip` hoặc `.exe` về máy Windows của bạn $\to$ Nhấp đúp chuột vào **`LicenseIntelligencePlatform.Presentation.Cli.exe`** $\to$ Hệ thống sẽ quét offline cục bộ trong $0.5$ giây và xuất ra trọn bộ **Bảng tính Excel (.XLSX) 4 Trang tính**, báo cáo **Web Widescreen HTML Full HD** cùng **Hồ sơ pháp lý Markdown** ngay tại thư mục `reports/` cạnh file chạy!
+
 </div>
 
 ---
